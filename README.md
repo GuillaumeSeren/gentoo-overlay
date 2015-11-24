@@ -10,5 +10,9 @@ Provide live-ebuilds for various project I try to follow.
 This overlay is not official, and not tested outside of my setup,
 so take some time to read before installing things.
 
+! USE IT AT YOUR OWN RISK !
+
 ## INSTALL
-WIP
+```
+layman -a https://raw.github.com/GuillaumeSeren/gentoo-overlay/master/overlay.xml
+```
