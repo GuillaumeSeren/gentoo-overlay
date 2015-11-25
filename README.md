@@ -16,3 +16,9 @@ so take some time to read before installing things.
 ```
 layman -a https://raw.github.com/GuillaumeSeren/gentoo-overlay/master/overlay.xml
 ```
+
+## CONTENT
+
+Software     | DESCRIPTION
+-------------|------------
+`cockatrice` | A cross-platform virtual tabletop for multiplayer card games
