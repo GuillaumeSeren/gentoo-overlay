@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<layman>
+	<overlay
+		type = "git"
+		src  = "https://github.com/GuillaumeSeren/gentoo-overlay.git"
+		contact = "guillaumeseren@gmail.com"
+		name = "GuillaumeSeren-gentoo-overlay">
+		<link>https://github.com/GuillaumeSeren/gentoo-overlay</link>
+		<description>Guillaume Seren Gentoo Overlay</description>
+	</overlay>
+</layman>
