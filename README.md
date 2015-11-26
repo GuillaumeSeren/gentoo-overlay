@@ -22,3 +22,4 @@ layman -a https://raw.github.com/GuillaumeSeren/gentoo-overlay/master/overlay.xm
 Software     | DESCRIPTION
 -------------|------------
 `cockatrice` | A cross-platform virtual tabletop for multiplayer card games
+`kakoune`    | mawww's experiment for a better code editor
