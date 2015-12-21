@@ -15,6 +15,19 @@ so take some time to read before installing things.
 ## INSTALL
 ```
 layman -a https://raw.github.com/GuillaumeSeren/gentoo-overlay/master/overlay.xml
+# Then search the ebuild like:
+emerge --search alot
+# If the version (9999 for exemple of a live-ebuild) did not show-up,
+# you might need to search it more precisely, like:
+emerge -pv "=mail-client/alot-9999"
+# The ebuild might need a keyword change to be able to install
+# You can add the entry in /etc/portage/
+# example for alot-9999.ebuild:
+# required by =mail-client/alot-9999 (argument)
+=mail-client/alot-9999 ~amd64
+
+# Then you can install the ebuild
+emerge -av "=mail-client/alot-9999"
 ```
 
 ## CONTENT
@@ -23,3 +36,7 @@ Software     | DESCRIPTION
 -------------|------------
 `cockatrice` | A cross-platform virtual tabletop for multiplayer card games
 `kakoune`    | mawww's experiment for a better code editor
+`alot`       | A commandline MUA using notmuch and urwid [alot]
+
+
+[alot]: https://github.com/pazz/alot
