@@ -4,7 +4,7 @@ gentoo-overlay
 My Gentoo overlay mostly live-ebuilds.
 
 ## IDEA
-Provide live-ebuilds for various project I try to follow.
+Provide upgraded bump and live-ebuilds for various project I follow.
 
 ## DISCLAIMER
 This overlay is not official, and not tested outside of my setup,
@@ -25,7 +25,6 @@ emerge -pv "=mail-client/alot-9999"
 # example for alot-9999.ebuild:
 # required by =mail-client/alot-9999 (argument)
 =mail-client/alot-9999 ~amd64
-
 # Then you can install the ebuild
 emerge -av "=mail-client/alot-9999"
 ```
@@ -37,6 +36,10 @@ Software     | DESCRIPTION
 `cockatrice` | A cross-platform virtual tabletop for multiplayer card games
 `kakoune`    | mawww's experiment for a better code editor
 `alot`       | A commandline MUA using notmuch and urwid [alot]
+
+## PARTICIPATE
+If find any bugs or problem related to those ebuild I suggest that you fill a __Issue__.
+If you fix something and want to share back you can open a __Pull Request__.
 
 
 [alot]: https://github.com/pazz/alot
