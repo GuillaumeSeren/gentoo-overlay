@@ -37,6 +37,7 @@ Software     | DESCRIPTION
 `kakoune`    | mawww's experiment for a better code editor
 `alot`       | A commandline MUA using notmuch and urwid [alot]
 `kpcli`      | A command line interface to KeePass database files [kpcli]
+`git-extras` | GIT utilities -- repo summary, repl, changelog population, author commit percentages and more [git-extras]
 
 ## PARTICIPATE
 If find any bugs or problem related to those ebuild I suggest that you fill a __Issue__.
@@ -45,3 +46,4 @@ If you fix something and want to share back you can open a __Pull Request__.
 
 [alot]: https://github.com/pazz/alot
 [kpcli]: http://kpcli.sourceforge.net/
+[git-extras]: https://github.com/tj/git-extras
