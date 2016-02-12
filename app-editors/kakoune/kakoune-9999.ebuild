@@ -4,6 +4,8 @@
 
 EAPI=5
 
+inherit git-r3 savedconfig
+
 EGIT_REPO_URI="git://github.com/mawww/kakoune.git"
 
 DESCRIPTION="mawww's experiment for a better code editor"
@@ -12,17 +14,26 @@ LICENSE="unlicense"
 SLOT="0"
 
 
-RDEPEND="dev-libs/boost sys-devel/gcc sys-libs/ncurses"
+RDEPEND="
+  dev-libs/boost
+  sys-devel/gcc
+  sys-libs/ncurses
+"
 
-# inherit git-r3
-inherit git-r3
+DEPEND="
+	${RDEPEND}
+"
+
+src_prepare() {
+	epatch_user
+}
 
 src_compile() {
-   cd src
-   make
+  cd src
+  make
 }
 
 src_install() {
-   cd src
-   make DESTDIR="${D}" install
+ cd src
+ make DESTDIR="${D}" install
 }
