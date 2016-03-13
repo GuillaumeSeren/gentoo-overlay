@@ -38,6 +38,7 @@ Software       | DESCRIPTION
 `[alot]`       | A commandline MUA using notmuch and urwid
 `[kpcli]`      | A command line interface to KeePass database files
 `[git-extras]` | GIT utilities -- repo summary, repl, changelog population, author commit percentages and more
+`[composer]`   | Dependency Manager for PHP
 
 ## PARTICIPATE
 If find any bugs or problem related to those ebuild I suggest that you fill a __Issue__.
@@ -48,3 +49,4 @@ If you fix something and want to share back you can open a __Pull Request__.
 [alot]: https://github.com/pazz/alot
 [kpcli]: http://kpcli.sourceforge.net/
 [git-extras]: https://github.com/tj/git-extras
+[composer]: https://github.com/composer/composer
