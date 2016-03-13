@@ -31,14 +31,14 @@ emerge -av "=mail-client/alot-9999"
 
 ## CONTENT
 
-Software       | DESCRIPTION
----------------|------------
-`[cockatrice]` | A cross-platform virtual tabletop for multiplayer card games
-`[kakoune]`    | mawww's experiment for a better code editor
-`[alot]`       | A commandline MUA using notmuch and urwid
-`[kpcli]`      | A command line interface to KeePass database files
-`[git-extras]` | GIT utilities -- repo summary, repl, changelog population, author commit percentages and more
-`[composer]`   | Dependency Manager for PHP
+Software                  | DESCRIPTION
+--------------------------|------------
+[cockatrice][cockatrice]  | A cross-platform virtual tabletop for multiplayer card games
+[kakoune][kakoune]        | mawww's experiment for a better code editor
+[alot][alot]              | A commandline MUA using notmuch and urwid
+[kpcli][kpcli]            | A command line interface to KeePass database files
+[git-extras][git-extras]  | GIT utilities -- repo summary, repl, changelog population, author commit percentages and more
+[composer][composer]      | Dependency Manager for PHP
 
 ## PARTICIPATE
 If find any bugs or problem related to those ebuild I suggest that you fill a __Issue__.
