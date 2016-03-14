@@ -19,7 +19,8 @@ IUSE=""
 
 DEPEND="${RDEPEND}
 >=dev-lang/php-5.3.4"
-RDEPEND="dev-lang/php[zip,gmp,xmlreader]"
+# RDEPEND="dev-lang/php[zip,gmp,xmlreader,curl]"
+RDEPEND="dev-lang/php[curl]"
 
 src_unpack() {
 	cp "${DISTDIR}/${A}" "${WORKDIR}"
