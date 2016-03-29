@@ -39,7 +39,7 @@ Software                  | DESCRIPTION
 [kpcli][kpcli]            | A command line interface to KeePass database files
 [git-extras][git-extras]  | GIT utilities -- repo summary, repl, changelog population, author commit percentages and more
 [composer][composer]      | Dependency Manager for PHP
-[git][git]                | Git Source Code Mirror - This is a publish-only repository and all pull requests are ignored. Please follow Documentation/SubmittingPatches procedure for any of your improvements.
+[git][git]                | Git Source Code Mirror
 
 ## PARTICIPATE
 If find any bugs or problem related to those ebuild I suggest that you fill a __Issue__.
