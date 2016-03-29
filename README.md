@@ -40,6 +40,7 @@ Software                  | DESCRIPTION
 [git-extras][git-extras]  | GIT utilities -- repo summary, repl, changelog population, author commit percentages and more
 [composer][composer]      | Dependency Manager for PHP
 [git][git]                | Git Source Code Mirror
+[rkt][rkt]                | rkt is an App Container runtime for Linux
 
 ## PARTICIPATE
 If find any bugs or problem related to those ebuild I suggest that you fill a __Issue__.
@@ -52,3 +53,4 @@ If you fix something and want to share back you can open a __Pull Request__.
 [git-extras]: https://github.com/tj/git-extras
 [composer]: https://github.com/composer/composer
 [git]: https://github.com/git/git
+[rkt]: https://github.com/coreos/rkt
