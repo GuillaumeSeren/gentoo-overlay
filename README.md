@@ -1,16 +1,14 @@
 gentoo-overlay
 ==============
 
-My Gentoo overlay mostly live-ebuilds.
-
-## IDEA
-Provide upgraded bump and live-ebuilds for various project I follow.
+My Gentoo overlay mostly live-ebuilds, but I try also to have stable ebuilds,
+for things that are not already in Gentoo.
 
 ## DISCLAIMER
-This overlay is not official, and not tested outside of my setup,
+This overlay is *not official*, and not tested outside of my setup,
 so take some time to read before installing things.
 
-! USE IT AT YOUR OWN RISK !
+_! USE IT AT YOUR OWN RISK !_
 
 ## INSTALL
 ```
