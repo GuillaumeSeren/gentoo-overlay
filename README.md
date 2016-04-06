@@ -29,16 +29,17 @@ emerge -av "=mail-client/alot-9999"
 
 ## CONTENT
 
-Software                  | DESCRIPTION
---------------------------|------------
-[cockatrice][cockatrice]  | A cross-platform virtual tabletop for multiplayer card games
-[kakoune][kakoune]        | mawww's experiment for a better code editor
-[alot][alot]              | A commandline MUA using notmuch and urwid
-[kpcli][kpcli]            | A command line interface to KeePass database files
-[git-extras][git-extras]  | GIT utilities -- repo summary, repl, changelog population, author commit percentages and more
-[composer][composer]      | Dependency Manager for PHP
-[git][git]                | Git Source Code Mirror
-[rkt][rkt]                | rkt is an App Container runtime for Linux
+Software                          | DESCRIPTION
+----------------------------------|------------
+[cockatrice][cockatrice]          | A cross-platform virtual tabletop for multiplayer card games
+[kakoune][kakoune]                | mawww's experiment for a better code editor
+[alot][alot]                      | A commandline MUA using notmuch and urwid
+[kpcli][kpcli]                    | A command line interface to KeePass database files
+[git-extras][git-extras]          | GIT utilities -- repo summary, repl, changelog population, author commit percentages and more
+[composer][composer]              | Dependency Manager for PHP
+[git][git]                        | Git Source Code Mirror
+[rkt][rkt]                        | rkt is an App Container runtime for Linux
+[docker-machine][docker-machine]  | Machine management for a container-centric world
 
 ## PARTICIPATE
 If find any bugs or problem related to those ebuild I suggest that you fill a __Issue__.
@@ -52,3 +53,4 @@ If you fix something and want to share back you can open a __Pull Request__.
 [composer]: https://github.com/composer/composer
 [git]: https://github.com/git/git
 [rkt]: https://github.com/coreos/rkt
+[docker-machine]: https://github.com/docker/machine
