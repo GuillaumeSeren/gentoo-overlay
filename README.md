@@ -40,6 +40,8 @@ Software                          | DESCRIPTION
 [git][git]                        | Git Source Code Mirror
 [rkt][rkt]                        | rkt is an App Container runtime for Linux
 [docker-machine][docker-machine]  | Machine management for a container-centric world
+[phpunit][phpunit]                | The PHP Unit Testing framework
+
 
 ## PARTICIPATE
 If find any bugs or problem related to those ebuild I suggest that you fill a __Issue__.
@@ -54,3 +56,4 @@ If you fix something and want to share back you can open a __Pull Request__.
 [git]: https://github.com/git/git
 [rkt]: https://github.com/coreos/rkt
 [docker-machine]: https://github.com/docker/machine
+[phpunit]: https://github.com/sebastianbergmann/phpunit
