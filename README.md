@@ -41,6 +41,7 @@ Software                          | DESCRIPTION
 [rkt][rkt]                        | rkt is an App Container runtime for Linux
 [docker-machine][docker-machine]  | Machine management for a container-centric world
 [phpunit][phpunit]                | The PHP Unit Testing framework
+[s3fs][s3fs-fuse]                 | FUSE-based file system backed by Amazon S3
 
 
 ## PARTICIPATE
@@ -57,3 +58,4 @@ If you fix something and want to share back you can open a __Pull Request__.
 [rkt]: https://github.com/coreos/rkt
 [docker-machine]: https://github.com/docker/machine
 [phpunit]: https://github.com/sebastianbergmann/phpunit
+[s3fs-fuse]: https://github.com/s3fs-fuse/s3fs-fuse
