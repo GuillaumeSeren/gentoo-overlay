@@ -11,6 +11,7 @@ so take some time to read before installing things.
 _! USE IT AT YOUR OWN RISK !_
 
 ## INSTALL
+You can install this overlay using layman, according to the doc https://wiki.gentoo.org/wiki/Layman
 ```
 layman -o https://raw.github.com/GuillaumeSeren/gentoo-overlay/master/guillaumeseren.xml -f -a guillaumeseren
 # Then search the ebuild like:
