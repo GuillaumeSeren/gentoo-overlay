@@ -12,7 +12,7 @@ _! USE IT AT YOUR OWN RISK !_
 
 ## INSTALL
 ```
-layman -a https://raw.github.com/GuillaumeSeren/gentoo-overlay/master/overlay.xml
+layman -o https://raw.github.com/GuillaumeSeren/gentoo-overlay/master/guillaumeseren.xml -f -a guillaumeseren
 # Then search the ebuild like:
 emerge --search alot
 # If the version (9999 for exemple of a live-ebuild) did not show-up,
