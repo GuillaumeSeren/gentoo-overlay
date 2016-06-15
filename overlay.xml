@@ -1,11 +1,16 @@
-<?xml version="1.0" ?>
-<layman>
-	<overlay
-		type = "git"
-		src  = "https://github.com/GuillaumeSeren/gentoo-overlay.git"
-		contact = "guillaumeseren@gmail.com"
-		name = "GuillaumeSeren-gentoo-overlay">
-		<link>https://github.com/GuillaumeSeren/gentoo-overlay</link>
-		<description>Guillaume Seren Gentoo Overlay</description>
-	</overlay>
-</layman>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE repositories SYSTEM "/dtd/repositories.dtd">
+<repositories version="1.0">
+  <repositories xmlns="" version="1.0">
+  <repo quality="experimental" status="unofficial">
+    <name><![CDATA[guillaumeseren-overlay]]></name>
+    <description lang="en"><![CDATA[Guillaume Seren Gentoo Overlay]]></description>
+    <homepage>https://github.com/GuillaumeSeren/gentoo-overlay</homepage>
+    <owner type="person">
+      <email>guillaumeseren@gmail.com</email>
+      <name><![CDATA[Guillaume Seren]]></name>
+    </owner>
+    <source type="git">git://github.com/GuillaumeSeren/gentoo-overlay.git</source>
+    <feed>http://github.com/GuillaumeSeren/gentoo-overlay/commits/master.atom</feed>
+  </repo>
+</repositories>
