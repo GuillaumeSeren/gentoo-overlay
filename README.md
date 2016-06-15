@@ -1,31 +1,80 @@
 gentoo-overlay
 ==============
 
-My Gentoo overlay mostly live-ebuilds, but I try also to have stable ebuilds,
+My Gentoo overlay mostly bump/live-ebuilds, but I try also to have stable ebuilds,
 for things that are not already in Gentoo.
 
 ## DISCLAIMER
-This overlay is *not official*, and not tested outside of my setup,
-so take some time to read before installing things.
+This overlay is *not official*, and *not tested outside of my setup*,
+so take some time to read ebuild before installing things.
 
 _! USE IT AT YOUR OWN RISK !_
 
 ## INSTALL
-You can install this overlay using layman, according to the doc https://wiki.gentoo.org/wiki/Layman
+You can install this overlay using the new [Portage/Sync system](https://wiki.gentoo.org/wiki/Project:Portage/Sync).
+Add the overlay in '/etc/portage/repos.conf/guillaumeseren.conf':
 ```
-layman -o https://raw.github.com/GuillaumeSeren/gentoo-overlay/master/guillaumeseren.xml -f -a guillaumeseren
-# Then search the ebuild like:
-emerge --search alot
-# If the version (9999 for exemple of a live-ebuild) did not show-up,
-# you might need to search it more precisely, like:
-emerge -pv "=mail-client/alot-9999"
-# The ebuild might need a keyword change to be able to install
-# You can add the entry in /etc/portage/
-# example for alot-9999.ebuild:
-# required by =mail-client/alot-9999 (argument)
-=mail-client/alot-9999 ~amd64
-# Then you can install the ebuild
-emerge -av "=mail-client/alot-9999"
+[GuillaumeSeren]
+location = /usr/local/portage/guillaumeseren
+sync-type = git
+sync-uri = https://github.com/GuillaumeSeren/gentoo-overlay.git
+masters = gentoo
+priority = 50
+auto-sync = yes
+```
+
+Then you can sync the overlay with 'emerge --sync' *or* 'emaint sync --auto'.
+To pull the overlay directly just:
+```
+emaint sync --repo  GuillaumeSeren
+```
+
+You should mask all ebuild by default in my overlay and just unmask,
+the one you want
+```
+echo '*/*::GuillaumeSeren' >> /etc/portage/package.mask/guillaumeseren-repo
+```
+
+Then search the ebuild like:
+```
+emerge --search git-extras
+```
+
+As we masked the whole overlay, the package you want should be masked,
+you might need to search it more precisely, like:
+```
+$ emerge --search git-extras
+[ Results for search key : git-extras ]
+Searching...
+
+*  dev-vcs/git-extras [ Masked ]
+      Latest version available: 9999
+      Latest version installed: 9999
+      Size of files: 0 KiB
+      Homepage:      https://github.com/tj/git-extras
+      Description:   GIT utilities -- repo summary, repl, changelog population, author commit percentages and more
+      License:       MIT
+
+[ Applications found : 1 ]
+
+```
+
+To install this version you will need to unmask, the specific ebuild version.
+```
+$ echo '=dev-vcs/git-extras-9999::GuillaumeSeren' >>  /etc/portage/package.unmask/git-extras
+```
+
+Now you can install it
+```
+$ emerge -av dev-vcs/git-extras
+These are the packages that would be merged, in order:
+
+Calculating dependencies... done!
+[ebuild   R   #] dev-vcs/git-extras-9999::GuillaumeSeren  USE="-savedconfig" 0 KiB
+
+Total: 1 package (1 reinstall), Size of downloads: 0 KiB
+
+Would you like to merge these packages? [Yes/No]
 ```
 
 ## CONTENT
