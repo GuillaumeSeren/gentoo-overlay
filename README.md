@@ -88,7 +88,6 @@ Would you like to merge these packages? [Yes/No]
 Software                          | DESCRIPTION
 ----------------------------------|------------
 [cockatrice][cockatrice]          | A cross-platform virtual tabletop for multiplayer card games
-[kakoune][kakoune]                | mawww's experiment for a better code editor
 [alot][alot]                      | A commandline MUA using notmuch and urwid
 [git-extras][git-extras]          | GIT utilities -- repo summary, repl, changelog population, author commit percentages and more
 [composer][composer]              | Dependency Manager for PHP
@@ -104,7 +103,6 @@ If find any bugs or problem related to those ebuild I suggest that you fill a __
 If you fix something and want to share back you can open a __Pull Request__.
 
 [cockatrice]: https://github.com/Cockatrice/Cockatrice
-[kakoune]: https://github.com/mawww/kakoune
 [alot]: https://github.com/pazz/alot
 [git-extras]: https://github.com/tj/git-extras
 [composer]: https://github.com/composer/composer
