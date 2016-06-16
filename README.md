@@ -35,6 +35,12 @@ the one you want
 echo '*/*::GuillaumeSeren' >> /etc/portage/package.mask/guillaumeseren-repo
 ```
 
+You also need to accept the package, you can do it per package, or for all of
+them like
+```
+echo '*/*::GuillaumeSeren' > /etc/portage/package.accept_keywords/guillaumeseren-repo'
+```
+
 Then search the ebuild like:
 ```
 emerge --search git-extras
