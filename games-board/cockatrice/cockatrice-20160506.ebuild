@@ -8,9 +8,6 @@ inherit cmake-utils eutils gnome2-utils games
 DESCRIPTION="An open-source multiplatform software for playing card games over a network"
 HOMEPAGE="https://github.com/Cockatrice/Cockatrice"
 
-# https://github.com/Cockatrice/Cockatrice/archive/2016-02-03-Release.tar.gz
-# https://github.com/Cockatrice/cockatrice/archive/20160203-Release.tar.gz
-# SRC_URI="https://github.com/Cockatrice/${PN}/archive/${PV}-Release.tar.gz -> ${P}.tar.gz"
 SRC_URI="https://github.com/Cockatrice/${PN}/archive/2016-05-06-Release.tar.gz"
 
 S=${WORKDIR}/"Cockatrice-2016-05-06-Release"
@@ -23,22 +20,13 @@ IUSE="dedicated server"
 DEPEND="
 	dev-libs/libgcrypt:0
 	dev-libs/protobuf
-	dev-qt/qtcore:4
-	dev-qt/qtsql:4
+	dev-qt/qtcore:5
+	dev-qt/qtconcurrent
 	!dedicated? (
-		dev-qt/qtmultimedia:4
-		dev-qt/qtsvg:4
-		dev-qt/qtgui:4
+		dev-qt/qtmultimedia:5
+		dev-qt/qtsvg:5
+		dev-qt/qtgui:5
 	)"
-
-# S=${WORKDIR}/${PN}_${PV}
-# S=${WORKDIR}/"cockatrice-99999999"
-# S="/var/tmp/portage/games-board/cockatrice-99999999/work/cockatrice-99999999"
-
-# src_prepare() {
-# 	epatch "${FILESDIR}"/${P}-build.patch \
-# 		"${FILESDIR}"/${P}-underlinking.patch
-# }
 
 src_configure() {
 	local mycmakeargs=(
