@@ -91,7 +91,6 @@ Software                          | DESCRIPTION
 [alot][alot]                      | A commandline MUA using notmuch and urwid
 [git-extras][git-extras]          | GIT utilities -- repo summary, repl, changelog population, author commit percentages and more
 [composer][composer]              | Dependency Manager for PHP
-[git][git]                        | Git Source Code Mirror
 [rkt][rkt]                        | rkt is an App Container runtime for Linux
 [docker-machine][docker-machine]  | Machine management for a container-centric world
 [phpunit][phpunit]                | The PHP Unit Testing framework
@@ -106,7 +105,6 @@ If you fix something and want to share back you can open a __Pull Request__.
 [alot]: https://github.com/pazz/alot
 [git-extras]: https://github.com/tj/git-extras
 [composer]: https://github.com/composer/composer
-[git]: https://github.com/git/git
 [rkt]: https://github.com/coreos/rkt
 [docker-machine]: https://github.com/docker/machine
 [phpunit]: https://github.com/sebastianbergmann/phpunit
