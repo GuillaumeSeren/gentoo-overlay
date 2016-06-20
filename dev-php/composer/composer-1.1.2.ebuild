@@ -8,9 +8,9 @@ inherit eutils versionator
 DESCRIPTION="A dependancy manager for PHP"
 HOMEPAGE="http://getcomposer.org"
 
-MY_PV=$(replace_version_separator _ -)
+# MY_PV=$(replace_version_separator _ -)
 
-SRC_URI="http://getcomposer.org/download/${MY_PV}/composer.phar -> ${PN}-${MY_PV}.phar"
+SRC_URI="http://getcomposer.org/download/${PV}/${PN}.phar"
 
 LICENSE="MIT"
 SLOT="0"
@@ -19,7 +19,6 @@ IUSE=""
 
 DEPEND="${RDEPEND}
 >=dev-lang/php-5.3.4"
-# RDEPEND="dev-lang/php[zip,gmp,xmlreader,curl]"
 RDEPEND="dev-lang/php[curl]"
 
 src_unpack() {
