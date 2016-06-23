@@ -22,6 +22,8 @@ DEPEND="
 	dev-libs/protobuf
 	dev-qt/qtcore:5
 	dev-qt/qtconcurrent
+	dev-qt/linguist-tools
+	dev-qt/qtprintsupport
 	!dedicated? (
 		dev-qt/qtmultimedia:5
 		dev-qt/qtsvg:5
