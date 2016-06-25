@@ -91,7 +91,6 @@ Software                          | DESCRIPTION
 [alot][alot]                      | A commandline MUA using notmuch and urwid
 [git-extras][git-extras]          | GIT utilities -- repo summary, repl, changelog population, author commit percentages and more
 [composer][composer]              | Dependency Manager for PHP
-[rkt][rkt]                        | rkt is an App Container runtime for Linux
 [phpunit][phpunit]                | The PHP Unit Testing framework
 [s3fs][s3fs-fuse]                 | FUSE-based file system backed by Amazon S3
 [bedup][bedup]                    | Btrfs deduplication
@@ -105,7 +104,6 @@ If you fix something and want to share back you can open a __Pull Request__.
 [alot]: https://github.com/pazz/alot
 [git-extras]: https://github.com/tj/git-extras
 [composer]: https://github.com/composer/composer
-[rkt]: https://github.com/coreos/rkt
 [phpunit]: https://github.com/sebastianbergmann/phpunit
 [s3fs-fuse]: https://github.com/s3fs-fuse/s3fs-fuse
 [bedup]: https://github.com/g2p/bedup
