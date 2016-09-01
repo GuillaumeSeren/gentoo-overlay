@@ -2,7 +2,7 @@ gentoo-overlay
 ==============
 
 My Gentoo overlay mostly bump/live-ebuilds, but I try also to have stable ebuilds,
-for things that are not already in Gentoo.
+for things that are in Gentoo or not upto-date in Gentoo.
 
 ## DISCLAIMER
 This overlay is *not official*, and *not tested outside of my setup*,
@@ -65,7 +65,7 @@ Searching...
 
 ```
 
-To install this version you will need to unmask, the specific ebuild version.
+To install this version you will need to *unmask*, the version from my overlay (::GuillaumeSeren).
 ```
 $ echo '=dev-vcs/git-extras-9999::GuillaumeSeren' >>  /etc/portage/package.unmask/git-extras
 ```
@@ -92,7 +92,6 @@ Software                          | DESCRIPTION
 [git-extras][git-extras]          | GIT utilities -- repo summary, repl, changelog population, author commit percentages and more
 [composer][composer]              | Dependency Manager for PHP
 [phpunit][phpunit]                | The PHP Unit Testing framework
-[s3fs][s3fs-fuse]                 | FUSE-based file system backed by Amazon S3
 [bedup][bedup]                    | Btrfs deduplication
 
 
@@ -105,5 +104,4 @@ If you fix something and want to share back you can open a __Pull Request__.
 [git-extras]: https://github.com/tj/git-extras
 [composer]: https://github.com/composer/composer
 [phpunit]: https://github.com/sebastianbergmann/phpunit
-[s3fs-fuse]: https://github.com/s3fs-fuse/s3fs-fuse
 [bedup]: https://github.com/g2p/bedup
