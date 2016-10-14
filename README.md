@@ -30,7 +30,7 @@ emaint sync --repo  GuillaumeSeren
 ```
 
 You should mask all ebuild by default in my overlay and just unmask,
-the one you want
+the specific one you want
 ```
 echo '*/*::GuillaumeSeren' >> /etc/portage/package.mask/guillaumeseren-repo
 ```
