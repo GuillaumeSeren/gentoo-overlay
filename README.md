@@ -93,6 +93,7 @@ Software                          | DESCRIPTION
 [composer][composer]              | Dependency Manager for PHP
 [phpunit][phpunit]                | The PHP Unit Testing framework
 [bedup][bedup]                    | Btrfs deduplication
+[mixxx][mixxx]                    | Mixxx is Free DJ software that gives you everything you need to perform live mixes
 
 
 ## PARTICIPATE
@@ -105,3 +106,4 @@ If you fix something and want to share back you can open a __Pull Request__.
 [composer]: https://github.com/composer/composer
 [phpunit]: https://github.com/sebastianbergmann/phpunit
 [bedup]: https://github.com/g2p/bedup
+[mixxx]: http://mixxx.org
