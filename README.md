@@ -104,7 +104,7 @@ If you fix something and want to share back you can open a __Pull Request__.
 [cockatrice]: https://github.com/Cockatrice/Cockatrice
 [alot]: https://github.com/pazz/alot
 [git-extras]: https://github.com/tj/git-extras
-[composer]: https://github.com/composer/composer
+[composer]: https://getcomposer.org
 [phpunit]: https://github.com/sebastianbergmann/phpunit
 [bedup]: https://github.com/g2p/bedup
 [mixxx]: http://mixxx.org
