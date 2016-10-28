@@ -95,6 +95,7 @@ Software                          | DESCRIPTION
 [bedup][bedup]                    | Btrfs deduplication
 [mixxx][mixxx]                    | Mixxx is Free DJ software that gives you everything you need to perform live mixes
 [winetricks][winetricks]          | Winetricks is an easy way to work around problems in Wine
+[nodejs][nodejs]                  | Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine
 
 
 ## PARTICIPATE
@@ -109,3 +110,4 @@ If you fix something and want to share back you can open a __Pull Request__.
 [bedup]: https://github.com/g2p/bedup
 [mixxx]: http://mixxx.org
 [winetricks]: https://github.com/Winetricks/winetricks
+[nodejs]: https://nodejs.org
