@@ -96,6 +96,7 @@ Software                          | DESCRIPTION
 [mixxx][mixxx]                    | Mixxx is Free DJ software that gives you everything you need to perform live mixes
 [winetricks][winetricks]          | Winetricks is an easy way to work around problems in Wine
 [nodejs][nodejs]                  | Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine
+[wine][wine]                      | Free implementation of Windows(tm) on Unix.
 
 
 ## PARTICIPATE
@@ -111,3 +112,4 @@ If you fix something and want to share back you can open a __Pull Request__.
 [mixxx]: http://mixxx.org
 [winetricks]: https://github.com/Winetricks/winetricks
 [nodejs]: https://nodejs.org
+[wine]: https://www.winehq.org/
