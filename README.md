@@ -84,20 +84,21 @@ Would you like to merge these packages? [Yes/No]
 ```
 
 ## CONTENT
+Here the links for stuff that are packaged here.
 
-Software                          | DESCRIPTION
-----------------------------------|------------
-[cockatrice][cockatrice]          | A cross-platform virtual tabletop for multiplayer card games
-[alot][alot]                      | A commandline MUA using notmuch and urwid
-[git-extras][git-extras]          | GIT utilities -- repo summary, repl, changelog population, author commit percentages and more
-[composer][composer]              | Dependency Manager for PHP
-[phpunit][phpunit]                | The PHP Unit Testing framework
-[bedup][bedup]                    | Btrfs deduplication
-[mixxx][mixxx]                    | Mixxx is Free DJ software that gives you everything you need to perform live mixes
-[winetricks][winetricks]          | Winetricks is an easy way to work around problems in Wine
-[nodejs][nodejs]                  | Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine
-[wine][wine]                      | Free implementation of Windows(tm) on Unix.
-[fedora-autoloader][fedora-autoloader]          | Static PSR-4, PSR-0, and classmap autoloader.
+Software                                | DESCRIPTION
+----------------------------------------|------------
+[cockatrice][cockatrice]                | A cross-platform virtual tabletop for multiplayer card games
+[alot][alot]                            | A commandline MUA using notmuch and urwid
+[git-extras][git-extras]                | GIT utilities -- repo summary, repl, changelog population, author commit percentages and more
+[composer][composer]                    | Dependency Manager for PHP
+[phpunit][phpunit]                      | The PHP Unit Testing framework
+[bedup][bedup]                          | Btrfs deduplication
+[mixxx][mixxx]                          | Mixxx is Free DJ software that gives you everything you need to perform live mixes
+[winetricks][winetricks]                | Winetricks is an easy way to work around problems in Wine
+[nodejs][nodejs]                        | Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine
+[wine][wine]                            | Free implementation of Windows(tm) on Unix.
+[fedora-autoloader][fedora-autoloader]  | Static PSR-4, PSR-0, and classmap autoloader.
 
 
 ## PARTICIPATE
