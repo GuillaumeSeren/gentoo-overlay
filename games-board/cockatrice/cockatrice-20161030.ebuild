@@ -37,6 +37,8 @@ src_configure() {
 		-DDESKTOPDIR="/usr/share/applications"
 	)
 
+	# Add date in the help about, come from git originally
+	sed -i 's/^set(PROJECT_VERSION_FRIENDLY.*/set(PROJECT_VERSION_FRIENDLY \"'${PV}'\")/' cmake/getversion.cmake || die "Sed failed!"
 	cmake-utils_src_configure
 }
 
