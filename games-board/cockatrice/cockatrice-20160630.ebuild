@@ -9,7 +9,8 @@ DESCRIPTION="An open-source multiplatform software for playing card games over a
 HOMEPAGE="https://github.com/Cockatrice/Cockatrice"
 
 SRC_URI="https://github.com/Cockatrice/${PN}/archive/2016-06-30-Release.tar.gz -> ${P}.tar.gz"
-
+# As the default help/about display the sha1 we need it
+SHA1='277d7e2'
 S=${WORKDIR}/"Cockatrice-2016-06-30-Release"
 
 LICENSE="GPL-2"
@@ -38,7 +39,7 @@ src_configure() {
 	)
 
 	# Add date in the help about, come from git originally
-	sed -i 's/^set(PROJECT_VERSION_FRIENDLY.*/set(PROJECT_VERSION_FRIENDLY \"'${PV}'\")/' cmake/getversion.cmake || die "Sed failed!"
+	sed -i 's/^set(PROJECT_VERSION_FRIENDLY.*/set(PROJECT_VERSION_FRIENDLY \"'${SHA1}'\")/' cmake/getversion.cmake || die "Sed failed!"
 	cmake-utils_src_configure
 }
 
