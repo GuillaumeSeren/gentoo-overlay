@@ -25,7 +25,9 @@ DEPEND="${RDEPEND}
 src_install() {
 	# I've kept the same path name that Fedora use
 	insinto "/usr/share/php/JsonSchema2"
-	doins src/JsonSchema/*
+	doins -r src/JsonSchema/*
+	# Install the autoloader
+	doins "${FILESDIR}"/autoload.php
 	#Install the doc
 	dodoc README.md
 }
