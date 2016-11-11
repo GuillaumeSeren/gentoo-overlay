@@ -99,6 +99,7 @@ Software                                | DESCRIPTION
 [nodejs][nodejs]                        | Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine
 [wine][wine]                            | Free implementation of Windows(tm) on Unix.
 [fedora-autoloader][fedora-autoloader]  | Static PSR-4, PSR-0, and classmap autoloader.
+[json-schema][json-schema]              | PHP implementation of JSON schema
 
 
 ## PARTICIPATE
@@ -116,3 +117,4 @@ If you fix something and want to share back you can open a __Pull Request__.
 [nodejs]: https://nodejs.org
 [wine]: https://www.winehq.org/
 [fedora-autoloader]: https://github.com/php-fedora/autoloader
+[json-schema]: https://github.com/justinrainbow/json-schema
