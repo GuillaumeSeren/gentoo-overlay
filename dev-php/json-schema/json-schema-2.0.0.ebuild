@@ -13,14 +13,10 @@ SRC_URI="https://github.com/justinrainbow/${PN}/archive/${PV}.tar.gz -> ${P}.tar
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-# IUSE="test"
 
 RDEPEND="dev-lang/php:*"
 DEPEND="${RDEPEND}
 	=dev-php/fedora-autoloader-0.2.1"
-
-# # Change the name accordin to the archive
-# S=${WORKDIR}/${PN}"-"${PV}
 
 src_install() {
 	# I've kept the same path name that Fedora use
@@ -31,7 +27,3 @@ src_install() {
 	#Install the doc
 	dodoc README.md
 }
-
-# src_test() {
-# 	phpunit || die "test suite failed"
-# }
