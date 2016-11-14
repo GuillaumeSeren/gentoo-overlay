@@ -100,6 +100,8 @@ Software                                | DESCRIPTION
 [wine][wine]                            | Free implementation of Windows(tm) on Unix.
 [fedora-autoloader][fedora-autoloader]  | Static PSR-4, PSR-0, and classmap autoloader.
 [json-schema][json-schema]              | PHP implementation of JSON schema
+[ca-bundle][ca-bundle]                  | Lets you find a path to the system CA bundle, and includes a fallback to the Mozilla CA bundle
+[semver][semver]                        | Semantic versioning utilities with the addition of version constraints parsing and checking
 [spdx-licenses][spdx-licenses]          | Tools for working with the SPDX license list and validating licenses
 
 
@@ -119,4 +121,6 @@ If you fix something and want to share back you can open a __Pull Request__.
 [wine]: https://www.winehq.org/
 [fedora-autoloader]: https://github.com/php-fedora/autoloader
 [json-schema]: https://github.com/justinrainbow/json-schema
+[ca-bundle]: https://github.com/composer/ca-bundle
+[semver]: https://github.com/composer/semver
 [spdx-licenses]: https://github.com/composer/spdx-licenses
