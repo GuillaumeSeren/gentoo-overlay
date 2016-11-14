@@ -103,6 +103,7 @@ Software                                | DESCRIPTION
 [ca-bundle][ca-bundle]                  | Lets you find a path to the system CA bundle, and includes a fallback to the Mozilla CA bundle
 [semver][semver]                        | Semantic versioning utilities with the addition of version constraints parsing and checking
 [spdx-licenses][spdx-licenses]          | Tools for working with the SPDX license list and validating licenses
+[jsonlint][jsonlint]                    | JSON Lint for PHP
 
 
 ## PARTICIPATE
@@ -124,3 +125,4 @@ If you fix something and want to share back you can open a __Pull Request__.
 [ca-bundle]: https://github.com/composer/ca-bundle
 [semver]: https://github.com/composer/semver
 [spdx-licenses]: https://github.com/composer/spdx-licenses
+[jsonlint]: https://github.com/Seldaek/jsonlint
