@@ -104,6 +104,7 @@ Software                                | DESCRIPTION
 [semver][semver]                        | Semantic versioning utilities with the addition of version constraints parsing and checking
 [spdx-licenses][spdx-licenses]          | Tools for working with the SPDX license list and validating licenses
 [jsonlint][jsonlint]                    | JSON Lint for PHP
+[symfony-finder][symfony-finder]        | Symfony Finder Component
 
 
 ## PARTICIPATE
@@ -126,3 +127,4 @@ If you fix something and want to share back you can open a __Pull Request__.
 [semver]: https://github.com/composer/semver
 [spdx-licenses]: https://github.com/composer/spdx-licenses
 [jsonlint]: https://github.com/Seldaek/jsonlint
+[symfony-finder]: https://github.com/symfony/finder
