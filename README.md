@@ -106,7 +106,8 @@ Software                                | DESCRIPTION
 [jsonlint][jsonlint]                    | JSON Lint for PHP
 [symfony-finder][symfony-finder]        | Symfony Finder Component
 [symfony-filesystem][symfony-filesystem] | Symfony Filesystem Component
-[phar-utils]                            | PHAR file format utilities, for when PHP phars you up
+[phar-utils][phar-utils]                | PHAR file format utilities, for when PHP phars you up
+[cli-prompt][cli-prompt]                | Allows you to prompt for user input on the command line, and optionally hide the characters they type
 
 
 ## PARTICIPATE
