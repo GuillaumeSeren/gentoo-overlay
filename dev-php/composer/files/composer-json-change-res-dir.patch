@@ -1,0 +1,11 @@
+--- ./src/Composer/Json/JsonFile.php    2016-11-04 02:51:03.844719014 +0100
++++ ./src/Composer/Json/JsonFile.php    2016-11-18 16:44:06.065969630 +0100
+@@ -156,7 +156,7 @@
+             self::validateSyntax($content, $this->path);
+         }
+ 
+-        $schemaFile = __DIR__ . '/../../../res/composer-schema.json';
++        $schemaFile = '/usr/share/php/Composer/Composer/res/composer-schema.json';
+         $schemaData = json_decode(file_get_contents($schemaFile));
+ 
+         if ($schema === self::LAX_SCHEMA) {

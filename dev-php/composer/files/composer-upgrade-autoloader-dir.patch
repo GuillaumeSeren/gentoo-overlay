@@ -1,0 +1,11 @@
+--- ./bin/composer      2016-11-18 15:56:40.615898592 +0100
++++ ./bin/composer      2016-11-18 16:06:05.348912690 +0100
+@@ -5,7 +5,7 @@
+     echo 'Warning: Composer should be invoked via the CLI version of PHP, not the '.PHP_SAPI.' SAPI'.PHP_EOL;
+ }
+
+-require __DIR__.'/../src/bootstrap.php';
++require '/usr/share/php/Composer/Composer/autoload.php';
+ 
+ use Composer\Console\Application;
+
