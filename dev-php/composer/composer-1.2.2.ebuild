@@ -4,6 +4,8 @@
 
 EAPI=6
 
+inherit eutils
+
 DESCRIPTION="Dependency Manager for PHP"
 HOMEPAGE="https://github.com/composer/composer"
 
@@ -16,6 +18,7 @@ KEYWORDS="~amd64 ~x86"
 
 RDEPEND="dev-lang/php:*"
 DEPEND="${RDEPEND}
+	dev-lang/php[curl]
 	=dev-php/fedora-autoloader-0.2.1
 	=dev-php/json-schema-2.0.0
 	=dev-php/ca-bundle-1.0.0
@@ -43,12 +46,23 @@ DEPEND="${RDEPEND}
 # seld/cli-prompt": "^1.0",
 # psr/log": "^1.0"
 
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+	# We need to patch the main composer file to load our autoloader
+	EPATCH_SOURCE="${FILESDIR}" EPATCH_SUFFIX="patch" EPATCH_FORCE="yes" epatch
+}
+
 src_install() {
 	# I've kept the same path name that Fedora use
 	insinto "/usr/share/php/Composer/Composer"
 	doins -r src/Composer/*
+	doins -r res
+	doins LICENSE
 	# Install the autoloader
 	doins "${FILESDIR}"/autoload.php
+	# Install the comoser main file
+	dobin bin/composer
 	#Install the doc
 	dodoc README.md
 }
