@@ -4,8 +4,6 @@
 
 EAPI=6
 
-inherit eutils
-
 DESCRIPTION="Dependency Manager for PHP"
 HOMEPAGE="https://github.com/composer/composer"
 
@@ -46,11 +44,20 @@ DEPEND="${RDEPEND}
 # seld/cli-prompt": "^1.0",
 # psr/log": "^1.0"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-	# We need to patch the main composer file to load our autoloader
-	EPATCH_SOURCE="${FILESDIR}" EPATCH_SUFFIX="patch" EPATCH_FORCE="yes" epatch
+# Needed patches
+PATCHES=(
+	"${FILESDIR}/${PN}-fix-license-dir.patch"
+	"${FILESDIR}/${PN}-json-change-res-dir.patch"
+	"${FILESDIR}/${PN}-upgrade-autoloader-dir.patch"
+)
+
+src_prepare() {
+	if declare -p PATCHES | grep -q "^declare -a "; then
+		[[ -n ${PATCHES[@]} ]] && eapply "${PATCHES[@]}"
+	else
+		[[ -n ${PATCHES} ]] && eapply ${PATCHES}
+	fi
+	eapply_user
 }
 
 src_install() {
