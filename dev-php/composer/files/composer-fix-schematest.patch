@@ -1,0 +1,10 @@
+--- ./tests/Composer/Test/Json/ComposerSchemaTest.php   2016-11-03 17:43:15.000000000 +0100
++++ ./tests/Composer/Test/Json/ComposerSchemaTest.php   2016-11-20 18:27:43.169665101 +0100
+@@ -87,7 +87,7 @@
+
+     private function check($json)
+     {
+-        $schema = json_decode(file_get_contents(__DIR__ . '/../../../../res/composer-schema.json'));
++        $schema = json_decode(file_get_contents('/usr/share/php/Composer/Composer/res/composer-schema.json'));
+         $validator = new Validator();
+         $validator->check(json_decode($json), $schema);

@@ -30,6 +30,7 @@ DEPEND="${RDEPEND}
 	=dev-php/phar-utils-1.0.0
 	=dev-php/cli-prompt-1.0.0
 	=dev-php/fig-log-1.0.2"
+	# test? ( dev-php/phpunit )"
 
 # justinrainbow/json-schema": "^1.6 || ^2.0 || ^3.0 || ^4.0",
 # composer/ca-bundle": "^1.0",
@@ -49,6 +50,7 @@ PATCHES=(
 	"${FILESDIR}/${PN}-fix-license-dir.patch"
 	"${FILESDIR}/${PN}-json-change-res-dir.patch"
 	"${FILESDIR}/${PN}-upgrade-autoloader-dir.patch"
+	# "${FILESDIR}/${PN}-fix-schematest.patch"
 )
 
 src_prepare() {
@@ -66,6 +68,7 @@ src_install() {
 	doins -r src/Composer/*
 	doins -r res
 	doins LICENSE
+	# doins -r test
 	# Install the autoloader
 	doins "${FILESDIR}"/autoload.php
 	# Install the comoser main file
@@ -77,5 +80,6 @@ src_install() {
 # src_test() {
 # 	# The tests did not run error
 # 	# 'PHP Fatal error:  Cannot redeclare class Symfony\Component\Finder\Tests\FinderTest'
-# 	phpunit --bootstrap /usr/share/php/Symfony/Finder/autoload.php || die "test suite failed"
+# 	# phpunit --bootstrap /usr/share/php/Composer/Composer/autoload.php || die "test suite failed"
+# 	phpunit || die "test suite failed"
 # }
