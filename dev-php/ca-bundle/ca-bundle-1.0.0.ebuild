@@ -4,7 +4,7 @@
 
 EAPI=6
 
-DESCRIPTION="Lets you find a path to the system CA bundle, and includes a fallback to the Mozilla CA bundle"
+DESCRIPTION="Find a path to the system CA bundle, and fallback to the Mozilla CA bundle"
 HOMEPAGE="https://github.com/composer/ca-bundle"
 
 SRC_URI="https://github.com/composer/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
