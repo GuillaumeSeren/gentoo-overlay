@@ -4,8 +4,6 @@
 
 EAPI=6
 
-inherit ssl-cert eutils pam autotools
-
 DESCRIPTION="Tools for working with the SPDX license list and validating licenses"
 HOMEPAGE="https://github.com/composer/spdx-licenses"
 
@@ -19,12 +17,19 @@ RDEPEND="dev-lang/php:*"
 DEPEND="${RDEPEND}
 	=dev-php/fedora-autoloader-0.2.1"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-	EPATCH_SOURCE="${FILESDIR}" EPATCH_SUFFIX="patch" EPATCH_FORCE="yes" epatch
-}
+# Needed patches
+PATCHES=(
+	"${FILESDIR}/${PN}-licences-change-res-path.patch"
+)
 
+src_prepare() {
+	if declare -p PATCHES | grep -q "^declare -a "; then
+		[[ -n ${PATCHES[@]} ]] && eapply "${PATCHES[@]}"
+	else
+		[[ -n ${PATCHES} ]] && eapply ${PATCHES}
+	fi
+	eapply_user
+}
 
 src_install() {
 	# I've kept the same path name that Fedora use
