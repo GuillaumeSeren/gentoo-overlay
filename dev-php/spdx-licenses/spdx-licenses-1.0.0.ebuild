@@ -19,7 +19,7 @@ DEPEND="${RDEPEND}
 
 # Needed patches
 PATCHES=(
-	"${FILESDIR}/${PN}-licences-change-res-path.patch"
+	"${FILESDIR}/${PN}-change-res-path.patch"
 )
 
 src_prepare() {
