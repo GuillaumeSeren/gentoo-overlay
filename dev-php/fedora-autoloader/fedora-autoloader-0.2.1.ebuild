@@ -19,14 +19,13 @@ RDEPEND="dev-lang/php:*"
 DEPEND="${RDEPEND}
 	test? ( dev-php/phpunit )"
 
-# Change the name accordin to the archive
-S=${WORKDIR}/"autoloader-"${PV}
+# Change the name according to the archive
+S="${WORKDIR}/autoloader-${PV}"
 
 src_install() {
 	# To help with preserving the relative path we use the same directory
 	insinto "/usr/share/php/Fedora/Autoloader"
 	doins src/Autoload.php src/Dependencies.php src/autoload.php src/functions.php
-	#Install the doc
 	dodoc CHANGELOG.md README.md
 }
 

@@ -7,9 +7,9 @@ EAPI=6
 DESCRIPTION="Symfony DependencyInjection Component"
 HOMEPAGE="https://github.com/symfony/dependency-injection"
 
-# SRC_URI="https://github.com/symfony/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 SRC_URI="https://github.com/symfony/dependency-injection/archive/v${PV}.tar.gz -> ${P}.tar.gz"
-S=${WORKDIR}/dependency-injection-${PV}
+
+S="${WORKDIR}/dependency-injection-${PV}"
 
 LICENSE="MIT"
 SLOT="0"
@@ -26,9 +26,7 @@ src_install() {
 	# I've kept the same path name that Fedora use
 	insinto "/usr/share/php/Symfony/DependencyInjection"
 	doins -r *
-	# Install the autoloader
 	doins "${FILESDIR}"/autoload.php
-	#Install the doc
 	dodoc README.md
 }
 

@@ -7,9 +7,9 @@ EAPI=6
 DESCRIPTION="Symfony EventDispatcher Component"
 HOMEPAGE="https://github.com/symfony/event-dispatcher"
 
-# SRC_URI="https://github.com/symfony/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 SRC_URI="https://github.com/symfony/event-dispatcher/archive/v${PV}.tar.gz -> ${P}.tar.gz"
-S=${WORKDIR}/event-dispatcher-${PV}
+
+S="${WORKDIR}/event-dispatcher-${PV}"
 
 LICENSE="MIT"
 SLOT="0"
@@ -25,9 +25,7 @@ src_install() {
 	# I've kept the same path name that Fedora use
 	insinto "/usr/share/php/Symfony/EventDispatcher"
 	doins -r *
-	# Install the autoloader
 	doins "${FILESDIR}"/autoload.php
-	#Install the doc
 	dodoc README.md
 }
 
