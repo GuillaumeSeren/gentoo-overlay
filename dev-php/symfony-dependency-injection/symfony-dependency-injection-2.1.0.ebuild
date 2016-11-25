@@ -9,7 +9,8 @@ HOMEPAGE="https://github.com/symfony/dependency-injection"
 
 # SRC_URI="https://github.com/symfony/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 SRC_URI="https://github.com/symfony/dependency-injection/archive/v${PV}.tar.gz -> ${P}.tar.gz"
-S=${WORKDIR}/dependency-injection-${PV}
+
+S="${WORKDIR}/dependency-injection-${PV}"
 
 LICENSE="MIT"
 SLOT="0"

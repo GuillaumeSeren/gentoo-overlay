@@ -8,7 +8,8 @@ DESCRIPTION="Symfony Finder Component"
 HOMEPAGE="https://github.com/symfony/finder"
 
 SRC_URI="https://github.com/symfony/finder/archive/v${PV}.tar.gz -> ${P}.tar.gz"
-S=${WORKDIR}/finder-${PV}
+
+S="${WORKDIR}/finder-${PV}"
 
 LICENSE="MIT"
 SLOT="0"

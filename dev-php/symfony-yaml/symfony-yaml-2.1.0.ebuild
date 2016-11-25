@@ -9,7 +9,8 @@ HOMEPAGE="https://github.com/symfony/yaml"
 
 # SRC_URI="https://github.com/symfony/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 SRC_URI="https://github.com/symfony/yaml/archive/v${PV}.tar.gz -> ${P}.tar.gz"
-S=${WORKDIR}/yaml-${PV}
+
+S="${WORKDIR}/yaml-${PV}"
 
 LICENSE="MIT"
 SLOT="0"

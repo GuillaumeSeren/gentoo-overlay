@@ -9,7 +9,8 @@ HOMEPAGE="https://github.com/symfony/event-dispatcher"
 
 # SRC_URI="https://github.com/symfony/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 SRC_URI="https://github.com/symfony/event-dispatcher/archive/v${PV}.tar.gz -> ${P}.tar.gz"
-S=${WORKDIR}/event-dispatcher-${PV}
+
+S="${WORKDIR}/event-dispatcher-${PV}"
 
 LICENSE="MIT"
 SLOT="0"

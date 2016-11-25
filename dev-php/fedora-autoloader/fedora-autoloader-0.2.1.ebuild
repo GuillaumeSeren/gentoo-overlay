@@ -19,8 +19,8 @@ RDEPEND="dev-lang/php:*"
 DEPEND="${RDEPEND}
 	test? ( dev-php/phpunit )"
 
-# Change the name accordin to the archive
-S=${WORKDIR}/"autoloader-"${PV}
+# Change the name according to the archive
+S="${WORKDIR}/autoloader-${PV}"
 
 src_install() {
 	# To help with preserving the relative path we use the same directory

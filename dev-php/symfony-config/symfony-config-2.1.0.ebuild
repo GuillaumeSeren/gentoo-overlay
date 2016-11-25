@@ -9,7 +9,8 @@ HOMEPAGE="https://github.com/symfony/config"
 
 # SRC_URI="https://github.com/symfony/${PN}/archive/v${PV}.tar.gz -> symfony-${P}.tar.gz"
 SRC_URI="https://github.com/symfony/config/archive/v${PV}.tar.gz -> symfony-config-${PV}.tar.gz"
-S=${WORKDIR}/config-${PV}
+
+S="${WORKDIR}/config-${PV}"
 
 LICENSE="MIT"
 SLOT="0"

@@ -8,7 +8,8 @@ DESCRIPTION="Symfony Filesystem Component"
 HOMEPAGE="https://github.com/symfony/filesystem"
 
 SRC_URI="https://github.com/symfony/filesystem/archive/v${PV}.tar.gz -> ${P}.tar.gz"
-S=${WORKDIR}/filesystem-${PV}
+
+S="${WORKDIR}/filesystem-${PV}"
 
 LICENSE="MIT"
 SLOT="0"

@@ -9,7 +9,8 @@ HOMEPAGE="https://github.com/symfony/console"
 
 # SRC_URI="https://github.com/symfony/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 SRC_URI="https://github.com/symfony/console/archive/v${PV}.tar.gz -> ${P}.tar.gz"
-S=${WORKDIR}/console-${PV}
+
+S="${WORKDIR}/console-${PV}"
 
 LICENSE="MIT"
 SLOT="0"
