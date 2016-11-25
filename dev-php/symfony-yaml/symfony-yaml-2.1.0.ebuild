@@ -7,7 +7,6 @@ EAPI=6
 DESCRIPTION="Symfony YAML Component"
 HOMEPAGE="https://github.com/symfony/yaml"
 
-# SRC_URI="https://github.com/symfony/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 SRC_URI="https://github.com/symfony/yaml/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 S="${WORKDIR}/yaml-${PV}"
@@ -26,9 +25,7 @@ src_install() {
 	# I've kept the same path name that Fedora use
 	insinto "/usr/share/php/Symfony/Yaml"
 	doins -r *
-	# Install the autoloader
 	doins "${FILESDIR}"/autoload.php
-	#Install the doc
 	dodoc README.md
 }
 

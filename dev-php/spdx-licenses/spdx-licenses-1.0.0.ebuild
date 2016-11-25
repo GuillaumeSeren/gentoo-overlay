@@ -17,7 +17,6 @@ RDEPEND="dev-lang/php:*"
 DEPEND="${RDEPEND}
 	=dev-php/fedora-autoloader-0.2.1"
 
-# Needed patches
 PATCHES=(
 	"${FILESDIR}/${PN}-change-res-path.patch"
 )
@@ -37,8 +36,6 @@ src_install() {
 	doins -r src/*
 	# we copy the res directory inside Sdpx
 	doins -r res
-	# Install the autoloader
 	doins "${FILESDIR}"/autoload.php
-	#Install the doc
 	dodoc README.md
 }

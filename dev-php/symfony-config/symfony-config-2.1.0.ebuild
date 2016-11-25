@@ -7,7 +7,6 @@ EAPI=6
 DESCRIPTION="Symfony Config Component"
 HOMEPAGE="https://github.com/symfony/config"
 
-# SRC_URI="https://github.com/symfony/${PN}/archive/v${PV}.tar.gz -> symfony-${P}.tar.gz"
 SRC_URI="https://github.com/symfony/config/archive/v${PV}.tar.gz -> symfony-config-${PV}.tar.gz"
 
 S="${WORKDIR}/config-${PV}"
@@ -25,9 +24,7 @@ src_install() {
 	# I've kept the same path name that Fedora use
 	insinto "/usr/share/php/Symfony/Config"
 	doins -r *
-	# Install the autoloader
 	doins "${FILESDIR}"/autoload.php
-	#Install the doc
 	dodoc README.md
 }
 
