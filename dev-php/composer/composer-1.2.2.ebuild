@@ -30,21 +30,11 @@ RDEPEND="dev-lang/php:*
 	=dev-php/fig-log-1.0.2"
 DEPEND="${RDEPEND}"
 
-# Needed patches
 PATCHES=(
 	"${FILESDIR}/${PN}-fix-license-dir.patch"
 	"${FILESDIR}/${PN}-json-change-res-dir.patch"
 	"${FILESDIR}/${PN}-upgrade-autoloader-dir.patch"
 )
-
-src_prepare() {
-	if declare -p PATCHES | grep -q "^declare -a "; then
-		[[ -n ${PATCHES[@]} ]] && eapply "${PATCHES[@]}"
-	else
-		[[ -n ${PATCHES} ]] && eapply ${PATCHES}
-	fi
-	eapply_user
-}
 
 src_install() {
 	# I've kept the same path name that Fedora use

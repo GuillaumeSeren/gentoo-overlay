@@ -21,15 +21,6 @@ PATCHES=(
 	"${FILESDIR}/${PN}-change-res-path.patch"
 )
 
-src_prepare() {
-	if declare -p PATCHES | grep -q "^declare -a "; then
-		[[ -n ${PATCHES[@]} ]] && eapply "${PATCHES[@]}"
-	else
-		[[ -n ${PATCHES} ]] && eapply ${PATCHES}
-	fi
-	eapply_user
-}
-
 src_install() {
 	# I've kept the same path name that Fedora use
 	insinto "/usr/share/php/Composer/Spdx"
