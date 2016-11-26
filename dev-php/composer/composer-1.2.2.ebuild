@@ -13,10 +13,9 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND="dev-lang/php:*"
-DEPEND="${RDEPEND}
+RDEPEND="dev-lang/php:*
 	dev-lang/php[curl]
-	=dev-php/fedora-autoloader-0.2.1
+	dev-php/fedora-autoloader
 	=dev-php/json-schema-2.0.0
 	=dev-php/ca-bundle-1.0.0
 	=dev-php/semver-1.0.0

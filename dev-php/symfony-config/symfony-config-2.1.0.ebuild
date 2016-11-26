@@ -16,9 +16,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
-RDEPEND="dev-lang/php:*"
-DEPEND="${RDEPEND}
-	=dev-php/fedora-autoloader-0.2.1"
+RDEPEND="dev-lang/php:*
+	dev-php/fedora-autoloader"
+DEPEND="${RDEPEND}"
 
 src_install() {
 	# I've kept the same path name that Fedora use
