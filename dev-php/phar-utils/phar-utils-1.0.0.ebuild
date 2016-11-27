@@ -6,7 +6,6 @@ EAPI=6
 
 DESCRIPTION="PHAR file format utilities, for when PHP phars you up"
 HOMEPAGE="https://github.com/Seldaek/phar-utils"
-
 SRC_URI="https://github.com/Seldaek/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"

@@ -5,6 +5,10 @@
     <email>guillaumeseren@gmail.com</email>
     <name>Guillaume Seren</name>
   </maintainer>
+  <maintainer type="project">
+    <email>proxy-maint@gentoo.org</email>
+    <name>Proxy Maintainers</name>
+  </maintainer>
   <longdescription>
   	The DependencyInjection component allows you to standardize
 	and centralize the way objects are constructed in your application.

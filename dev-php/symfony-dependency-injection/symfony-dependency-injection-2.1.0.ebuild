@@ -6,7 +6,6 @@ EAPI=6
 
 DESCRIPTION="Symfony DependencyInjection Component"
 HOMEPAGE="https://github.com/symfony/dependency-injection"
-
 SRC_URI="https://github.com/symfony/dependency-injection/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 S="${WORKDIR}/dependency-injection-${PV}"

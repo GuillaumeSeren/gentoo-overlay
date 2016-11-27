@@ -6,7 +6,6 @@ EAPI=6
 
 DESCRIPTION="JSON Lint for PHP"
 HOMEPAGE="https://github.com/Seldaek/jsonlint"
-
 SRC_URI="https://github.com/Seldaek/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"

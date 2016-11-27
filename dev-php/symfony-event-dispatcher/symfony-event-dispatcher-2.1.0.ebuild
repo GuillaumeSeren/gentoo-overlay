@@ -6,7 +6,6 @@ EAPI=6
 
 DESCRIPTION="Symfony EventDispatcher Component"
 HOMEPAGE="https://github.com/symfony/event-dispatcher"
-
 SRC_URI="https://github.com/symfony/event-dispatcher/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 S="${WORKDIR}/event-dispatcher-${PV}"

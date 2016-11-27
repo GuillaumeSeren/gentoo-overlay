@@ -6,8 +6,6 @@ EAPI=6
 
 DESCRIPTION="PHP implementation of JSON schema"
 HOMEPAGE="https://github.com/justinrainbow/json-schema"
-
-# here we use autoloadder as it is the upstream name
 SRC_URI="https://github.com/justinrainbow/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
