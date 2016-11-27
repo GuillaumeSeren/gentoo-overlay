@@ -6,7 +6,6 @@ EAPI=6
 
 DESCRIPTION="Common interface for logging libraries"
 HOMEPAGE="https://github.com/symfony/process"
-
 SRC_URI="https://github.com/php-fig/log/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 S="${WORKDIR}/log-${PV}"

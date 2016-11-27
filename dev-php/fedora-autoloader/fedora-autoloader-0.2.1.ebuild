@@ -6,8 +6,6 @@ EAPI=6
 
 DESCRIPTION="Fedora's Static PSR-4, PSR-0, and classmap autoloader"
 HOMEPAGE="https://github.com/php-fedora/autoloader"
-
-# here we use autoloadder as it is the upstream name
 SRC_URI="https://github.com/php-fedora/autoloader/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"

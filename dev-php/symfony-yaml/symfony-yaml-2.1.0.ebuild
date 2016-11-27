@@ -6,7 +6,6 @@ EAPI=6
 
 DESCRIPTION="Symfony YAML Component"
 HOMEPAGE="https://github.com/symfony/yaml"
-
 SRC_URI="https://github.com/symfony/yaml/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 S="${WORKDIR}/yaml-${PV}"
