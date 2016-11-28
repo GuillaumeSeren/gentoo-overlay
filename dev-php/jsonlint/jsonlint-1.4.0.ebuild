@@ -15,7 +15,8 @@ IUSE="test"
 
 RDEPEND="dev-lang/php:*
 	=dev-php/fedora-autoloader-0.2.1"
-DEPEND="${RDEPEND}"
+DEPEND="${RDEPEND}
+	test? ( dev-php/phpunit )"
 
 src_install() {
 	insinto "/usr/share/php/Seld/JsonLint"

@@ -8,8 +8,6 @@ DESCRIPTION="Symfony Filesystem Component"
 HOMEPAGE="https://github.com/symfony/filesystem"
 SRC_URI="https://github.com/symfony/filesystem/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
-S="${WORKDIR}/filesystem-${PV}"
-
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
@@ -17,6 +15,8 @@ KEYWORDS="~amd64 ~x86"
 RDEPEND="dev-lang/php:*
 	dev-php/fedora-autoloader"
 DEPEND="${RDEPEND}"
+
+S="${WORKDIR}/filesystem-${PV}"
 
 src_install() {
 	insinto "/usr/share/php/Symfony/Filesystem"
