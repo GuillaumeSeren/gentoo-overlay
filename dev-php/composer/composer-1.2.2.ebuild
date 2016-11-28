@@ -35,12 +35,8 @@ PATCHES=(
 )
 
 src_install() {
-	# I've kept the same path name that Fedora use
 	insinto "/usr/share/php/Composer/Composer"
-	doins -r src/Composer/*
-	doins -r res
-	doins LICENSE
-	doins "${FILESDIR}"/autoload.php
+	doins -r src/Composer/. res LICENSE "${FILESDIR}"/autoload.php
 	dobin bin/composer
 	dodoc README.md
 }

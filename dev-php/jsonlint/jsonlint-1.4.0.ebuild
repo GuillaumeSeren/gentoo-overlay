@@ -18,10 +18,8 @@ RDEPEND="dev-lang/php:*
 DEPEND="${RDEPEND}"
 
 src_install() {
-	# I've kept the same path name that Fedora use
 	insinto "/usr/share/php/Seld/JsonLint"
-	doins src/Seld/JsonLint/*
-	doins "${FILESDIR}"/autoload.php
+	doins -r src/Seld/JsonLint/. "${FILESDIR}"/autoload.php
 	dodoc README.mdown
 }
 

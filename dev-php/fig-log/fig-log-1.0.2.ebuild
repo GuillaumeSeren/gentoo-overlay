@@ -19,9 +19,7 @@ RDEPEND="dev-lang/php:*
 DEPEND="${RDEPEND}"
 
 src_install() {
-	# I've kept the same path name that Fedora use
 	insinto "/usr/share/php/Fig/Log"
-	doins -r Psr/Log/*
-	doins "${FILESDIR}"/autoload.php
+	doins -r Psr/Log/. "${FILESDIR}"/autoload.php
 	dodoc README.md
 }
