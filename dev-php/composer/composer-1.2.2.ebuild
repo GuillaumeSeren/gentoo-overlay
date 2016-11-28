@@ -29,9 +29,7 @@ RDEPEND="dev-lang/php:*[curl]
 DEPEND="${RDEPEND}"
 
 PATCHES=(
-	"${FILESDIR}/${PN}-fix-license-dir.patch"
-	"${FILESDIR}/${PN}-json-change-res-dir.patch"
-	"${FILESDIR}/${PN}-upgrade-autoloader-dir.patch"
+	"${FILESDIR}/${PN}-update-paths.patch"
 )
 
 src_install() {
