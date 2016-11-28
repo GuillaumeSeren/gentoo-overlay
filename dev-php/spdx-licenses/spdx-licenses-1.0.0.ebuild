@@ -21,11 +21,7 @@ PATCHES=(
 )
 
 src_install() {
-	# I've kept the same path name that Fedora use
 	insinto "/usr/share/php/Composer/Spdx"
-	doins -r src/*
-	# we copy the res directory inside Sdpx
-	doins -r res
-	doins "${FILESDIR}"/autoload.php
+	doins -r src/. res "${FILESDIR}"/autoload.php
 	dodoc README.md
 }

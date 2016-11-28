@@ -17,9 +17,7 @@ RDEPEND="dev-lang/php:*
 DEPEND="${RDEPEND}"
 
 src_install() {
-	# I've kept the same path name that Fedora use
 	insinto "/usr/share/php/Composer/CaBundle"
-	doins src/*
-	doins "${FILESDIR}"/autoload.php
+	doins -r src/. "${FILESDIR}"/autoload.php
 	dodoc README.md
 }
