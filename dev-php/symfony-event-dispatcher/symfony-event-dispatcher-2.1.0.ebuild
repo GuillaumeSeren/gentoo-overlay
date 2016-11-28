@@ -17,7 +17,7 @@ IUSE="test"
 
 RDEPEND="dev-lang/php:*
 	dev-php/fedora-autoloader
-	=dev-php/symfony-dependency-injection-2.1.0"
+	~dev-php/symfony-dependency-injection-2.1.0"
 DEPEND="${RDEPEND}"
 
 src_install() {

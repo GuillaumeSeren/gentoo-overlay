@@ -17,8 +17,8 @@ IUSE="test"
 
 RDEPEND="dev-lang/php:*
 	dev-php/fedora-autoloader
-	=dev-php/symfony-yaml-2.1.0
-	=dev-php/symfony-config-2.1.0"
+	=dev-php/symfony-config-2.1.0
+	=dev-php/symfony-yaml-2.1.0"
 DEPEND="${RDEPEND}"
 
 src_install() {

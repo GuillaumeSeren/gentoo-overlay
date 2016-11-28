@@ -16,9 +16,9 @@ KEYWORDS="~amd64 ~x86"
 
 RDEPEND="dev-lang/php:*
 	dev-php/fedora-autoloader
-	=dev-php/symfony-event-dispatcher-2.1.0
-	=dev-php/fig-log-1.0.2
-	=dev-php/symfony-process-2.8.12"
+	~dev-php/fig-log-1.0.2
+	~dev-php/symfony-event-dispatcher-2.1.0
+	~dev-php/symfony-process-2.8.12"
 DEPEND="${RDEPEND}"
 
 src_install() {
