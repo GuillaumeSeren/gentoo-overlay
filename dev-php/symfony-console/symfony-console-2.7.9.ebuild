@@ -17,7 +17,6 @@ RDEPEND="dev-lang/php:*
 	~dev-php/fig-log-1.0.2
 	~dev-php/symfony-event-dispatcher-2.1.0
 	~dev-php/symfony-process-2.8.12"
-DEPEND="${RDEPEND}"
 
 S="${WORKDIR}/console-${PV}"
 

@@ -14,7 +14,6 @@ KEYWORDS="~amd64 ~x86"
 
 RDEPEND="dev-lang/php:*
 	dev-php/fedora-autoloader"
-DEPEND="${RDEPEND}"
 
 S="${WORKDIR}/finder-${PV}"
 

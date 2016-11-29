@@ -26,7 +26,6 @@ RDEPEND="dev-lang/php:*[curl]
 	~dev-php/symfony-filesystem-2.7.20
 	~dev-php/symfony-finder-2.7.20
 	~dev-php/symfony-process-2.8.12"
-DEPEND="${RDEPEND}"
 
 PATCHES=(
 	"${FILESDIR}/${PN}-update-paths.patch"

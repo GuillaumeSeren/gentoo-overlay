@@ -1,5 +1,5 @@
 <?php
-/* Autoloader for composer/ca-bundle and its dependencies */
+/* Autoloader for dev-php/symfony-event-dispatcher and its dependencies */
 
 $vendorDir = '/usr/share/php';
 if (!class_exists('Fedora\\Autoloader\\Autoload', false)) {
