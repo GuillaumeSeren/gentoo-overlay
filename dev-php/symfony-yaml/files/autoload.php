@@ -1,5 +1,5 @@
 <?php
-/* Autoloader for composer/ca-bundle and its dependencies */
+/* Autoloader for dev-php/symfony-yaml and its dependencies */
 
 /* $vendorDir = '/usr/share/php'; */
 if (!class_exists('Fedora\\Autoloader\\Autoload', false)) {
@@ -7,8 +7,3 @@ if (!class_exists('Fedora\\Autoloader\\Autoload', false)) {
 }
 
 \Fedora\Autoloader\Autoload::addPsr4('Symfony\\Component\\Yaml\\', __DIR__);
-
-// Dependencies
-/* \Fedora\Autoloader\Dependencies::required(array( */
-/* 	$vendorDir . '/Symfony/Yaml/Yaml.php', */
-/* )); */

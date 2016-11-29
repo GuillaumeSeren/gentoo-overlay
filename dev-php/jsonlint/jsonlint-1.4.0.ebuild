@@ -15,8 +15,16 @@ IUSE="test"
 
 RDEPEND="dev-lang/php:*
 	=dev-php/fedora-autoloader-0.2.1"
-DEPEND="${RDEPEND}
-	test? ( dev-php/phpunit )"
+DEPEND="test? ( ${RDEPEND}
+				dev-php/phpunit )"
+
+src_prepare() {
+	default
+	if use test; then
+		cp "${FILESDIR}"/autoload.php "${S}"/autoload-test.php
+		sed -i -e "s:__DIR__:'${S}/src/Seld/JsonLint':" "${S}"/autoload-test.php
+	fi
+}
 
 src_install() {
 	insinto "/usr/share/php/Seld/JsonLint"
@@ -25,5 +33,5 @@ src_install() {
 }
 
 src_test() {
-	phpunit --bootstrap /usr/share/php/Seld/JsonLint/autoload.php || die "test suite failed"
+	phpunit --bootstrap "${S}"/autoload-test.php || die "test suite failed"
 }

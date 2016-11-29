@@ -17,10 +17,18 @@ RDEPEND="dev-lang/php:*
 	dev-php/fedora-autoloader
 	=dev-php/symfony-config-2.1.0
 	=dev-php/symfony-yaml-2.1.0"
-DEPEND="${RDEPEND}
-	test? ( dev-php/phpunit )"
+DEPEND="test? ( ${RDEPEND}
+				dev-php/phpunit )"
 
 S="${WORKDIR}/dependency-injection-${PV}"
+
+src_prepare() {
+	default
+	if use test; then
+		cp "${FILESDIR}"/autoload.php "${S}"/autoload-test.php
+		sed -i -e "s:__DIR__:'${S}':" "${S}"/autoload-test.php
+	fi
+}
 
 src_install() {
 	insinto "/usr/share/php/Symfony/DependencyInjection"
@@ -29,5 +37,5 @@ src_install() {
 }
 
 src_test() {
-	phpunit --bootstrap /usr/share/php/Symfony/DependencyInjection/autoload.php || die "test suite failed"
+	phpunit --bootstrap "${S}"/autoload-test.php || die "test suite failed"
 }

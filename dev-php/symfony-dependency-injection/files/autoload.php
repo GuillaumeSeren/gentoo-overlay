@@ -1,5 +1,5 @@
 <?php
-/* Autoloader for composer/ca-bundle and its dependencies */
+/* Autoloader for dev-php/symfony-dependency-injection and its dependencies */
 
 $vendorDir = '/usr/share/php';
 if (!class_exists('Fedora\\Autoloader\\Autoload', false)) {
@@ -10,7 +10,6 @@ if (!class_exists('Fedora\\Autoloader\\Autoload', false)) {
 
 // Dependencies
 \Fedora\Autoloader\Dependencies::required(array(
-	/* $vendorDir . '/Symfony/DependencyInjection/autoload.php', */
 	$vendorDir . '/Symfony/Yaml/autoload.php',
 	$vendorDir . '/Symfony/Config/autoload.php',
 ));

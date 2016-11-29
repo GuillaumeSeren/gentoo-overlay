@@ -15,10 +15,18 @@ IUSE="test"
 
 RDEPEND="dev-lang/php:*
 	dev-php/fedora-autoloader"
-DEPEND="${RDEPEND}
-	test? ( dev-php/phpunit )"
+DEPEND="test? ( ${RDEPEND}
+				dev-php/phpunit )"
 
 S="${WORKDIR}/yaml-${PV}"
+
+src_prepare() {
+	default
+	if use test; then
+		cp "${FILESDIR}"/autoload.php "${S}"/autoload-test.php
+		sed -i -e "s:__DIR__:'${S}':" "${S}"/autoload-test.php
+	fi
+}
 
 src_install() {
 	insinto "/usr/share/php/Symfony/Yaml"
@@ -27,5 +35,5 @@ src_install() {
 }
 
 src_test() {
-	phpunit --bootstrap /usr/share/php/Symfony/Yaml/autoload.php || die "test suite failed"
+	phpunit --bootstrap "${S}"/autoload-test.php || die "test suite failed"
 }
