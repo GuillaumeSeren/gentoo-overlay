@@ -13,19 +13,22 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
-RDEPEND="dev-lang/php:*
+RDEPEND="
+	dev-lang/php:*
 	dev-php/fedora-autoloader
 	~dev-php/symfony-dependency-injection-2.1.0"
-DEPEND="test? ( ${RDEPEND}
-				dev-php/phpunit )"
+DEPEND="
+	test? (
+		${RDEPEND}
+		dev-php/phpunit )"
 
 S="${WORKDIR}/event-dispatcher-${PV}"
 
 src_prepare() {
 	default
 	if use test; then
-		cp "${FILESDIR}"/autoload.php "${S}"/autoload-test.php
-		sed -i -e "s:__DIR__:'${S}':" "${S}"/autoload-test.php
+		cp "${FILESDIR}"/autoload.php "${S}"/autoload-test.php || die
+		sed -i -e "s:__DIR__:'${S}':" "${S}"/autoload-test.php || die
 	fi
 }
 

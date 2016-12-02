@@ -12,7 +12,8 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND="dev-lang/php:*[curl]
+RDEPEND="
+	dev-lang/php:*[curl]
 	~dev-php/ca-bundle-1.0.0
 	~dev-php/cli-prompt-1.0.0
 	~dev-php/fig-log-1.0.2
