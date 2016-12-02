@@ -28,8 +28,8 @@ S="${WORKDIR}/dependency-injection-${PV}"
 src_prepare() {
 	default
 	if use test; then
-		cp "${FILESDIR}"/autoload.php "${S}"/autoload-test.php
-		sed -i -e "s:__DIR__:'${S}':" "${S}"/autoload-test.php
+		cp "${FILESDIR}"/autoload.php "${S}"/autoload-test.php || die
+		sed -i -e "s:__DIR__:'${S}':" "${S}"/autoload-test.php || die
 	fi
 }
 
