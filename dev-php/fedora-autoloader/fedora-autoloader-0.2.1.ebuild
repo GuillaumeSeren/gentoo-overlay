@@ -14,8 +14,10 @@ KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
 RDEPEND="dev-lang/php:*"
-DEPEND="test? ( ${RDEPEND}
-				dev-php/phpunit )"
+DEPEND="
+	test? (
+		${RDEPEND}
+		dev-php/phpunit )"
 
 S="${WORKDIR}/autoloader-${PV}"
 

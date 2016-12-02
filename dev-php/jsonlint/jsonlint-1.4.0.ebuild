@@ -13,10 +13,13 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
-RDEPEND="dev-lang/php:*
-	=dev-php/fedora-autoloader-0.2.1"
-DEPEND="test? ( ${RDEPEND}
-				dev-php/phpunit )"
+RDEPEND="
+	dev-lang/php:*
+	~dev-php/fedora-autoloader-0.2.1"
+DEPEND="
+	test? (
+		${RDEPEND}
+		dev-php/phpunit )"
 
 src_prepare() {
 	default

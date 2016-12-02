@@ -13,12 +13,15 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
-RDEPEND="dev-lang/php:*
+RDEPEND="
+	dev-lang/php:*
 	dev-php/fedora-autoloader
-	=dev-php/symfony-config-2.1.0
-	=dev-php/symfony-yaml-2.1.0"
-DEPEND="test? ( ${RDEPEND}
-				dev-php/phpunit )"
+	~dev-php/symfony-config-2.1.0
+	~dev-php/symfony-yaml-2.1.0"
+DEPEND="
+	test? (
+		${RDEPEND}
+		dev-php/phpunit )"
 
 S="${WORKDIR}/dependency-injection-${PV}"
 
