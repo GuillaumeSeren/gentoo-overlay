@@ -25,5 +25,4 @@ src_compile() {
 
 src_install() {
 	emake DESTDIR="${D}" install
-	dodoc Readme.md Commands.md
 }
