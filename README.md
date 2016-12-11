@@ -2,7 +2,7 @@ gentoo-overlay
 ==============
 
 My Gentoo overlay mostly bump/live-ebuilds, but I try also to have stable ebuilds,
-for things that are in Gentoo or not upto-date in Gentoo.
+for things that are in Gentoo or not upgraded in Gentoo.
 
 ## DISCLAIMER
 This overlay is *not official*, and *not tested outside of my setup*,
@@ -108,6 +108,8 @@ Software                                | DESCRIPTION
 [symfony-filesystem][symfony-filesystem] | Symfony Filesystem Component
 [phar-utils][phar-utils]                | PHAR file format utilities, for when PHP phars you up
 [cli-prompt][cli-prompt]                | Allows you to prompt for user input on the command line, and optionally hide the characters they type
+[recursion-context][recursion-context]  | Provides functionality to recursively process PHP variables
+
 
 
 ## PARTICIPATE
@@ -133,3 +135,5 @@ If you fix something and want to share back you can open a __Pull Request__.
 [symfony-finder]: https://github.com/symfony/finder
 [symfony-filesystem]: https://github.com/symfony/filesystem
 [phar-utils]: https://github.com/Seldaek/phar-utils
+[cli-prompt]: https://github.com/Seldaek/cli-prompt
+[recursion-context]: https://github.com/sebastianbergmann/recursion-context
