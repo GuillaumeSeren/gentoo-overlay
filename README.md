@@ -109,6 +109,7 @@ Software                                | DESCRIPTION
 [phar-utils][phar-utils]                | PHAR file format utilities, for when PHP phars you up
 [cli-prompt][cli-prompt]                | Allows you to prompt for user input on the command line, and optionally hide the characters they type
 [recursion-context][recursion-context]  | Provides functionality to recursively process PHP variables
+[exporter][exporter]                    | Provides the functionality to export PHP variables for visualization
 
 
 
@@ -137,3 +138,4 @@ If you fix something and want to share back you can open a __Pull Request__.
 [phar-utils]: https://github.com/Seldaek/phar-utils
 [cli-prompt]: https://github.com/Seldaek/cli-prompt
 [recursion-context]: https://github.com/sebastianbergmann/recursion-context
+[exporter]: https://github.com/sebastianbergmann/exporter
