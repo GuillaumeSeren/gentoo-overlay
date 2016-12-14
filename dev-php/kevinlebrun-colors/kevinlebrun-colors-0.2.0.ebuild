@@ -19,18 +19,25 @@ RDEPEND="
 DEPEND="
 	test? (
 		${RDEPEND}
-		dev-php/phpunit
- 		)"
+		dev-php/phpunit )"
 
 S="${WORKDIR}/colors.php-${PV}"
 
+src_prepare() {
+	default
+	if use test; then
+		cp "${FILESDIR}"/autoload.php "${S}"/autoload-test.php || die
+		sed -i -e "s:__DIR__:'${S}/lib/Colors':" "${S}"/autoload-test.php || die
+	fi
+}
+
 src_install() {
-	insinto "/usr/share/php/kevinlebrun/colors"
-	doins -r lib/Colors/.
+	insinto "/usr/share/php/kevinlebrun/Colors"
+	doins -r lib/Colors/. "${FILESDIR}"/autoload.php
 	dodoc README.mkd
 }
 
 # tests  phpunit --configuration tests/phpunit.xml --bootstrap tests/bootstrap.php
 src_test() {
-	phpunit  --configuration "${S}"/tests/phpunit.xml || die "test suite failed"
+	phpunit  --configuration "${S}"/tests/phpunit.xml --bootstrap "${S}"/autoload-test.php || die "test suite failed"
 }
