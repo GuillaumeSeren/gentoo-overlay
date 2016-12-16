@@ -19,7 +19,7 @@ RDEPEND="
 S="${WORKDIR}/filesystem-${PV}"
 
 src_install() {
-	insinto "/usr/share/php/Symfony/Filesystem"
+	insinto "/usr/share/php/Symfony/Component/Filesystem"
 	doins -r . "${FILESDIR}"/autoload.php
 	dodoc README.md
 }

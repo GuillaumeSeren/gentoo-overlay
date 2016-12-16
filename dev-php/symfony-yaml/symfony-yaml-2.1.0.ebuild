@@ -32,7 +32,7 @@ src_prepare() {
 }
 
 src_install() {
-	insinto "/usr/share/php/Symfony/Yaml"
+	insinto "/usr/share/php/Symfony/Component/Yaml"
 	doins -r . "${FILESDIR}"/autoload.php
 	dodoc README.md
 }

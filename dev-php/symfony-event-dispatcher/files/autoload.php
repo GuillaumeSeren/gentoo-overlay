@@ -10,5 +10,5 @@ if (!class_exists('Fedora\\Autoloader\\Autoload', false)) {
 
 // Dependencies
 \Fedora\Autoloader\Dependencies::required(array(
-	$vendorDir . '/Symfony/DependencyInjection/autoload.php',
+	$vendorDir . '/Symfony/Component/DependencyInjection/autoload.php',
 ));

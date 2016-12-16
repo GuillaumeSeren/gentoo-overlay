@@ -33,7 +33,7 @@ src_prepare() {
 }
 
 src_install() {
-	insinto "/usr/share/php/Symfony/EventDispatcher"
+	insinto "/usr/share/php/Symfony/Component/EventDispatcher"
 	doins -r . "${FILESDIR}"/autoload.php
 	dodoc README.md
 }
