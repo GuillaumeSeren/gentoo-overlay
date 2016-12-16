@@ -111,6 +111,7 @@ Software                                | DESCRIPTION
 [recursion-context][recursion-context]  | Provides functionality to recursively process PHP variables
 [exporter][exporter]                    | Provides the functionality to export PHP variables for visualization
 [colors.php][colors.php]                | An easy way to add colors in your CLI scripts
+[pimple][pimple]                        | A small PHP 5.3 dependency injection container
 
 
 
@@ -141,3 +142,4 @@ If you fix something and want to share back you can open a __Pull Request__.
 [recursion-context]: https://github.com/sebastianbergmann/recursion-context
 [exporter]: https://github.com/sebastianbergmann/exporter
 [colors.php]: https://github.com/kevinlebrun/colors.php
+[pimple]: https://github.com/silexphp/Pimple
