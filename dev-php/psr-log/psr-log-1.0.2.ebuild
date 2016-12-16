@@ -5,7 +5,7 @@
 EAPI=6
 
 DESCRIPTION="Common interface for logging libraries"
-HOMEPAGE="https://github.com/symfony/process"
+HOMEPAGE="https://github.com/php-fig/log"
 SRC_URI="https://github.com/php-fig/log/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
@@ -19,7 +19,7 @@ RDEPEND="
 S="${WORKDIR}/log-${PV}"
 
 src_install() {
-	insinto "/usr/share/php/Fig/Log"
+	insinto "/usr/share/php/Psr/Log"
 	doins -r Psr/Log/. "${FILESDIR}"/autoload.php
 	dodoc README.md
 }
