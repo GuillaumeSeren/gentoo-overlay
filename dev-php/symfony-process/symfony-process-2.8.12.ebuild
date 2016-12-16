@@ -19,7 +19,7 @@ RDEPEND="
 S="${WORKDIR}/process-${PV}"
 
 src_install() {
-	insinto "/usr/share/php/Symfony/Process"
+	insinto "/usr/share/php/Symfony/Component/Process"
 	doins -r . "${FILESDIR}"/autoload.php
 	dodoc README.md
 }

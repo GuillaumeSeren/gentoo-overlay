@@ -34,7 +34,7 @@ src_prepare() {
 }
 
 src_install() {
-	insinto "/usr/share/php/Symfony/DependencyInjection"
+	insinto "/usr/share/php/Symfony/Component/DependencyInjection"
 	doins -r . "${FILESDIR}"/autoload.php
 	dodoc README.md
 }

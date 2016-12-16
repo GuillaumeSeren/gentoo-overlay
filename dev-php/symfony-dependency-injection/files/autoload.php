@@ -10,6 +10,6 @@ if (!class_exists('Fedora\\Autoloader\\Autoload', false)) {
 
 // Dependencies
 \Fedora\Autoloader\Dependencies::required(array(
-	$vendorDir . '/Symfony/Yaml/autoload.php',
-	$vendorDir . '/Symfony/Config/autoload.php',
+	$vendorDir . '/Symfony/Component/Yaml/autoload.php',
+	$vendorDir . '/Symfony/Component/Config/autoload.php',
 ));

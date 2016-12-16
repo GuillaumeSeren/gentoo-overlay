@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 RDEPEND="
-	dev-lang/php:*
+	dev-lang/php:*[phar]
 	dev-php/fedora-autoloader"
 
 src_install() {

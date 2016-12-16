@@ -19,7 +19,7 @@ RDEPEND="
 S="${WORKDIR}/finder-${PV}"
 
 src_install() {
-	insinto "/usr/share/php/Symfony/Finder"
+	insinto "/usr/share/php/Symfony/Component/Finder"
 	doins -r . "${FILESDIR}"/autoload.php
 	dodoc README.md
 }

@@ -10,7 +10,7 @@ if (!class_exists('Fedora\\Autoloader\\Autoload', false)) {
 
 // Dependencies
 \Fedora\Autoloader\Dependencies::required(array(
-	$vendorDir . '/Symfony/EventDispatcher/autoload.php',
-	$vendorDir . '/Fig/Log/autoload.php',
-	$vendorDir . '/Symfony/Process/autoload.php',
+	$vendorDir . '/Symfony/Component/EventDispatcher/autoload.php',
+	$vendorDir . '/Psr/Log/autoload.php',
+	$vendorDir . '/Symfony/Component/Process/autoload.php',
 ));
