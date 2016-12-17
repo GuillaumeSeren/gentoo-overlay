@@ -14,7 +14,7 @@ KEYWORDS="~amd64 ~x86"
 
 RDEPEND="
 	dev-lang/php:*
-	~dev-php/fedora-autoloader"
+	dev-php/fedora-autoloader"
 
 src_install() {
 	insinto "/usr/share/php/JsonSchema2"
