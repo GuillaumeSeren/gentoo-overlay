@@ -15,7 +15,7 @@ IUSE="test"
 
 RDEPEND="
 	dev-lang/php:*
-	~dev-php/fedora-autoloader-0.2.1"
+	~dev-php/fedora-autoloader"
 DEPEND="
 	test? (
 		${RDEPEND}
@@ -25,7 +25,7 @@ src_prepare() {
 	default
 	if use test; then
 		cp "${FILESDIR}"/autoload.php "${S}"/autoload-test.php || die
-		sed -i -e "s:__DIR__:'${S}/src/Seld/JsonLint':" "${S}"/autoload-test.php || die
+		# sed -i -e "s:__DIR__:'${S}/src/Seld/JsonLint':" "${S}"/autoload-test.php || die
 	fi
 }
 

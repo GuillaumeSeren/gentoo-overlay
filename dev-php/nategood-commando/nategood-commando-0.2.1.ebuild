@@ -28,7 +28,7 @@ src_prepare() {
 	default
 	if use test; then
 		cp "${FILESDIR}"/autoload.php "${S}"/autoload-test.php || die
-		sed -i -e "s:__DIR__:'${S}/src/Commando/':" "${S}"/autoload-test.php || die
+		# sed -i -e "s:__DIR__:'${S}/src/Commando/':" "${S}"/autoload-test.php || die
 		# We also need to remove the require in the tests
 		sed -i -e "s:^require://require:" "${S}"/tests/Commando/CommandTest.php || die
 		sed -i -e "s:^require://require:" "${S}"/tests/Commando/OptionTest.php || die
