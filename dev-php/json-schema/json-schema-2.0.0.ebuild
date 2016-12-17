@@ -17,7 +17,7 @@ RDEPEND="
 	dev-php/fedora-autoloader"
 
 src_install() {
-	insinto "/usr/share/php/JsonSchema2"
+	insinto "/usr/share/php/JsonSchema"
 	doins -r src/JsonSchema/. "${FILESDIR}"/autoload.php
 	dodoc README.md
 }
