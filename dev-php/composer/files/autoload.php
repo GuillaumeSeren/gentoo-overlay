@@ -10,7 +10,7 @@ if (!class_exists('Fedora\\Autoloader\\Autoload', false)) {
 
 // Dependencies
 \Fedora\Autoloader\Dependencies::required(array(
-	$vendorDir . '/JsonSchema2/autoload.php',
+	$vendorDir . '/JsonSchema/autoload.php',
 	$vendorDir . '/Composer/CaBundle/autoload.php',
 	$vendorDir . '/Composer/Semver/autoload.php',
 	$vendorDir . '/Composer/Spdx/autoload.php',
