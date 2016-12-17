@@ -11,7 +11,6 @@ SRC_URI="https://github.com/symfony/yaml/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
 
 RDEPEND="
 	dev-lang/php:*
@@ -23,20 +22,8 @@ DEPEND="
 
 S="${WORKDIR}/yaml-${PV}"
 
-src_prepare() {
-	default
-	if use test; then
-		cp "${FILESDIR}"/autoload.php "${S}"/autoload-test.php || die
-		# sed -i -e "s:__DIR__:'${S}':" "${S}"/autoload-test.php || die
-	fi
-}
-
 src_install() {
 	insinto "/usr/share/php/Symfony/Component/Yaml"
 	doins -r . "${FILESDIR}"/autoload.php
 	dodoc README.md
-}
-
-src_test() {
-	phpunit --bootstrap "${S}"/autoload-test.php || die "test suite failed"
 }

@@ -21,5 +21,5 @@ if (!class_exists('Fedora\\Autoloader\\Autoload', false)) {
 	$vendorDir . '/Symfony/Component/Filesystem/autoload.php',
 	$vendorDir . '/Seld/PharUtils/autoload.php',
 	$vendorDir . '/Seld/CliPrompt/autoload.php',
-	$vendorDir . '/Fig/Log/autoload.php',
+	$vendorDir . '/Psr/Log/autoload.php',
 ));
