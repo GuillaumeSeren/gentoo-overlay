@@ -15,7 +15,7 @@ IUSE="test"
 
 RDEPEND="
 	dev-lang/php:*
-	~dev-php/fedora-autoloader-0.2.1"
+	~dev-php/fedora-autoloader"
 DEPEND="
 	test? (
 		${RDEPEND}
