@@ -12,6 +12,7 @@ LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
+RESTRICT="test"
 
 RDEPEND="
 	dev-lang/php:*
@@ -28,7 +29,6 @@ src_prepare() {
 	default
 	if use test; then
 		cp "${FILESDIR}"/autoload.php "${S}"/autoload-test.php || die
-		# sed -i -e "s:__DIR__:'${S}/src/':" "${S}"/autoload-test.php || die
 	fi
 }
 
@@ -37,7 +37,6 @@ src_install() {
 	doins -r  src/. "${FILESDIR}"/autoload.php
 	dodoc README.md
 }
-
 
 src_test() {
 	phpunit --bootstrap "${S}"/autoload-test.php || die "test suite failed"

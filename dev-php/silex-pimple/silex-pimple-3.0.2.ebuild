@@ -13,6 +13,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
+RESTRICT="test"
 
 RDEPEND="
 	dev-lang/php:*
@@ -28,7 +29,6 @@ src_prepare() {
 	default
 	if use test; then
 		cp "${FILESDIR}"/autoload.php "${S}"/autoload-test.php || die
-		# sed -i -e "s:__DIR__:'${S}/src/Pimple':" "${S}"/autoload-test.php || die
 	fi
 }
 
