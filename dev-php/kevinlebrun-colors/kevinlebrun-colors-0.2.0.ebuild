@@ -28,7 +28,6 @@ src_prepare() {
 	default
 	if use test; then
 		cp "${FILESDIR}"/autoload.php "${S}"/autoload-test.php || die
-		# sed -i -e "s:__DIR__:'${S}/lib/Colors':" "${S}"/autoload-test.php || die
 	fi
 }
 
@@ -38,7 +37,6 @@ src_install() {
 	dodoc README.mkd
 }
 
-# tests  phpunit --configuration tests/phpunit.xml --bootstrap tests/bootstrap.php
 src_test() {
 	phpunit  --configuration "${S}"/tests/phpunit.xml --bootstrap "${S}"/autoload-test.php || die "test suite failed"
 }

@@ -29,7 +29,6 @@ src_prepare() {
 	default
 	if use test; then
 		cp "${FILESDIR}"/autoload.php "${S}"/autoload-test.php || die
-		# sed -i -e "s:__DIR__:'${S}/src/Pimple':" "${S}"/autoload-test.php || die
 	fi
 }
 
