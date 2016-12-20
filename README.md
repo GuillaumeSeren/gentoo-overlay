@@ -112,6 +112,7 @@ Software                                | DESCRIPTION
 [exporter][exporter]                    | Provides the functionality to export PHP variables for visualization
 [colors.php][colors.php]                | An easy way to add colors in your CLI scripts
 [pimple][pimple]                        | A small PHP 5.3 dependency injection container
+[diff][diff]                            | Diff implementation
 
 
 
@@ -143,3 +144,4 @@ If you fix something and want to share back you can open a __Pull Request__.
 [exporter]: https://github.com/sebastianbergmann/exporter
 [colors.php]: https://github.com/kevinlebrun/colors.php
 [pimple]: https://github.com/silexphp/Pimple
+[diff]: https://github.com/sebastianbergmann/diff
