@@ -113,6 +113,7 @@ Software                                | DESCRIPTION
 [colors.php][colors.php]                | An easy way to add colors in your CLI scripts
 [pimple][pimple]                        | A small PHP 5.3 dependency injection container
 [diff][diff]                            | Diff implementation
+[comparator][comparator]                | Provides the functionality to compare PHP values for equality
 
 
 
@@ -145,3 +146,4 @@ If you fix something and want to share back you can open a __Pull Request__.
 [colors.php]: https://github.com/kevinlebrun/colors.php
 [pimple]: https://github.com/silexphp/Pimple
 [diff]: https://github.com/sebastianbergmann/diff
+[comparator]: https://github.com/sebastianbergmann/comparator
