@@ -303,6 +303,8 @@ pkg_setup() {
 	fi
 }
 
+S="${WORKDIR}/wine-2.0-rc1"
+
 src_unpack() {
 	if [[ ${PV} == "9999" ]] ; then
 		EGIT_COMMIT="${WINE_COMMIT}" git-r3_src_unpack
