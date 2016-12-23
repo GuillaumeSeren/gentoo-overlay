@@ -114,6 +114,7 @@ Software                                | DESCRIPTION
 [pimple][pimple]                        | A small PHP 5.3 dependency injection container
 [diff][diff]                            | Diff implementation
 [comparator][comparator]                | Provides the functionality to compare PHP values for equality
+[environment][environment]              | Provides functionality to handle HHVM/PHP environments
 
 
 
@@ -147,3 +148,4 @@ If you fix something and want to share back you can open a __Pull Request__.
 [pimple]: https://github.com/silexphp/Pimple
 [diff]: https://github.com/sebastianbergmann/diff
 [comparator]: https://github.com/sebastianbergmann/comparator
+[environment]: https://github.com/sebastianbergmann/environment
