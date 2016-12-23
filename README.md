@@ -115,6 +115,7 @@ Software                                | DESCRIPTION
 [diff][diff]                            | Diff implementation
 [comparator][comparator]                | Provides the functionality to compare PHP values for equality
 [environment][environment]              | Provides functionality to handle HHVM/PHP environments
+[global-state][global-state]            | Snapshotting of global state, factored out of PHPUnit into a stand-alone component
 
 
 
@@ -149,3 +150,4 @@ If you fix something and want to share back you can open a __Pull Request__.
 [diff]: https://github.com/sebastianbergmann/diff
 [comparator]: https://github.com/sebastianbergmann/comparator
 [environment]: https://github.com/sebastianbergmann/environment
+[global-state]: https://github.com/sebastianbergmann/global-state
