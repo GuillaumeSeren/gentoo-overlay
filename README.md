@@ -116,6 +116,7 @@ Software                                | DESCRIPTION
 [comparator][comparator]                | Provides the functionality to compare PHP values for equality
 [environment][environment]              | Provides functionality to handle HHVM/PHP environments
 [global-state][global-state]            | Snapshotting of global state, factored out of PHPUnit into a stand-alone component
+[resource-operation][resource-operation]  | Provides a list of PHP built-in functions that operate on resources
 
 
 
@@ -151,3 +152,4 @@ If you fix something and want to share back you can open a __Pull Request__.
 [comparator]: https://github.com/sebastianbergmann/comparator
 [environment]: https://github.com/sebastianbergmann/environment
 [global-state]: https://github.com/sebastianbergmann/global-state
+[resource-operation]: https://github.com/sebastianbergmann/resource-operations
