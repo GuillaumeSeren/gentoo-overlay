@@ -118,6 +118,7 @@ Software                                | DESCRIPTION
 [global-state][global-state]            | Snapshotting of global state, factored out of PHPUnit into a stand-alone component
 [resource-operation][resource-operation]  | Provides a list of PHP built-in functions that operate on resources
 [verion][version]                       | Library that helps with managing the version number of Git-hosted PHP projects
+[doctrine-collection]                   | Collections Abstraction Library
 
 
 
@@ -155,3 +156,4 @@ If you fix something and want to share back you can open a __Pull Request__.
 [global-state]: https://github.com/sebastianbergmann/global-state
 [resource-operation]: https://github.com/sebastianbergmann/resource-operations
 [version]: https://github.com/sebastianbergmann/version
+[doctrine-collection]: https://github.com/doctrine/collections
