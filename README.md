@@ -118,7 +118,9 @@ Software                                | DESCRIPTION
 [global-state][global-state]            | Snapshotting of global state, factored out of PHPUnit into a stand-alone component
 [resource-operation][resource-operation]  | Provides a list of PHP built-in functions that operate on resources
 [verion][version]                       | Library that helps with managing the version number of Git-hosted PHP projects
-[doctrine-collection]                   | Collections Abstraction Library
+[doctrine-collection][doctrine-collection]  | Collections Abstraction Library
+[myclabs-deep-copy][myclabs-deep-copy]  | Create deep copies (clones) of your objects
+
 
 
 
@@ -157,3 +159,4 @@ If you fix something and want to share back you can open a __Pull Request__.
 [resource-operation]: https://github.com/sebastianbergmann/resource-operations
 [version]: https://github.com/sebastianbergmann/version
 [doctrine-collection]: https://github.com/doctrine/collections
+[myclabs-deep-copy]: https://github.com/myclabs/DeepCopy
