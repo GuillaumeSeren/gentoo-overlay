@@ -120,6 +120,8 @@ Software                                | DESCRIPTION
 [verion][version]                       | Library that helps with managing the version number of Git-hosted PHP projects
 [doctrine-collection][doctrine-collection]  | Collections Abstraction Library
 [myclabs-deep-copy][myclabs-deep-copy]  | Create deep copies (clones) of your objects
+[notmuch][notmuch]                      | Index local mail for fast, tag-based, search
+
 
 
 
@@ -160,3 +162,4 @@ If you fix something and want to share back you can open a __Pull Request__.
 [version]: https://github.com/sebastianbergmann/version
 [doctrine-collection]: https://github.com/doctrine/collections
 [myclabs-deep-copy]: https://github.com/myclabs/DeepCopy
+[notmuch]: https://notmuchmail.org/
