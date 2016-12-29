@@ -303,7 +303,7 @@ pkg_setup() {
 	fi
 }
 
-S="${WORKDIR}/wine-2.0-rc1"
+S="${WORKDIR}/${PN}-${MY_PV}"
 
 src_unpack() {
 	if [[ ${PV} == "9999" ]] ; then
