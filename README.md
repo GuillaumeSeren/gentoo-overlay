@@ -121,6 +121,7 @@ Software                                | DESCRIPTION
 [doctrine-collection][doctrine-collection]  | Collections Abstraction Library
 [myclabs-deep-copy][myclabs-deep-copy]  | Create deep copies (clones) of your objects
 [notmuch][notmuch]                      | Index local mail for fast, tag-based, search
+[zetacomponents-UnitTest][zetacomponents-UnitTest] | zetacomponents-unit-test Component
 
 
 
@@ -163,3 +164,4 @@ If you fix something and want to share back you can open a __Pull Request__.
 [doctrine-collection]: https://github.com/doctrine/collections
 [myclabs-deep-copy]: https://github.com/myclabs/DeepCopy
 [notmuch]: https://notmuchmail.org/
+[zetacomponents-UnitTest]: https://github.com/zetacomponents/UnitTest
