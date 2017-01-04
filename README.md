@@ -123,6 +123,7 @@ Software                                | DESCRIPTION
 [notmuch][notmuch]                      | Index local mail for fast, tag-based, search
 [zetacomponents-UnitTest][zetacomponents-UnitTest] | zetacomponents-unit-test Component
 [zetacomponents-base][zetacomponents-base] | The Base package provides the basic infrastructure that all packages rely on
+[zetacomponents-ConsoleTools][zetacomponents-ConsoleTools] | A set of classes to do different actions with the console
 
 
 
@@ -167,3 +168,4 @@ If you fix something and want to share back you can open a __Pull Request__.
 [notmuch]: https://notmuchmail.org/
 [zetacomponents-UnitTest]: https://github.com/zetacomponents/UnitTest
 [zetacomponents-base]: https://github.com/zetacomponents/Base
+[zetacomponents-ConsoleTools]: https://github.com/zetacomponents/ConsoleTools
