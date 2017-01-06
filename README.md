@@ -124,7 +124,8 @@ Software                                | DESCRIPTION
 [zetacomponents-UnitTest][zetacomponents-UnitTest] | zetacomponents-unit-test Component
 [zetacomponents-base][zetacomponents-base] | The Base package provides the basic infrastructure that all packages rely on
 [zetacomponents-ConsoleTools][zetacomponents-ConsoleTools] | A set of classes to do different actions with the console
-[theseer-Autoload][theseer-Autoload]  | PHP File Scanner
+[theseer-DirectoryScanner][theseer-DirectoryScanner]  | PHP File Scanner
+[theseer-Autoload][theseer-Autoload]  | A lightweight php namespace aware autoload generator and phar archive builder
 
 
 
@@ -170,4 +171,5 @@ If you fix something and want to share back you can open a __Pull Request__.
 [zetacomponents-UnitTest]: https://github.com/zetacomponents/UnitTest
 [zetacomponents-base]: https://github.com/zetacomponents/Base
 [zetacomponents-ConsoleTools]: https://github.com/zetacomponents/ConsoleTools
-[theseer-Autoload]: https://github.com/theseer/DirectoryScanner
+[theseer-DirectoryScanner]: https://github.com/theseer/DirectoryScanner
+[theseer-Autoload]: https://github.com/theseer/Autoload
