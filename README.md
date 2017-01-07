@@ -126,6 +126,7 @@ Software                                | DESCRIPTION
 [zetacomponents-ConsoleTools][zetacomponents-ConsoleTools] | A set of classes to do different actions with the console
 [theseer-DirectoryScanner][theseer-DirectoryScanner]  | PHP File Scanner
 [theseer-Autoload][theseer-Autoload]  | A lightweight php namespace aware autoload generator and phar archive builder
+[php-timer][php-timer]	| Utility class for timing
 
 
 
@@ -173,3 +174,4 @@ If you fix something and want to share back you can open a __Pull Request__.
 [zetacomponents-ConsoleTools]: https://github.com/zetacomponents/ConsoleTools
 [theseer-DirectoryScanner]: https://github.com/theseer/DirectoryScanner
 [theseer-Autoload]: https://github.com/theseer/Autoload
+[php-timer]: https://github.com/sebastianbergmann/php-timer
