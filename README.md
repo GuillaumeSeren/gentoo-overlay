@@ -127,6 +127,8 @@ Software                                | DESCRIPTION
 [theseer-DirectoryScanner][theseer-DirectoryScanner]  | PHP File Scanner
 [theseer-Autoload][theseer-Autoload]  | A lightweight php namespace aware autoload generator and phar archive builder
 [php-timer][php-timer]	| Utility class for timing
+[php-file-iterator][php-file-iterator] | FilterIterator implementation that filters files based on a list of suffixes, prefixes, and other exclusion criteria
+
 
 
 
@@ -175,3 +177,4 @@ If you fix something and want to share back you can open a __Pull Request__.
 [theseer-DirectoryScanner]: https://github.com/theseer/DirectoryScanner
 [theseer-Autoload]: https://github.com/theseer/Autoload
 [php-timer]: https://github.com/sebastianbergmann/php-timer
+[php-file-iterator]: https://github.com/sebastianbergmann/php-file-iterator
