@@ -128,6 +128,7 @@ Software                                | DESCRIPTION
 [theseer-Autoload][theseer-Autoload]  | A lightweight php namespace aware autoload generator and phar archive builder
 [php-timer][php-timer]	| Utility class for timing
 [php-file-iterator][php-file-iterator] | FilterIterator implementation that filters files based on a list of suffixes, prefixes, and other exclusion criteria
+[php-token-stream][php-token-stream] | Wrapper around PHP's tokenizer extension
 
 
 
@@ -178,3 +179,4 @@ If you fix something and want to share back you can open a __Pull Request__.
 [theseer-Autoload]: https://github.com/theseer/Autoload
 [php-timer]: https://github.com/sebastianbergmann/php-timer
 [php-file-iterator]: https://github.com/sebastianbergmann/php-file-iterator
+[php-token-stream]: https://github.com/sebastianbergmann/php-token-stream
