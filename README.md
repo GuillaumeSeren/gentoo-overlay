@@ -130,7 +130,7 @@ Software                                | DESCRIPTION
 [php-file-iterator][php-file-iterator] | FilterIterator implementation that filters files based on a list of suffixes, prefixes, and other exclusion criteria
 [php-token-stream][php-token-stream] | Wrapper around PHP's tokenizer extension
 [code-unit-reverse-lookup][code-unit-reverse-lookup] | Looks up which function or method a line of code belongs to
-
+[php-code-coverage][php-code-coverage]  | Library that provides collection, processing, and rendering functionality for PHP code coverage information
 
 
 
@@ -182,3 +182,4 @@ If you fix something and want to share back you can open a __Pull Request__.
 [php-file-iterator]: https://github.com/sebastianbergmann/php-file-iterator
 [php-token-stream]: https://github.com/sebastianbergmann/php-token-stream
 [code-unit-reverse-lookup]: https://github.com/sebastianbergmann/code-unit-reverse-lookup
+[php-code-coverage]: https://github.com/sebastianbergmann/php-code-coverage
