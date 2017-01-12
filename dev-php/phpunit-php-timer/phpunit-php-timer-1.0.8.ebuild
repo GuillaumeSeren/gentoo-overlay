@@ -16,9 +16,9 @@ IUSE="test"
 RDEPEND="
 	dev-lang/php:*"
 DEPEND="
+	${RDEPEND}
 	dev-php/theseer-Autoload
 	test? (
-		${RDEPEND}
 		dev-php/phpunit
 		)"
 
