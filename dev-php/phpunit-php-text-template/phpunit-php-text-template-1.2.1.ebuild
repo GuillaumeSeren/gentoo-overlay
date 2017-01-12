@@ -14,11 +14,19 @@ KEYWORDS="~amd64 ~x86"
 
 RDEPEND="
 	dev-lang/php:*"
+DEPEND="
+	${RDEPEND}
+	dev-php/theseer-Autoload"
 
 S="${WORKDIR}/php-text-template-${PV}"
 
+src_prepare() {
+	default
+	/usr/bin/phpab -o "${S}"/autoload.php -b "${S}"/src "${S}"/composer.json || die
+}
+
 src_install() {
 	insinto "/usr/share/php/SebastianBergmann/TextTemplate"
-	doins -r  src/. "${FILESDIR}"/autoload.php
+	doins -r  src/. "${S}"/autoload.php
 	dodoc README.md
 }
