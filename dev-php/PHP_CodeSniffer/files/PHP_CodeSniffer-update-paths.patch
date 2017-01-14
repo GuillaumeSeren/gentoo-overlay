@@ -1,0 +1,27 @@
+--- ./bin/phpcs     2016-11-30 05:23:58.000000000 +0100
++++ ./bin/phpcs     2017-01-13 18:29:07.184975850 +0100
+@@ -8,8 +8,8 @@
+  * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+  */
+
+-if (is_file(__DIR__.'/../autoload.php') === true) {
+-    include_once __DIR__.'/../autoload.php';
++if (is_file('/usr/share/php/squizlabs/PHP_CodeSniffer/autoload.php') === true) {
++    include_once '/usr/share/php/squizlabs/PHP_CodeSniffer/autoload.php';
+ } else {
+     include_once 'PHP/CodeSniffer/autoload.php';
+ }
+
+--- ./bin/phpcbf    2016-11-30 05:23:58.000000000 +0100
++++ ./bin/phpcbf    2017-01-13 18:31:57.215970932 +0100
+@@ -8,8 +8,8 @@
+  * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+  */
+
+-if (is_file(__DIR__.'/../autoload.php') === true) {
+-    include_once __DIR__.'/../autoload.php';
++if (is_file('/usr/share/php/squizlabs/PHP_CodeSniffer/autoload.php') === true) {
++    include_once '/usr/share/php/squizlabs/PHP_CodeSniffer/autoload.php';
+ } else {
+     include_once 'PHP/CodeSniffer/autoload.php';
+ }
