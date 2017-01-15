@@ -132,6 +132,7 @@ Software                                | DESCRIPTION
 [code-unit-reverse-lookup][code-unit-reverse-lookup] | Looks up which function or method a line of code belongs to
 [php-code-coverage][php-code-coverage]  | Library that provides collection, processing, and rendering functionality for PHP code coverage information
 [php-codesniffer][php-codesniffer]  |  Detects violations of a defined set of coding standards
+[guzzle][guzzle]                    | Guzzle, an extensible PHP HTTP client
 
 
 
@@ -185,3 +186,4 @@ If you fix something and want to share back you can open a __Pull Request__.
 [code-unit-reverse-lookup]: https://github.com/sebastianbergmann/code-unit-reverse-lookup
 [php-code-coverage]: https://github.com/sebastianbergmann/php-code-coverage
 [php-codesniffer]: https://github.com/squizlabs/PHP_CodeSniffer
+[guzzle]: https://github.com/guzzle/guzzle3
