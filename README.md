@@ -133,6 +133,7 @@ Software                                | DESCRIPTION
 [php-code-coverage][php-code-coverage]  | Library that provides collection, processing, and rendering functionality for PHP code coverage information
 [php-codesniffer][php-codesniffer]  |  Detects violations of a defined set of coding standards
 [guzzle][guzzle]                    | Guzzle, an extensible PHP HTTP client
+[symfony-stopwatch][symfony-stopwatch] | Symfony Stopwatch Component
 
 
 
@@ -187,3 +188,4 @@ If you fix something and want to share back you can open a __Pull Request__.
 [php-code-coverage]: https://github.com/sebastianbergmann/php-code-coverage
 [php-codesniffer]: https://github.com/squizlabs/PHP_CodeSniffer
 [guzzle]: https://github.com/guzzle/guzzle3
+[symfony-stopwatch]: https://github.com/symfony/stopwatch
