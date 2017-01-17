@@ -6,3 +6,4 @@ if (!class_exists('Fedora\\Autoloader\\Autoload', false)) {
 }
 
 \Fedora\Autoloader\Autoload::addPsr4('Symfony\\Component\\Config\\', __DIR__);
+
