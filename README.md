@@ -134,6 +134,7 @@ Software                                | DESCRIPTION
 [php-codesniffer][php-codesniffer]  |  Detects violations of a defined set of coding standards
 [guzzle][guzzle]                    | Guzzle, an extensible PHP HTTP client
 [symfony-stopwatch][symfony-stopwatch] | Symfony Stopwatch Component
+[symfony-polyfill-mbstring][symfony-polyfill-mbstring] | Partial, native PHP implementation for the Mbstring extension
 
 
 
@@ -189,3 +190,4 @@ If you fix something and want to share back you can open a __Pull Request__.
 [php-codesniffer]: https://github.com/squizlabs/PHP_CodeSniffer
 [guzzle]: https://github.com/guzzle/guzzle3
 [symfony-stopwatch]: https://github.com/symfony/stopwatch
+[symfony-polyfill-mbstring]: https://github.com/symfony/polyfill-mbstring
