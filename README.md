@@ -136,6 +136,7 @@ Software                                | DESCRIPTION
 [symfony-stopwatch][symfony-stopwatch] | Symfony Stopwatch Component
 [symfony-polyfill-mbstring][symfony-polyfill-mbstring] | Partial, native PHP implementation for the Mbstring extension
 [docker-machine][docker-machine] | Machine management for a container-centric world
+[symfony-debug][symfony-debug] | Symfony Debug Component
 
 
 
@@ -193,3 +194,4 @@ If you fix something and want to share back you can open a __Pull Request__.
 [symfony-stopwatch]: https://github.com/symfony/stopwatch
 [symfony-polyfill-mbstring]: https://github.com/symfony/polyfill-mbstring
 [docker-machine]: https://github.com/docker/machine
+[symfony-debug]: https://github.com/symfony/debug
