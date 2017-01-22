@@ -137,6 +137,7 @@ Software                                | DESCRIPTION
 [symfony-polyfill-mbstring][symfony-polyfill-mbstring] | Partial, native PHP implementation for the Mbstring extension
 [docker-machine][docker-machine] | Machine management for a container-centric world
 [symfony-debug][symfony-debug] | Symfony Debug Component
+[symfony-polyfill-apcu][symfony-polyfill-apcu] | Symfony polyfill backporting apcu_* functions
 
 
 
@@ -195,3 +196,4 @@ If you fix something and want to share back you can open a __Pull Request__.
 [symfony-polyfill-mbstring]: https://github.com/symfony/polyfill-mbstring
 [docker-machine]: https://github.com/docker/machine
 [symfony-debug]: https://github.com/symfony/debug
+[symfony-polyfill-apcu]: https://packagist.org/packages/symfony/polyfill-apcu
