@@ -138,6 +138,7 @@ Software                                | DESCRIPTION
 [docker-machine][docker-machine] | Machine management for a container-centric world
 [symfony-debug][symfony-debug] | Symfony Debug Component
 [symfony-polyfill-apcu][symfony-polyfill-apcu] | Symfony polyfill backporting apcu_* functions
+[symfony-http-foundation][symfony-http-foundation] | Symfony HttpFoundation Component
 
 
 
@@ -197,3 +198,4 @@ If you fix something and want to share back you can open a __Pull Request__.
 [docker-machine]: https://github.com/docker/machine
 [symfony-debug]: https://github.com/symfony/debug
 [symfony-polyfill-apcu]: https://packagist.org/packages/symfony/polyfill-apcu
+[symfony-http-foundation]: https://github.com/symfony/http-foundation
