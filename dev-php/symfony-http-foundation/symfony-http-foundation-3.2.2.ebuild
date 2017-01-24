@@ -16,9 +16,9 @@ RESTRICT="test"
 
 RDEPEND="
 	dev-lang/php:*
-	dev-php/fedora-autoloader"
+	dev-php/fedora-autoloader
+	>=dev-php/symfony-polyfill-mbstring-1.1"
 DEPEND="
-	>=dev-php/symfony-polyfill-mbstring-1.1
 	test? (
 		${RDEPEND}
 		dev-php/phpunit
