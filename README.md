@@ -139,6 +139,7 @@ Software                                | DESCRIPTION
 [symfony-debug][symfony-debug] | Symfony Debug Component
 [symfony-polyfill-apcu][symfony-polyfill-apcu] | Symfony polyfill backporting apcu_* functions
 [symfony-http-foundation][symfony-http-foundation] | Symfony HttpFoundation Component
+[symfony-kernel][symfony-kernel] | Subtree split of the Symfony HttpKernel Component
 
 
 
@@ -199,3 +200,4 @@ If you fix something and want to share back you can open a __Pull Request__.
 [symfony-debug]: https://github.com/symfony/debug
 [symfony-polyfill-apcu]: https://packagist.org/packages/symfony/polyfill-apcu
 [symfony-http-foundation]: https://github.com/symfony/http-foundation
+[symfony-kernel]: https://github.com/symfony/http-kernel
