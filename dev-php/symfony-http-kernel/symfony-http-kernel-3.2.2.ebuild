@@ -54,11 +54,11 @@ src_prepare() {
 src_install() {
 	insinto "/usr/share/php/Symfony/Component/HttpKernel"
 	# As there is no src dir we have to list needed dir + files
-	doins -r Bundle CacheClearer CacheWarmer Config Controller
-	ControllerMetadata DataCollector Debug DependencyInjection
-	Event EventListener Exception Fragment HttpCache Log
-	Profiler Client.php HttpKernelInterface.php HttpKernel.php
-	KernelEvents.php KernelInterface.php Kernel.php
+	doins -r Bundle CacheClearer CacheWarmer Config Controller \
+	ControllerMetadata DataCollector Debug DependencyInjection \
+	Event EventListener Exception Fragment HttpCache Log \
+	Profiler Client.php HttpKernelInterface.php HttpKernel.php \
+	KernelEvents.php KernelInterface.php Kernel.php \
 	TerminableInterface.php UriSigner.php "${FILESDIR}"/autoload.php
 	dodoc README.md
 }
