@@ -9,7 +9,13 @@
     <email>proxy-maint@gentoo.org</email>
     <name>Proxy Maintainers</name>
   </maintainer>
+  <maintainer type="project">
+    <email>php-bugs@gentoo.org</email>
+  </maintainer>
   <longdescription>
   	The Yaml component loads and dumps YAML files.
   </longdescription>
+  <upstream>
+    <remote-id type="github">symfony/yaml</remote-id>
+  </upstream>
 </pkgmetadata>
