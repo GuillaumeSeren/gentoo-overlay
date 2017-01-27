@@ -30,17 +30,17 @@ src_prepare() {
 	if use test; then
 		cp "${FILESDIR}"/autoload.php "${S}"/autoload-test.php || die
 		echo "
-$vendorDir = '/usr/share/php';
+\$vendorDir = '/usr/share/php';
 // Dependencies
 \Fedora\Autoloader\Dependencies::required(array(
-	$vendorDir . '/Symfony/Component/Console/autoload.php',
+	\$vendorDir . '/Symfony/Component/Console/autoload.php',
 ));" >> "${S}"/autoload-test.php || die
 	fi
 }
 
 src_install() {
 	insinto "/usr/share/php/Symfony/Component/Yaml"
-	doins -r Command/ Exception/ Dumper.php Escaper.php \
+	doins -r Command Exception Dumper.php Escaper.php \
 	Inline.php LICENSE Parser.php Unescaper.php Yaml.php \
 	"${FILESDIR}"/autoload.php
 	dodoc README.md
