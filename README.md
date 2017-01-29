@@ -140,6 +140,7 @@ Software                                | DESCRIPTION
 [symfony-polyfill-apcu][symfony-polyfill-apcu] | Symfony polyfill backporting apcu_* functions
 [symfony-http-foundation][symfony-http-foundation] | Symfony HttpFoundation Component
 [symfony-kernel][symfony-kernel] | Subtree split of the Symfony HttpKernel Component
+[psr-cache][psr-cache] | This repository holds all interfaces defined by PSR-6
 
 
 
@@ -201,3 +202,4 @@ If you fix something and want to share back you can open a __Pull Request__.
 [symfony-polyfill-apcu]: https://packagist.org/packages/symfony/polyfill-apcu
 [symfony-http-foundation]: https://github.com/symfony/http-foundation
 [symfony-kernel]: https://github.com/symfony/http-kernel
+[psr-cache]: https://github.com/php-fig/cache
