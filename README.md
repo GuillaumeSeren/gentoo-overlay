@@ -141,6 +141,7 @@ Software                                | DESCRIPTION
 [symfony-http-foundation][symfony-http-foundation] | Symfony HttpFoundation Component
 [symfony-kernel][symfony-kernel] | Subtree split of the Symfony HttpKernel Component
 [psr-cache][psr-cache] | This repository holds all interfaces defined by PSR-6
+[symfony-cache][symfony-cache] | Symfony Cache Component
 
 
 
@@ -203,3 +204,4 @@ If you fix something and want to share back you can open a __Pull Request__.
 [symfony-http-foundation]: https://github.com/symfony/http-foundation
 [symfony-kernel]: https://github.com/symfony/http-kernel
 [psr-cache]: https://github.com/php-fig/cache
+[symfony-cache]: https://github.com/symfony/cache
