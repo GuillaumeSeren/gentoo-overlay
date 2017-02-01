@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -14,11 +14,11 @@ KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
 RDEPEND="
-	dev-lang/php:*
-	dev-php/fedora-autoloader"
+	dev-lang/php:*"
 DEPEND="
+	${RDEPEND}
+	dev-php/theseer-Autoload
 	test? (
-		${RDEPEND}
 		dev-php/phpunit
 		)"
 
@@ -26,15 +26,15 @@ S="${WORKDIR}/recursion-context-${PV}"
 
 src_prepare() {
 	default
+	/usr/bin/phpab -o "${S}"/autoload.php -b "${S}"/src "${S}"/composer.json || die
 	if use test; then
-		cp "${FILESDIR}"/autoload.php "${S}"/autoload-test.php || die
-		sed -i -e "s:__DIR__:'${S}/src/':" "${S}"/autoload-test.php || die
+		cp "${S}"/autoload.php "${S}"/autoload-test.php || die
 	fi
 }
 
 src_install() {
 	insinto "/usr/share/php/SebastianBergmann/RecursionContext"
-	doins -r  src/. "${FILESDIR}"/autoload.php
+	doins -r  src/. LICENSE "${S}"/autoload.php
 	dodoc README.md
 }
 
