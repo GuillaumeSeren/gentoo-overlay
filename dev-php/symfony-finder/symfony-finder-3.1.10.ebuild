@@ -12,7 +12,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
-# The test suite is broken in 3.1.10 on php-5.x
+# 20170204-The test suite is broken in 3.1.10 on php-5.x
 RESTRICT="test"
 
 RDEPEND="
@@ -34,7 +34,7 @@ src_prepare() {
 
 src_install() {
 	insinto "/usr/share/php/Symfony/Component/Finder"
-	doins -r Comparator Exception Iterator Finder.php
+	doins -r Comparator Exception Iterator Finder.php \
 	Glob.php LICENSE SplFileInfo.php "${FILESDIR}"/autoload.php
 	dodoc README.md
 }
