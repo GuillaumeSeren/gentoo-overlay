@@ -9,7 +9,13 @@
     <email>proxy-maint@gentoo.org</email>
     <name>Proxy Maintainers</name>
   </maintainer>
+  <maintainer type="project">
+    <email>php-bugs@gentoo.org</email>
+  </maintainer>
   <longdescription>
   	A PHP Implementation for validating JSON Structures against a given Schema.
   </longdescription>
+  <upstream>
+    <remote-id type="github">justinrainbow/json-schema</remote-id>
+  </upstream>
 </pkgmetadata>
