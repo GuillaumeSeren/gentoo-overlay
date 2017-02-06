@@ -9,6 +9,6 @@ if (!class_exists('Fedora\\Autoloader\\Autoload', false)) {
 
 $vendorDir = '/usr/share/php';
 \Fedora\Autoloader\Dependencies::required(array(
-	$vendorDir . 'Psr/Cache/autoload.php',
-	$vendorDir . 'Psr/Log/autoload.php',
+	$vendorDir . '/Psr/Cache/autoload.php',
+	$vendorDir . '/Psr/Log/autoload.php',
 ));
