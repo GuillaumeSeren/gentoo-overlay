@@ -32,12 +32,12 @@ src_prepare() {
 	if use test; then
 		cp "${FILESDIR}"/autoload.php "${S}"/autoload-test.php || die
 		echo "
-$vendorDir = '/usr/share/php';
+\$vendorDir = '/usr/share/php';
 // Dependencies
 \Fedora\Autoloader\Dependencies::required(array(
-	$vendorDir . '/Symfony/Component/Yaml/autoload.php',
-	$vendorDir . '/Symfony/Component/Config/autoload.php',
-	$vendorDir . '/Symfony/Component/ExpressionLanguage/autoload.php',
+	\$vendorDir . '/Symfony/Component/Yaml/autoload.php',
+	\$vendorDir . '/Symfony/Component/Config/autoload.php',
+	\$vendorDir . '/Symfony/Component/ExpressionLanguage/autoload.php',
 ));" >> "${S}"/autoload-test.php || die
 	fi
 }
