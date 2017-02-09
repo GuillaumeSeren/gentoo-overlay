@@ -12,6 +12,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
+RESTRICT="test"
 
 RDEPEND="
 	dev-lang/php:*
@@ -27,26 +28,21 @@ S="${WORKDIR}/config-${PV}"
 
 src_prepare() {
 	default
-	# /!\ IMPORTANT /!\
-	# This add the needed require to autoloader, because was missing in previous
-	# version, so add it in autoloader ASAP when previous version install it or
-	# delete old version
-	echo "
-// Dependencies
-$vendorDir = '/usr/share/php';
-\Fedora\Autoloader\Dependencies::required(array(
-	$vendorDir . 'Symfony/Component/Filesystem/autoload.php',
-)); " >> "${FILESDIR}"/autoload.php || die
 	if use test; then
 		cp "${FILESDIR}"/autoload.php "${S}"/autoload-test.php || die
 		sed -i -e "s:__DIR__:__DIR__.'/src':" "${S}"/autoload-test.php || die
-		sed -i -e "s:));:\t\'/Symfony/Component/Yaml/autoload.php\',\n));:" "${S}"/autoload-test.php 
+		sed -i -e "s:));:\t\$vendorDir . \'/Symfony/Component/Yaml/autoload.php\',\n));:" "${S}"/autoload-test.php
 	fi
 }
 
 src_install() {
 	insinto "/usr/share/php/Symfony/Component/Config"
-	doins -r . "${FILESDIR}"/autoload.php
+	doins -r Definition Exception Loader Resource \
+	Util ConfigCacheFactoryInterface.php ConfigCacheFactory.php \
+	ConfigCacheInterface.php ConfigCache.php FileLocatorInterface.php \
+	FileLocator.php LICENSE ResourceCheckerConfigCacheFactory.php \
+	ResourceCheckerConfigCache.php ResourceCheckerInterface.php \
+	"${FILESDIR}"/autoload.php
 	dodoc README.md
 }
 
