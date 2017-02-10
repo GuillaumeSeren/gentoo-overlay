@@ -22,4 +22,5 @@ if (!class_exists('Fedora\\Autoloader\\Autoload', false)) {
 	$vendorDir . '/Seld/PharUtils/autoload.php',
 	$vendorDir . '/Seld/CliPrompt/autoload.php',
 	$vendorDir . '/Psr/Log/autoload.php',
+	$vendorDir . '/phpunit-mock-object/autoload.php',
 ));
