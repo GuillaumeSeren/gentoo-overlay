@@ -15,19 +15,19 @@ IUSE="test"
 
 RDEPEND="
 	dev-lang/php:*[curl]
+	>=dev-php/ca-bundle-1.0
+	>=dev-php/cli-prompt-1.0
 	dev-php/fedora-autoloader
 	>=dev-php/json-schema-4.0
-	>=dev-php/ca-bundle-1.0
+	>=dev-php/jsonlint-1.4
+	>=dev-php/phar-utils-1.0
+	>=dev-php/psr-log-1.0
 	>=dev-php/semver-1.0
 	>=dev-php/spdx-licenses-1.0
-	>=dev-php/jsonlint-1.4
 	>=dev-php/symfony-console-3.0
-	>=dev-php/symfony-finder-3.0
-	>=dev-php/symfony-process-3.0
 	>=dev-php/symfony-filesystem-3.0
-	>=dev-php/phar-utils-1.0
-	>=dev-php/cli-prompt-1.0
-	>=dev-php/psr-log-1.0"
+	>=dev-php/symfony-finder-3.0
+	>=dev-php/symfony-process-3.0"
 DEPEND="
 	test? (
 		${RDEPEND}
