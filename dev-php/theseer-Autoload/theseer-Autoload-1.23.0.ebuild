@@ -12,7 +12,6 @@ LICENSE="BSD-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
-RESTRICT="test"
 
 RDEPEND="
 	dev-lang/php:*
@@ -31,11 +30,12 @@ S="${WORKDIR}/Autoload-${PV}"
 
 src_prepare() {
 	default
+		sed -i -e "s:%development%:${PV}:" "${S}"/composer/bin/phpab || die
+		sed -i -e "s:require __DIR__ . '/../../src/autoload.php':require '/usr/share/php/theseer/Autoload/autoload.php':" "${S}"/composer/bin/phpab || die
 	if use test; then
 		cp "${FILESDIR}"/autoload.php "${S}"/autoload-test.php || die
 		sed -i -e "s:__DIR__:__DIR__.'/src':" "${S}"/autoload-test.php || die
-		sed -i -e "s:%development%:${PV}:" "${S}"/composer/bin/phpab || die
-		sed -i -e "s:require __DIR__ . '/../../src/autoload.php':require '/usr/share/php/theseer/Autoload/autoload.php':" "${S}"/composer/bin/phpab || die
+		# sed -i -e "s:require __DIR__ ;:test;" "${S}"/composer/bin/phpab || die
 	fi
 }
 
