@@ -35,7 +35,6 @@ DEPEND="
 		>=dev-php/phpunit-mock-objects-3.0 )"
 
 PATCHES=(
-	"${FILESDIR}/${PN}-update-paths.patch"
 	"${FILESDIR}/${PN}-tests-fix.patch"
 )
 
@@ -43,6 +42,7 @@ src_prepare() {
 	default
 	if use test; then
 		cp "${FILESDIR}"/autoload.php "${S}"/src/Composer/autoload.php || die
+		# sed -i -e "s:__DIR__:__DIR__.'/src':" "${S}"/src/Composer/autoload.php || die
 		# The patch is needed to remove a failing test
 		cp "${FILESDIR}"/bootstrap.php "${S}"/tests/bootstrap.php || die
 		rm src/bootstrap.php || die
@@ -50,6 +50,7 @@ src_prepare() {
 }
 
 src_install() {
+	eapply "${FILESDIR}/${PN}-update-paths.patch"
 	insinto "/usr/share/php/Composer/Composer"
 
 	# Composer expects the LICENSE file to be there, and the
