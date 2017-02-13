@@ -142,6 +142,8 @@ Software                                | DESCRIPTION
 [symfony-kernel][symfony-kernel] | Subtree split of the Symfony HttpKernel Component
 [psr-cache][psr-cache] | This repository holds all interfaces defined by PSR-6
 [symfony-cache][symfony-cache] | Symfony Cache Component
+[symfony-event-dispatcher][symfony-event-dispatcher] | Symfony EventDispatcher Component
+
 
 
 
@@ -205,3 +207,4 @@ If you fix something and want to share back you can open a __Pull Request__.
 [symfony-kernel]: https://github.com/symfony/http-kernel
 [psr-cache]: https://github.com/php-fig/cache
 [symfony-cache]: https://github.com/symfony/cache
+[symfony-event-dispatcher]: https://github.com/symfony/event-dispatcher
