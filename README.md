@@ -137,12 +137,13 @@ Software                                | DESCRIPTION
 [symfony-polyfill-mbstring][symfony-polyfill-mbstring] | Partial, native PHP implementation for the Mbstring extension
 [docker-machine][docker-machine] | Machine management for a container-centric world
 [symfony-debug][symfony-debug] | Symfony Debug Component
-[symfony-polyfill-apcu][symfony-polyfill-apcu] | Symfony polyfill backporting apcu_* functions
+[symfony-polyfill-apcu][symfony-polyfill-apcu] | Symfony polyfill backporting apcu functions
 [symfony-http-foundation][symfony-http-foundation] | Symfony HttpFoundation Component
 [symfony-kernel][symfony-kernel] | Subtree split of the Symfony HttpKernel Component
 [psr-cache][psr-cache] | This repository holds all interfaces defined by PSR-6
 [symfony-cache][symfony-cache] | Symfony Cache Component
 [symfony-event-dispatcher][symfony-event-dispatcher] | Symfony EventDispatcher Component
+[doctrine-instanciator][doctrine-instanciator] | Avoiding usage of constructors when instantiating PHP classes
 
 
 
@@ -208,3 +209,4 @@ If you fix something and want to share back you can open a __Pull Request__.
 [psr-cache]: https://github.com/php-fig/cache
 [symfony-cache]: https://github.com/symfony/cache
 [symfony-event-dispatcher]: https://github.com/symfony/event-dispatcher
+[doctrine-instanciator]: https://github.com/doctrine/instantiator
