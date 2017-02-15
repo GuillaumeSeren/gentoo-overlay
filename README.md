@@ -144,6 +144,7 @@ Software                                | DESCRIPTION
 [symfony-cache][symfony-cache] | Symfony Cache Component
 [symfony-event-dispatcher][symfony-event-dispatcher] | Symfony EventDispatcher Component
 [doctrine-instanciator][doctrine-instanciator] | Avoiding usage of constructors when instantiating PHP classes
+[phpunit-mock-objects][phpunit-mock-objects] | Mock Object library for PHPUnit
 
 
 
@@ -210,3 +211,4 @@ If you fix something and want to share back you can open a __Pull Request__.
 [symfony-cache]: https://github.com/symfony/cache
 [symfony-event-dispatcher]: https://github.com/symfony/event-dispatcher
 [doctrine-instanciator]: https://github.com/doctrine/instantiator
+[phpunit-mock-objects]: https://github.com/sebastianbergmann/phpunit-mock-objects
