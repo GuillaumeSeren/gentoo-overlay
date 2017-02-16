@@ -14,6 +14,7 @@ HOMEPAGE="https://github.com/squizlabs/PHP_CodeSniffer"
 MY_PR=${PR/r/RC}
 # http://download.pear.php.net/package/PHP_CodeSniffer-3.0.0RC2.tgz
 # https://github.com/squizlabs/PHP_CodeSniffer/archive/3.0.0RC2.tar.gz
+# https://github.com/squizlabs/PHP_CodeSniffer/archive/3.0.0RC2.tar.gz
 # SRC_URI="http://download.pear.php.net/package/${P}${MY_PR}.tgz"
 SRC_URI="https://github.com/squizlabs/${PN}/archive/${PV}${MY_PR}.tar.gz -> ${P}.tar.gz"
 
@@ -24,7 +25,7 @@ KEYWORDS="~amd64 ~x86"
 DEPEND="
 	dev-lang/php:*[cli,tokenizer,xmlwriter]
 	dev-php/fedora-autoloader"
-DEPEND="${RDEPEND}	
+DEPEND="${RDEPEND}
 	dev-php/theseer-Autoload "
 
 PATCHES=(

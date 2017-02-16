@@ -14,7 +14,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
 RDEPEND="
-	dev-lang/php:*[curl]
+	dev-lang/php:*
 	dev-php/fedora-autoloader"
 DEPEND="
 	test? (

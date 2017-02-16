@@ -40,7 +40,7 @@ src_prepare() {
 
 src_install() {
 	insinto "/usr/share/php/Symfony/Component/Yaml"
-	doins -r Command Exception Dumper.php Escaper.php \
+	doins -r Command/ Exception/ Dumper.php Escaper.php \
 	Inline.php LICENSE Parser.php Unescaper.php Yaml.php \
 	"${FILESDIR}"/autoload.php
 	dodoc README.md
