@@ -12,7 +12,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
-RESTRICT="test"
 
 RDEPEND="
 	dev-lang/php:*
@@ -29,9 +28,11 @@ src_prepare() {
 	default
 	if use test; then
 		cp "${FILESDIR}"/autoload.php "${S}"/autoload-test.php || die
+		sed -i -e "s:__DIR__:'${S}/src/Commando/':" "${S}"/autoload-test.php || die
 		# We also need to remove the require in the tests
 		sed -i -e "s:^require://require:" "${S}"/tests/Commando/CommandTest.php || die
 		sed -i -e "s:^require://require:" "${S}"/tests/Commando/OptionTest.php || die
+		# rm "${S}"/tests/Commando/CommandTest.php || die
 
 	fi
 }
@@ -42,6 +43,7 @@ src_install() {
 	dodoc README.md
 }
 
+# phpunit --configuration tests/phpunit.xml
 src_test() {
 	phpunit  --configuration "${S}"/tests/phpunit.xml --bootstrap "${S}"/autoload-test.php || die "test suite failed"
 }

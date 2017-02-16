@@ -12,7 +12,6 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
-RESTRICT="test"
 
 RDEPEND="
 	dev-lang/php:*
@@ -20,7 +19,9 @@ RDEPEND="
 DEPEND="
 	test? (
 		${RDEPEND}
-		dev-php/phpunit )"
+		>=dev-php/phpunit-3.7
+		>=dev-php/PHP_CodeSniffer-1.0
+		>=dev-php/satooshi-php-coveralls-1.0)"
 
 S="${WORKDIR}/colors.php-${PV}"
 
@@ -28,6 +29,7 @@ src_prepare() {
 	default
 	if use test; then
 		cp "${FILESDIR}"/autoload.php "${S}"/autoload-test.php || die
+		sed -i -e "s:__DIR__:'${S}/lib/Colors':" "${S}"/autoload-test.php || die
 	fi
 }
 
@@ -37,6 +39,7 @@ src_install() {
 	dodoc README.mkd
 }
 
+# tests  phpunit --configuration tests/phpunit.xml --bootstrap tests/bootstrap.php
 src_test() {
 	phpunit  --configuration "${S}"/tests/phpunit.xml --bootstrap "${S}"/autoload-test.php || die "test suite failed"
 }
