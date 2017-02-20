@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -6,7 +6,7 @@ EAPI=6
 
 DESCRIPTION="zetacomponents-unit-test Component"
 HOMEPAGE="https://github.com/zetacomponents/UnitTest"
-SRC_URI="https://github.com/zetacomponents/UnitTest/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="${HOMEPAGE}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
@@ -19,5 +19,5 @@ S="${WORKDIR}/UnitTest-${PV}"
 
 src_install() {
 	insinto "/usr/share/php/zetacomponents/UnitTest"
-	doins -r  src/. "${FILESDIR}"/autoload.php
+	doins -r src/. "${FILESDIR}"/autoload.php
 }
