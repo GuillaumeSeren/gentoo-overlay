@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -6,7 +6,7 @@ EAPI=6
 
 DESCRIPTION="A set of classes to do different actions with the console"
 HOMEPAGE="https://github.com/zetacomponents/ConsoleTools"
-SRC_URI="https://github.com/zetacomponents/ConsoleTools/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="${HOMEPAGE}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
@@ -35,7 +35,8 @@ src_prepare() {
 	if use test; then
 		cp "${FILESDIR}"/autoload.php "${S}"/autoload-test.php || die
 		sed -i -e "s:__DIR__:__DIR__.'/src':" "${S}"/autoload-test.php || die
-		echo "require_once '/usr/share/php/zetacomponents/UnitTest/autoload.php';
+		echo "
+require_once '/usr/share/php/zetacomponents/UnitTest/autoload.php';
 " >> "${S}"/autoload-test.php || die
 	fi
 }
