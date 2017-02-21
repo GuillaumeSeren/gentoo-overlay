@@ -6,7 +6,7 @@ EAPI=6
 
 DESCRIPTION="The Base package provides the basic infrastructure that all packages rely on"
 HOMEPAGE="https://github.com/zetacomponents/Base"
-SRC_URI="https://github.com/zetacomponents/Base/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="${HOMEPAGE}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
