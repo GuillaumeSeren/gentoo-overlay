@@ -6,7 +6,7 @@ EAPI=6
 
 DESCRIPTION="Symfony Process Component"
 HOMEPAGE="https://github.com/symfony/process"
-SRC_URI="https://github.com/symfony/process/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="${HOMEPAGE}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
