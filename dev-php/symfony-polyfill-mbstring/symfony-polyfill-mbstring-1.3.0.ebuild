@@ -1,12 +1,12 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
 EAPI=6
 
-DESCRIPTION="This component provides a partial, native PHP implementation for the Mbstring extension"
+DESCRIPTION="Provides a partial, native PHP implementation for the Mbstring extension"
 HOMEPAGE="https://github.com/symfony/polyfill-mbstring"
-SRC_URI="https://github.com/symfony/polyfill-mbstring/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="${HOMEPAGE}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 # Test exist in the main project, but now (2017-01-19) not in the subtree,
 # For the moment only mbstring is needed but we could provide the main project
 # if needed https://github.com/symfony/polyfill
