@@ -6,13 +6,13 @@ EAPI=6
 
 DESCRIPTION="PHP implementation of JSON schema"
 HOMEPAGE="https://github.com/justinrainbow/json-schema"
-SRC_URI="https://github.com/justinrainbow/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="${HOMEPAGE}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
-# To run the test we need to download the test from master
+# Tests are not in the release tarball
 RESTRICT="test"
 
 RDEPEND="
