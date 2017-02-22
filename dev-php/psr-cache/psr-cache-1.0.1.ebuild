@@ -6,8 +6,7 @@ EAPI=6
 
 DESCRIPTION="PSR Cache interfaces defined by PSR-6"
 HOMEPAGE="https://github.com/php-fig/cache"
-# https://github.com/php-fig/cache/archive/1.0.1.tar.gz
-SRC_URI="https://github.com/php-fig/cache/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="${HOMEPAGE}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"

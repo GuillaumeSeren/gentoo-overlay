@@ -6,8 +6,7 @@ EAPI=6
 
 DESCRIPTION="Symfony Cache Component"
 HOMEPAGE="https://github.com/symfony/cache"
-# https://github.com/symfony/cache/archive/v3.1.10.tar.gz
-SRC_URI="https://github.com/symfony/cache/archive/v${PV}.tar.gz -> symfony-cache-${PV}.tar.gz"
+SRC_URI="${HOMEPAGE}/archive/v${PV}.tar.gz -> symfony-cache-${PV}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -16,6 +15,12 @@ IUSE="test"
 # Test dependencies are not here, mostly because we have to make a live ebuild
 # for cache-tag-interop which has no release yet,
 # and is needed by cache-integration-tests (also ask for dev-master)
+# And there is some package not already in the tree
+#
+# >=dev-php/cache-integration-tests-9999
+# >=dev-php/doctrine-cache-1.6
+# >=dev-php/doctrine-dbal-2.4
+# >=dev-php/nrk-predis-1.0 )"
 RESTRICT="test"
 
 RDEPEND="
@@ -26,11 +31,7 @@ DEPEND="
 	>=dev-php/psr-log-1.0
 	test? (
 		${RDEPEND}
-		dev-php/phpunit
-		>=dev-php/cache-integration-tests-9999
-		>=dev-php/doctrine-cache-1.6
-		>=dev-php/doctrine-dbal-2.4
-		>=dev-php/nrk-predis-1.0 )"
+		dev-php/phpunit )"
 
 S="${WORKDIR}/cache-${PV}"
 

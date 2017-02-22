@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -6,12 +6,15 @@ EAPI=6
 
 DESCRIPTION="Symfony Debug Component"
 HOMEPAGE="https://github.com/symfony/debug"
-SRC_URI="https://github.com/symfony/debug/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="${HOMEPAGE}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
+# Test suite need
+# dev-php/symfony-class-loader-3.0
+# dev-php/symfony-http-kernel-3.0
 RESTRICT="test"
 
 RDEPEND="
@@ -21,9 +24,7 @@ RDEPEND="
 DEPEND="
 	test? (
 		${RDEPEND}
-		dev-php/phpunit
-		>=dev-php/symfony-class-loader-3.0
-		>=dev-php/symfony-http-kernel-3.0 )"
+		dev-php/phpunit )"
 
 S="${WORKDIR}/debug-${PV}"
 

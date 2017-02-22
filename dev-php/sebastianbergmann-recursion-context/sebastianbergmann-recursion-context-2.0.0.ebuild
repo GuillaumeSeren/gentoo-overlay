@@ -6,9 +6,9 @@ EAPI=6
 
 DESCRIPTION="Provides functionality to recursively process PHP variables"
 HOMEPAGE="https://github.com/sebastianbergmann/recursion-context"
-SRC_URI="https://github.com/sebastianbergmann/recursion-context/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="${HOMEPAGE}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE="BSD-3"
+LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"

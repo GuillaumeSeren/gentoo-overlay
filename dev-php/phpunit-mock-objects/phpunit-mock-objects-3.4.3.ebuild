@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -6,7 +6,7 @@ EAPI=6
 
 DESCRIPTION="Mock Object library for PHPUnit"
 HOMEPAGE="https://github.com/sebastianbergmann/phpunit-mock-objects"
-SRC_URI="https://github.com/sebastianbergmann/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="${HOMEPAGE}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -24,7 +24,7 @@ RDEPEND="
 DEPEND="
 	test? (
 		${RDEPEND}
-		>=dev-php/phpunit-5.4 )"
+		dev-php/phpunit )"
 
 src_prepare() {
 	default

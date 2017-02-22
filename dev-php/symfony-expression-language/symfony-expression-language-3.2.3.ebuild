@@ -4,7 +4,7 @@
 
 EAPI=6
 
-DESCRIPTION="Symfony ExpressionLanguage Component "
+DESCRIPTION="Symfony ExpressionLanguage Component"
 HOMEPAGE="https://github.com/symfony/expression-language"
 SRC_URI="${HOMEPAGE}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 

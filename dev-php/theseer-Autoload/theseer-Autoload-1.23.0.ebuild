@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -6,13 +6,12 @@ EAPI=6
 
 DESCRIPTION="A lightweight php namespace aware autoload generator and phar archive builder"
 HOMEPAGE="https://github.com/theseer/Autoload"
-SRC_URI="https://github.com/theseer/Autoload/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="${HOMEPAGE}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE="BSD-3"
+LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
-# RESTRICT="test"
 
 RDEPEND="
 	dev-lang/php:*
@@ -31,12 +30,11 @@ S="${WORKDIR}/Autoload-${PV}"
 
 src_prepare() {
 	default
-		sed -i -e "s:%development%:${PV}:" "${S}"/composer/bin/phpab || die
-		sed -i -e "s:require __DIR__ . '/../../src/autoload.php':require '/usr/share/php/theseer/Autoload/autoload.php':" "${S}"/composer/bin/phpab || die
+	sed -i -e "s:%development%:${PV}:" "${S}"/composer/bin/phpab || die
+	sed -i -e "s:require __DIR__ . '/../../src/autoload.php':require '/usr/share/php/theseer/Autoload/autoload.php':" "${S}"/composer/bin/phpab || die
 	if use test; then
 		cp "${FILESDIR}"/autoload.php "${S}"/autoload-test.php || die
 		sed -i -e "s:__DIR__:__DIR__.'/src':" "${S}"/autoload-test.php || die
-		# sed -i -e "s:require __DIR__ ;:test;" "${S}"/composer/bin/phpab || die
 	fi
 }
 
