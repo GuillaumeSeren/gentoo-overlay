@@ -6,7 +6,7 @@ EAPI=6
 
 DESCRIPTION="Dependency Manager for PHP"
 HOMEPAGE="https://github.com/composer/composer"
-SRC_URI="https://github.com/${PN}/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="${HOMEPAGE}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -42,7 +42,6 @@ src_prepare() {
 	default
 	if use test; then
 		cp "${FILESDIR}"/autoload.php "${S}"/src/Composer/autoload.php || die
-		# sed -i -e "s:__DIR__:__DIR__.'/src':" "${S}"/src/Composer/autoload.php || die
 		# The patch is needed to remove a failing test
 		cp "${FILESDIR}"/bootstrap.php "${S}"/tests/bootstrap.php || die
 		rm src/bootstrap.php || die
