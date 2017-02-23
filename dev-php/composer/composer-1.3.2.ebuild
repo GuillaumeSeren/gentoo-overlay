@@ -42,6 +42,8 @@ src_prepare() {
 	default
 	if use test; then
 		cp "${FILESDIR}"/autoload.php "${S}"/src/Composer/autoload.php || die
+		# $vendorDir . '/phpunit-mock-object/autoload.php',
+		sed -i -e "s:));:\t\$vendorDir . \'/phpunit-mock-object/autoload.php\',\n));:" "${S}"/src/Composer/autoload.php
 		# The patch is needed to remove a failing test
 		cp "${FILESDIR}"/bootstrap.php "${S}"/tests/bootstrap.php || die
 		rm src/bootstrap.php || die
