@@ -41,10 +41,10 @@ src_prepare() {
 		cp "${FILESDIR}"/autoload.php "${S}"/autoload-test.php || die
 		sed -i -e "s:__DIR__:__DIR__.'/src':" "${S}"/autoload-test.php || die
 		# Some of the dependencies are not packaged yet
-		sed -i -e "s:));:\t\'/Cache/IntegrationTests/autoload.php\',\n));:" "${S}"/autoload-test.php
-		sed -i -e "s:));:\t\'/Doctine/Cache/autoload.php\',\n));:" "${S}"/autoload-test.php
-		sed -i -e "s:));:\t\'/Doctrine/dbal/autoload.php\',\n));:" "${S}"/autoload-test.php
-		sed -i -e "s:));:\t\'/nrk/predis/autoload.php\',\n));:" "${S}"/autoload-test.php
+		sed -i -e "s:));:\t\$vendorDir . \'/Cache/IntegrationTests/autoload.php\',\n));:" "${S}"/autoload-test.php
+		sed -i -e "s:));:\t\$vendorDir . \'/Doctine/Cache/autoload.php\',\n));:" "${S}"/autoload-test.php
+		sed -i -e "s:));:\t\$vendorDir . \'/Doctrine/dbal/autoload.php\',\n));:" "${S}"/autoload-test.php
+		sed -i -e "s:));:\t\$vendorDir . \'/nrk/predis/autoload.php\',\n));:" "${S}"/autoload-test.php
 	fi
 }
 
