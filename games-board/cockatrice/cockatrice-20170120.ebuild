@@ -20,13 +20,14 @@ DEPEND="
 	dev-qt/linguist-tools:5
 	dev-qt/qtconcurrent:5
 	dev-qt/qtprintsupport:5
+ 	dev-qt/qtcore:5
 	!client? (
 		dev-qt/qtgui:5
 		dev-qt/qtmultimedia:5
-		dev-qt/qtsvg:5
+		dev-qt/qtsvg:5 )
+	!oracle? (
+		sys-libs/zlib
 	)"
-RDEPEND="
-	dev-qt/qtcore:5 "
 
 # As the default help/about display the sha1 we need it
 SHA1='dab7316'
