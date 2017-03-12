@@ -96,6 +96,8 @@ Software                                | DESCRIPTION
 [bedup][bedup]                          | Btrfs deduplication
 [mixxx][mixxx]                          | Mixxx is Free DJ software that gives you everything you need to perform live mixes
 [winetricks][winetricks]                | Winetricks is an easy way to work around problems in Wine
+[laptop-mode-tools][laptop-mode-tools]  | Linux kernel laptop_mode user-space utilities
+
 
 ## PARTICIPATE
 If find any bugs or problem related to those ebuild I suggest that you fill a __Issue__.
@@ -109,3 +111,4 @@ If you fix something and want to share back you can open a __Pull Request__.
 [bedup]: https://github.com/g2p/bedup
 [mixxx]: http://mixxx.org
 [winetricks]: https://github.com/Winetricks/winetricks
+[laptop-mode-tools]: https://github.com/rickysarraf/laptop-mode-tools/wiki
