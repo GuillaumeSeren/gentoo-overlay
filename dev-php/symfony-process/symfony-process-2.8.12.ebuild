@@ -3,9 +3,9 @@
 
 EAPI=6
 
-DESCRIPTION="Symfony Finder Component"
-HOMEPAGE="https://github.com/symfony/finder"
-SRC_URI="https://github.com/symfony/finder/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+DESCRIPTION="Symfony Process Component"
+HOMEPAGE="https://github.com/symfony/process"
+SRC_URI="https://github.com/symfony/process/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -15,10 +15,10 @@ RDEPEND="
 	dev-lang/php:*
 	dev-php/fedora-autoloader"
 
-S="${WORKDIR}/finder-${PV}"
+S="${WORKDIR}/process-${PV}"
 
 src_install() {
-	insinto "/usr/share/php/Symfony/Component/Finder"
+	insinto "/usr/share/php/Symfony/Component/Process"
 	doins -r . "${FILESDIR}"/autoload.php
 	dodoc README.md
 }
