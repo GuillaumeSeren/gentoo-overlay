@@ -1,6 +1,5 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
@@ -12,7 +11,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
-# Test suite need
+# Test suite need packages not already in the tree
 # dev-php/symfony-class-loader-3.0
 # dev-php/symfony-http-kernel-3.0
 RESTRICT="test"
