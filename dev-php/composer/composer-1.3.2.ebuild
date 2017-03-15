@@ -41,7 +41,7 @@ src_prepare() {
 	default
 	if use test; then
 		cp "${FILESDIR}"/autoload.php "${S}"/src/Composer/autoload.php || die
-		sed -i -e "s:));:\t\$vendorDir . \'/phpunit-mock-object/autoload.php\',\n));:" "${S}"/src/Composer/autoload.php
+		sed -i -e "s:));:\t\$vendorDir . \'/PHPUnit/Framework/MockObject/autoload.php\',\n));:" "${S}"/src/Composer/autoload.php
 		cp "${FILESDIR}"/bootstrap.php "${S}"/tests/bootstrap.php || die
 		rm src/bootstrap.php || die
 	fi
