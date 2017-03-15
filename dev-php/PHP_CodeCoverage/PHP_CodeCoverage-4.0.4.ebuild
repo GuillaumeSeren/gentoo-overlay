@@ -19,10 +19,10 @@ RDEPEND="
 	>=dev-php/phpunit-php-file-iterator-1.3
 	>=dev-php/phpunit-php-token-stream-1.4.2
 	>=dev-php/phpunit-php-text-template-1.2
-	>=dev-php/sebastianbergmann-code-unit-reverse-lookup-1.0
-	>=dev-php/sebastianbergmann-environment-2.0
-	>=dev-php/sebastianbergmann-version-2.0"
-DEPEND="${RDEPEND}	
+	>=dev-php/sebastian-code-unit-reverse-lookup-1.0
+	>=dev-php/sebastian-environment-2.0
+	>=dev-php/sebastian-version-2.0"
+DEPEND="${RDEPEND}
 	dev-php/theseer-Autoload
 	dev-php/xdebug
 	test? (
@@ -36,12 +36,12 @@ src_prepare() {
 	default
 	/usr/bin/phpab -o "${S}"/autoload.php -b "${S}"/src "${S}"/composer.json || die
 	echo "
-require_once '/usr/share/php/SebastianBergmann/php-file-iterator/autoload.php';
-require_once '/usr/share/php/SebastianBergmann/php-token-stream/autoload.php';
-require_once '/usr/share/php/SebastianBergmann/TextTemplate/autoload.php';
-require_once '/usr/share/php/SebastianBergmann/code-unit-reverse-lookup/autoload.php';
-require_once '/usr/share/php/SebastianBergmann/Environment/autoload.php';
-require_once '/usr/share/php/SebastianBergmann/Version/autoload.php';
+require_once '/usr/share/php/Sebastian/php-file-iterator/autoload.php';
+require_once '/usr/share/php/Sebastian/php-token-stream/autoload.php';
+require_once '/usr/share/php/Sebastian/TextTemplate/autoload.php';
+require_once '/usr/share/php/Sebastian/code-unit-reverse-lookup/autoload.php';
+require_once '/usr/share/php/Sebastian/Environment/autoload.php';
+require_once '/usr/share/php/Sebastian/Version/autoload.php';
 " >> "${S}"/autoload.php || die
 	if use test; then
 		cp "${S}"/autoload.php "${S}"/autoload-test.php || die
