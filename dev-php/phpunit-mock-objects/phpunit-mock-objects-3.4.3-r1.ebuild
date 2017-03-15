@@ -1,31 +1,29 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
-DESCRIPTION="Provides a way of avoiding usage of constructors when instantiating PHP classes"
-HOMEPAGE="https://github.com/doctrine/instantiator"
+DESCRIPTION="Mock Object library for PHPUnit"
+HOMEPAGE="https://github.com/sebastianbergmann/phpunit-mock-objects"
 SRC_URI="${HOMEPAGE}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
+# 20170204- test are crashing in php5
 RESTRICT="test"
 
 RDEPEND="
 	dev-lang/php:*
-	dev-php/fedora-autoloader"
+	dev-php/fedora-autoloader
+	>=dev-php/doctrine-instantiator-1.0.2
+	>=dev-php/phpunit-php-text-template-1.2
+	>=dev-php/sebastianbergmann-exporter-1.2"
 DEPEND="
 	test? (
 		${RDEPEND}
-		dev-lang/php:*[pdo,phar]
-		>=dev-php/phpunit-4.0
-		>=dev-php/PHP_CodeSniffer-2.0
-		)"
-
-S="${WORKDIR}/instantiator-${PV}"
+		dev-php/phpunit )"
 
 src_prepare() {
 	default
@@ -35,8 +33,8 @@ src_prepare() {
 }
 
 src_install() {
-	insinto "/usr/share/php/Doctrine/Instantiator"
-	doins -r  src/Doctrine/Instantiator/. "${FILESDIR}"/autoload.php
+	insinto "/usr/share/php/phpunit-mock-object"
+	doins -r  src/Framework/MockObject/. LICENSE "${FILESDIR}"/autoload.php
 	dodoc README.md
 }
 

@@ -1,6 +1,5 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
@@ -42,9 +41,7 @@ src_prepare() {
 	default
 	if use test; then
 		cp "${FILESDIR}"/autoload.php "${S}"/src/Composer/autoload.php || die
-		# $vendorDir . '/phpunit-mock-object/autoload.php',
 		sed -i -e "s:));:\t\$vendorDir . \'/phpunit-mock-object/autoload.php\',\n));:" "${S}"/src/Composer/autoload.php
-		# The patch is needed to remove a failing test
 		cp "${FILESDIR}"/bootstrap.php "${S}"/tests/bootstrap.php || die
 		rm src/bootstrap.php || die
 	fi
@@ -53,7 +50,6 @@ src_prepare() {
 src_install() {
 	eapply "${FILESDIR}/${PN}-update-paths.patch"
 	insinto "/usr/share/php/Composer/Composer"
-
 	# Composer expects the LICENSE file to be there, and the
 	# easiest thing to do is to give it what it wants.
 	doins -r src/Composer/. res LICENSE "${FILESDIR}"/autoload.php
