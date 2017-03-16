@@ -1,6 +1,7 @@
 <?php
 /* Autoloader for dev-php/sebastian-diff */
 
+$vendorDir = '/usr/share/php';
 if (!class_exists('Fedora\\Autoloader\\Autoload', false)) {
 	require_once '/usr/share/php/Fedora/Autoloader/autoload.php';
 }
