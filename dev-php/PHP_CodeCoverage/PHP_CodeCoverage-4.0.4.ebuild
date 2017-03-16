@@ -36,12 +36,12 @@ src_prepare() {
 	default
 	/usr/bin/phpab -o "${S}"/autoload.php -b "${S}"/src "${S}"/composer.json || die
 	echo "
-require_once '/usr/share/php/Sebastian/php-file-iterator/autoload.php';
-require_once '/usr/share/php/Sebastian/php-token-stream/autoload.php';
-require_once '/usr/share/php/Sebastian/TextTemplate/autoload.php';
-require_once '/usr/share/php/Sebastian/code-unit-reverse-lookup/autoload.php';
-require_once '/usr/share/php/Sebastian/Environment/autoload.php';
-require_once '/usr/share/php/Sebastian/Version/autoload.php';
+require_once '/usr/share/php/SebastianBergmann/php-file-iterator/autoload.php';
+require_once '/usr/share/php/SebastianBergmann/php-token-stream/autoload.php';
+require_once '/usr/share/php/SebastianBergmann/TextTemplate/autoload.php';
+require_once '/usr/share/php/SebastianBergmann/code-unit-reverse-lookup/autoload.php';
+require_once '/usr/share/php/SebastianBergmann/Environment/autoload.php';
+require_once '/usr/share/php/SebastianBergmann/Version/autoload.php';
 " >> "${S}"/autoload.php || die
 	if use test; then
 		cp "${S}"/autoload.php "${S}"/autoload-test.php || die
@@ -54,7 +54,7 @@ define('TEST_FILES_PATH', __DIR__ . '/_files/');" > "${S}"/tests/bootstrap.php |
 }
 
 src_install() {
-	insinto "/usr/share/php/SebastianBergmann/CodeCoverage"
+	insinto "/usr/share/php/PHP/CodeCoverage"
 	doins -r  src/. "${S}"/autoload.php
 	dodoc README.md
 }
