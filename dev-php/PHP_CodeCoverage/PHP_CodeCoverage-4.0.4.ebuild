@@ -39,7 +39,7 @@ src_prepare() {
 require_once '/usr/share/php/SebastianBergmann/php-file-iterator/autoload.php';
 require_once '/usr/share/php/SebastianBergmann/php-token-stream/autoload.php';
 require_once '/usr/share/php/SebastianBergmann/TextTemplate/autoload.php';
-require_once '/usr/share/php/SebastianBergmann/code-unit-reverse-lookup/autoload.php';
+require_once '/usr/share/php/SebastianBergmann/CodeUnitReverseLookup/autoload.php';
 require_once '/usr/share/php/SebastianBergmann/Environment/autoload.php';
 require_once '/usr/share/php/SebastianBergmann/Version/autoload.php';
 " >> "${S}"/autoload.php || die
