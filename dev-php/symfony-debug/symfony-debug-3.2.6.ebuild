@@ -3,24 +3,29 @@
 
 EAPI=6
 
-DESCRIPTION="Symfony Filesystem Component"
-HOMEPAGE="https://github.com/symfony/filesystem"
+DESCRIPTION="Symfony Debug Component"
+HOMEPAGE="https://github.com/symfony/debug"
 SRC_URI="${HOMEPAGE}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
+# Test suite need packages not already in the tree
+# dev-php/symfony-class-loader-3.0
+# dev-php/symfony-http-kernel-3.0
+RESTRICT="test"
 
 RDEPEND="
 	dev-lang/php:*
-	dev-php/fedora-autoloader"
+	dev-php/fedora-autoloader
+	>=dev-php/psr-log-1.0"
 DEPEND="
 	test? (
 		${RDEPEND}
 		dev-php/phpunit )"
 
-S="${WORKDIR}/filesystem-${PV}"
+S="${WORKDIR}/debug-${PV}"
 
 src_prepare() {
 	default
@@ -30,8 +35,10 @@ src_prepare() {
 }
 
 src_install() {
-	insinto "/usr/share/php/Symfony/Component/Filesystem"
-	doins -r . "${FILESDIR}"/autoload.php
+	insinto "/usr/share/php/Symfony/Component/Debug"
+	doins Exception FatalErrorHandler Resources BufferingLogger.php \
+	DebugClassLoader.php Debug.php ErrorHandler.php ExceptionHandler.php \
+	LICENSE "${FILESDIR}"/autoload.php
 	dodoc README.md
 }
 
