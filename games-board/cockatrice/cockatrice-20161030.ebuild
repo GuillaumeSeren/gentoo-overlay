@@ -20,7 +20,7 @@ DEPEND="
 	dev-qt/linguist-tools:5
 	dev-qt/qtconcurrent:5
 	dev-qt/qtprintsupport:5
- 	dev-qt/qtcore:5
+	dev-qt/qtcore:5
 	!client? (
 		dev-qt/qtgui:5
 		dev-qt/qtmultimedia:5
