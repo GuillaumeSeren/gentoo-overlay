@@ -27,8 +27,6 @@ DEPEND="
 	oracle? (
 		sys-libs/zlib
 	)"
-RDEPEND="
-	dev-qt/qtcore:5 "
 
 # As the default help/about display the sha1 we need it
 SHA1='c96f234'
@@ -37,9 +35,9 @@ S=${WORKDIR}/"Cockatrice-2017-05-05-Release-2.3.17"
 
 src_configure() {
 	local mycmakeargs=(
-		$(usex !client "-DWITH_CLIENT=0")
-		$(usex !oracle "-DWITH_ORACLE=0")
-		$(usex server "-DWITH_SERVER=1")
+		-DWITH_CLIENT=$(usex client)
+		-DWITH_ORACLE=$(usex oracle)
+		-DWITH_SERVER=$(usex server)
 		-DICONDIR="/usr/share/icons"
 		-DDESKTOPDIR="/usr/share/applications" )
 
