@@ -27,11 +27,13 @@ RDEPEND="
 	dev-python/flask[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
 "
-DEPEND="${RDEPEND}"
+DEPEND="${RDEPEND}
+	doc? ( dev-python/sphinx_rtd_theme )
+"
 
 PATCHES=(
 	"${FILESDIR}/${PV}-0001-Drop-non-working-test.patch"
 )
 
 distutils_enable_tests nose
-distutils_enable_sphinx docs --no-autodoc
+distutils_enable_sphinx docs
