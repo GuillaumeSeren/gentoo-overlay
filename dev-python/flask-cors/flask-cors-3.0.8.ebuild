@@ -34,4 +34,4 @@ PATCHES=(
 )
 
 distutils_enable_tests nose
-distutils_enable_sphinx doc --no-autodoc
+distutils_enable_sphinx docs --no-autodoc
