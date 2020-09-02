@@ -4,15 +4,14 @@
 EAPI=7
 
 DISTUTILS_SINGLE_IMPL=1
-PYTHON_COMPAT=( python{2_7,3_{6,7,8}} )
+PYTHON_COMPAT=( python3_{6,7,8} )
 PYTHON_REQ_USE="sqlite"
 
-inherit distutils-r1
+inherit distutils-r1 bash-completion-r1
 
 if [[ ${PV} == "9999" ]]; then
 	EGIT_REPO_URI="https://github.com/beetbox/beets.git"
 	inherit git-r3
-	KEYWORDS="~amd64 ~x86"
 else
 	MY_PV=${PV/_beta/-beta.}
 	MY_P=${PN}-${MY_PV}
@@ -23,13 +22,9 @@ fi
 
 DESCRIPTION="Media library management system for obsessive-compulsive music geeks"
 HOMEPAGE="http://beets.io/ https://pypi.org/project/beets/"
-# SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
-
-# S="${WORKDIR}/${MY_P}"
 
 LICENSE="MIT"
 SLOT="0"
-# KEYWORDS="~amd64 ~x86"
 IUSE="badfiles chromaprint discogs doc ffmpeg gstreamer icu lastfm mpd replaygain test thumbnail webserver"
 
 RDEPEND="${DEPEND}"
@@ -174,4 +169,7 @@ python_install_all() {
 	doman docs/build/man/*
 	use doc && local HTML_DOCS=( docs/build/html/. )
 	einstalldocs
+
+	"${D}$(python_get_scriptdir)/beet" completion > "${T}/beet.bashcomp"
+	newbashcomp "${T}/beet.bashcomp" beet
 }

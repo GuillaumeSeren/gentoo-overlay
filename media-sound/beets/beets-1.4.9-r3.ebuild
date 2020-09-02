@@ -22,11 +22,11 @@ else
 fi
 
 DESCRIPTION="Media library management system for obsessive-compulsive music geeks"
-HOMEPAGE="http://beets.io/ https://pypi.org/project/beets/"
+HOMEPAGE="https://beets.io/ https://pypi.org/project/beets/"
 
 LICENSE="MIT"
 SLOT="0"
-IUSE="badfiles chromaprint discogs doc ffmpeg gstreamer icu lastfm mpd replaygain test thumbnail webserver"
+IUSE="badfiles chromaprint cors discogs doc ffmpeg gstreamer icu lastfm mpd replaygain test thumbnail webserver"
 
 RDEPEND="${DEPEND}"
 DEPEND="
@@ -86,10 +86,16 @@ DEPEND="
 		)
 		webserver? (
 			dev-python/flask[${PYTHON_MULTI_USEDEP}]
-			dev-python/flask-cors[${PYTHON_MULTI_USEDEP}]
+			cors? (
+				dev-python/flask-cors[${PYTHON_MULTI_USEDEP}]
+			)
 		)
 	')"
 BDEPEND="dev-python/sphinx"
+
+PATCHES=(
+	"${FILESDIR}/${PV}-0001-compatibility-with-breaking-changes-to-the-ast-modul.patch"
+)
 
 DOCS=( README.rst docs/changelog.rst )
 
@@ -120,7 +126,9 @@ python_prepare_all() {
 
 	rm_use_plugins chromaprint chroma
 	rm_use_plugins ffmpeg convert
-	rm_use_plugins icu loadext
+	if ! use icu; then
+		rm_use_plugins icu loadext
+	fi
 	rm_use_plugins lastfm lastgenre lastimport
 	rm_use_plugins mpd bpd mpdstats
 	rm_use_plugins webserver web
@@ -132,30 +140,30 @@ python_prepare_all() {
 	done
 
 	if ! use mpd; then
-		rm test/test_player.py || die
-		rm test/test_mpdstats.py || die
+		rm test/test_player.py || die "Failed to remove test_player.py"
+		rm test/test_mpdstats.py || die "Failed to remove test_mpdstats.py"
 	fi
 	if ! use webserver; then
 		rm test/test_web.py || die "Failed to remove test_web.py"
 	fi
 	if ! use replaygain; then
-		rm test/test_replaygain.py || die
+		rm test/test_replaygain.py || die "Failed to remove test_replaygain.py"
 	fi
 	if ! use ffmpeg; then
-		rm test/test_convert.py || die
+		rm test/test_convert.py || die "Failed to remove test_convert.py"
 	fi
 	if ! use thumbnail; then
-		rm test/test_thumbnails.py || die
+		rm test/test_thumbnails.py || die "Failed to remove test_thumbnails.py"
 	fi
 	if use test; then
 		# Those test need network
-		rm test/test_art.py || die
-		rm test/test_discogs.py || die
-		rm test/test_embyupdate.py || die
-		rm test/test_lastgenre.py || die
-		rm test/test_spotify.py || die
+		rm test/test_art.py || die "Failed to remove test_art.py"
+		rm test/test_discogs.py || die "Failed to remove test_discogs.py"
+		rm test/test_embyupdate.py || die "Failed to remove test_embyupdate.py"
+		rm test/test_lastgenre.py || die "Failed to remove test_lastgenre.py"
+		rm test/test_spotify.py || die "Failed to remove test_spotify.py"
 		# Not working and dropped in master
-		rm test/test_mediafile.py || die
+		rm test/test_mediafile.py || die "Failed to remove test_mediafile.py"
 	fi
 }
 
