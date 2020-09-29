@@ -4,7 +4,6 @@
 EAPI=7
 
 PYTHON_COMPAT=( python3_{6,7,8} )
-DISTUTILS_USE_SETUPTOOLS=bdepend
 
 inherit distutils-r1
 
@@ -21,19 +20,12 @@ HOMEPAGE="https://github.com/wcdolphin/flask-cors https://pypi.org/project/Flask
 
 LICENSE="MIT"
 SLOT="0"
-RESTRICT="!test? ( test )"
 
 RDEPEND="
 	dev-python/flask[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
 "
-DEPEND="${RDEPEND}
-	doc? ( dev-python/sphinx_rtd_theme )
-"
-
-PATCHES=(
-	"${FILESDIR}/${PV}-0001-Drop-non-working-test.patch"
-)
 
 distutils_enable_tests nose
-distutils_enable_sphinx docs
+distutils_enable_sphinx docs \
+	dev-python/sphinx_rtd_theme
