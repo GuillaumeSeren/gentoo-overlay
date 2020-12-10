@@ -44,7 +44,6 @@ RDEPEND="
 			media-sound/mp3val
 		)
 		chromaprint? (
-			dev-python/audioread[${PYTHON_MULTI_USEDEP}]
 			dev-python/pyacoustid[${PYTHON_MULTI_USEDEP}]
 			media-libs/chromaprint[tools]
 		)
@@ -93,7 +92,9 @@ DEPEND="
 	${RDEPEND}
 "
 BDEPEND="
-	dev-python/sphinx
+	doc? (
+		dev-python/sphinx
+	)
 	$(python_gen_cond_dep '
 		test? (
 			dev-python/beautifulsoup[${PYTHON_MULTI_USEDEP}]
@@ -118,44 +119,39 @@ distutils_enable_tests pytest
 python_prepare_all() {
 	distutils-r1_python_prepare_all
 
-	if use test; then
-		# Those test need network
-		rm test/test_art.py || die "Failed to remove test_art.py"
-		rm test/test_discogs.py || die "Failed to remove test_discogs.py"
-		rm test/test_embyupdate.py || die "Failed to remove test_embyupdate.py"
-		rm test/test_lastgenre.py || die "Failed to remove test_lastgenre.py"
-		rm test/test_spotify.py || die "Failed to remove test_spotify.py"
-		# Not working and dropped in master
-		rm test/test_mediafile.py || die "Failed to remove test_mediafile.py"
-		if ! use ffmpeg; then
-			rm test/test_convert.py || die "Failed to remove test_convert.py"
-		fi
-		if ! use mpd; then
-			rm test/test_player.py || die "Failed to remove test_player.py"
-			rm test/test_mpdstats.py || die "Failed to remove test_mpdstats.py"
-		fi
-		if ! use replaygain; then
-			rm test/test_replaygain.py || die "Failed to remove test_replaygain.py"
-		fi
-		if ! use thumbnail; then
-			rm test/test_thumbnails.py || die "Failed to remove test_thumbnails.py"
-		fi
-		if ! use webserver; then
-			rm test/test_web.py || die "Failed to remove test_web.py"
-		fi
-
+	rm test/test_art.py || die "Failed to remove test_art.py"
+	rm test/test_discogs.py || die "Failed to remove test_discogs.py"
+	rm test/test_embyupdate.py || die "Failed to remove test_embyupdate.py"
+	rm test/test_lastgenre.py || die "Failed to remove test_lastgenre.py"
+	rm test/test_spotify.py || die "Failed to remove test_spotify.py"
+	# Not working and dropped in master
+	rm test/test_mediafile.py || die "Failed to remove test_mediafile.py"
+	if ! use ffmpeg; then
+		rm test/test_convert.py || die "Failed to remove test_convert.py"
+	fi
+	if ! use mpd; then
+		rm test/test_player.py || die "Failed to remove test_player.py"
+		rm test/test_mpdstats.py || die "Failed to remove test_mpdstats.py"
+	fi
+	if ! use replaygain; then
+		rm test/test_replaygain.py || die "Failed to remove test_replaygain.py"
+	fi
+	if ! use thumbnail; then
+		rm test/test_thumbnails.py || die "Failed to remove test_thumbnails.py"
+	fi
+	if ! use webserver; then
+		rm test/test_web.py || die "Failed to remove test_web.py"
 	fi
 }
 
 python_compile_all() {
-	esetup.py build_sphinx -b man --build-dir=docs/build
 	use doc && esetup.py build_sphinx -b html --build-dir=docs/build
 }
 
 python_install_all() {
 	distutils-r1_python_install_all
 
-	doman docs/build/man/*
+	doman man/*
 	use doc && local HTML_DOCS=( docs/build/html/. )
 	einstalldocs
 
