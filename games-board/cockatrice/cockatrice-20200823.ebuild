@@ -13,7 +13,7 @@ SRC_URI="https://github.com/Cockatrice/Cockatrice/archive/${MY_PV}.tar.gz -> ${P
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+client +oracle server"
+IUSE="+client +oracle test server"
 
 RDEPEND="
 	dev-qt/qtconcurrent:5
@@ -38,6 +38,7 @@ BDEPEND="
 	dev-qt/linguist-tools:5
 	client? ( dev-libs/protobuf )
 	server? ( dev-libs/protobuf )
+	test? ( dev-cpp/gtest )
 "
 DEPEND="${RDEPEND}"
 
@@ -50,6 +51,7 @@ src_configure() {
 		-DWITH_CLIENT=$(usex client)
 		-DWITH_ORACLE=$(usex oracle)
 		-DWITH_SERVER=$(usex server)
+		-DTEST=$(usex test)
 		-DICONDIR="${EPREFIX}/usr/share/icons"
 		-DDESKTOPDIR="${EPREFIX}/usr/share/applications" )
 
@@ -58,4 +60,12 @@ src_configure() {
 		-i cmake/getversion.cmake || die "sed failed!"
 
 	cmake_src_configure
+}
+
+pkg_postinst() {
+	xdg_icon_cache_update
+}
+
+pkg_postrm() {
+	xdg_icon_cache_update
 }
