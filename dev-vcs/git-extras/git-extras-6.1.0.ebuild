@@ -50,4 +50,7 @@ src_install() {
 	doman man/git-*.1
 	dodoc AUTHORS Readme.md
 	dobin prepare/*
+	newbashcomp etc/bash_completion.sh "${PN}"
+	insinto /usr/share/zsh/site-functions
+	newins etc/git-extras-completion.zsh "_${PN}"
 }
