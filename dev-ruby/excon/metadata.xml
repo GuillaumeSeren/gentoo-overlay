@@ -10,6 +10,6 @@
 		<name>Proxy Maintainers</name>
 	</maintainer>
 	<upstream>
-		<remote-id type="github">hashicorp/ruby-checkpoint</remote-id>
+		<remote-id type="github">excon/excon</remote-id>
 	</upstream>
 </pkgmetadata>
