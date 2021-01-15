@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -158,5 +158,5 @@ python_install_all() {
 	${PYTHON} "${ED}/usr/bin/beet" completion > "${T}/beet.bash" || die
 	newbashcomp "${T}/beet.bash" beet
 	insinto /usr/share/zsh/site-functions
-	newins ${WORKDIR}/${P}/extra/_beet _beet
+	newins "${WORKDIR}/${P}/extra/_beet" _beet
 }
