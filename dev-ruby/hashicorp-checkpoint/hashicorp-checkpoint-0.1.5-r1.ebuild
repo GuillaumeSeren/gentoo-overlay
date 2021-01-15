@@ -6,9 +6,8 @@ EAPI=7
 USE_RUBY="ruby25 ruby26 ruby27"
 
 RUBY_FAKEGEM_EXTRADOC="README.md"
-RUBY_FAKEGEM_GEMSPEC="${PN}.gemspec"
+RUBY_FAKEGEM_GEMSPEC="ruby-checkpoint.gemspec"
 RUBY_FAKEGEM_RECIPE_TEST="rspec3"
-RUBY_FAKEGEM_RECIPE_DOC="none"
 
 inherit ruby-fakegem
 
@@ -18,6 +17,7 @@ HOMEPAGE="https://www.hashicorp.com"
 LICENSE="MPL-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
+IUSE="test"
 
 ruby_add_bdepend "
 	test? ( dev-ruby/rspec-its )
@@ -26,6 +26,4 @@ ruby_add_bdepend "
 all_ruby_prepare() {
 	# remove bundler support
 	sed -i '/[Bb]undler/d' Rakefile || die
-	rm Gemfile || die
-	mv ruby-checkpoint.gemspec "${PN}".gemspec
 }
