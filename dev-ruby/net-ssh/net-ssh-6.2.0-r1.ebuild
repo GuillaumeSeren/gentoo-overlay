@@ -17,7 +17,7 @@ SRC_URI="https://github.com/${PN}/${PN}/archive/v${PV}.rc1.tar.gz -> net-ssh-git
 
 LICENSE="GPL-2"
 SLOT="$(ver_cut 1)"
-KEYWORDS="amd64 ~arm ppc ppc64 x86"
+KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~x86"
 IUSE="ed25519 test"
 
 MY_P="net-ssh-6.2.0.rc1"

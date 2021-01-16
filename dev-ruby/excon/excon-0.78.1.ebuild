@@ -12,7 +12,7 @@ RUBY_FAKEGEM_RECIPE_DOC="none"
 
 inherit ruby-fakegem
 
-DESCRIPTION="Usable, fast, simple Ruby HTTP 1.1"
+DESCRIPTION="EXtended http(s) CONnections"
 HOMEPAGE="https://github.com/excon/excon"
 SRC_URI="https://github.com/excon/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
