@@ -14,7 +14,7 @@ inherit ruby-fakegem
 
 DESCRIPTION="EXtended http(s) CONnections"
 HOMEPAGE="https://github.com/excon/excon"
-SRC_URI="https://github.com/excon/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/excon/excon/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -26,13 +26,13 @@ ruby_add_bdepend "
 	test? (
 		dev-ruby/activesupport
 		>=dev-ruby/eventmachine-1.0.4
+		>=dev-ruby/json-1.8.5
 		dev-ruby/open4
 		dev-ruby/rdoc
 		dev-ruby/sinatra
-		>=dev-ruby/json-1.8.5
 	)
 "
 all_ruby_prepare() {
 	# delete server test
-	rm spec/excon/test/server_spec.rb
+	rm spec/excon/test/server_spec.rb || die
 }
