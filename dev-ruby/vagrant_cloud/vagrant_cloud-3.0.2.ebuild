@@ -3,7 +3,7 @@
 
 EAPI=7
 
-USE_RUBY="ruby25 ruby26"
+USE_RUBY="ruby25 ruby26 ruby27"
 
 RUBY_FAKEGEM_EXTRADOC="CHANGELOG.md README.md"
 RUBY_FAKEGEM_RECIPE_TEST="rspec3"
@@ -28,11 +28,12 @@ ruby_add_bdepend ">=dev-ruby/rake-12.3
 "
 
 all_ruby_prepare() {
-	sed -i -e 'require_relative' ${PN}.gemspec || die
-	# loosen dependencies
-	sed -e '/excon/s/~>/>=/' -i ${PN}.gemspec || die
-	sed -e '/log4r/s/~>/>=/' -i ${PN}.gemspec || die
-	sed -e '/rake/s/~>/>=/' -i ${PN}.gemspec || die
-	sed -e '/rspec/s/~>/>=/' -i ${PN}.gemspec || die
-	sed -e '/webmock/s/~>/>=/' -i ${PN}.gemspec || die
+	# # loosen dependencies
+	sed -e 'require_relative' \
+		-e '/excon/s/~>/>=/' \
+		-e '/log4r/s/~>/>=/' \
+		-e '/rake/s/~>/>=/' \
+		-e '/rspec/s/~>/>=/' \
+		-e '/webmock/s/~>/>=/' \
+		-i ${PN}.gemspec || die
 }
