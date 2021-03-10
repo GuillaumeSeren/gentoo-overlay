@@ -24,9 +24,10 @@ MY_P="net-ssh-6.2.0.rc1"
 RUBY_S=${MY_P}
 
 ruby_add_rdepend "
-	virtual/ruby-ssl ed25519? (
-		>=dev-ruby/ed25519-1.2:1
-		dev-ruby/x25519 dev-ruby/bcrypt_pbkdf:1
+	virtual/ruby-ssl
+		ed25519? (
+			>=dev-ruby/ed25519-1.2:1
+			dev-ruby/x25519 dev-ruby/bcrypt_pbkdf:1
 	)
 "
 ruby_add_bdepend "
