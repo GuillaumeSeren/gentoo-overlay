@@ -36,12 +36,12 @@ ruby_add_rdepend "
 	>=dev-ruby/listen-3.1
 	<dev-ruby/log4r-1.1.11
 	>=dev-ruby/mime-types-3.3:*
-	>=dev-ruby/net-ssh-6.2.0-r1:*
-	>=dev-ruby/net-sftp-3.0
-	>=dev-ruby/net-scp-3.0.0
 	>=dev-ruby/rubyzip-2.0
-	>=dev-ruby/vagrant_cloud-3.0.2
+	>=dev-ruby/net-scp-3.0.0
+	>=dev-ruby/net-sftp-3.0
+	>=dev-ruby/net-ssh-6.2.0-r1:*
 	dev-ruby/rest-client:2
+	>=dev-ruby/vagrant_cloud-3.0.2
 "
 
 ruby_add_bdepend "
@@ -58,22 +58,15 @@ all_ruby_prepare() {
 	sed -i '/[Bb]undler/d' Rakefile || die
 	rm tasks/bundler.rake || die
 
-	rm Gemfile || die
+	sed -e 's/..\/vagrant-spec\|..\/..\/vagrant-spec/\/home\/gseren\/tmp\/vagrant-spec/' \
+		-i Gemfile|| die
 
-	# loosen dependencies
-	sed -e '/hashicorp-checkpoint\|i18n\|listen\|net-ssh\|net-scp\|net-sftp\|rake\|childprocess/s/~>/>=/' \
-		-i ${PN}.gemspec || die
-
-	# remove windows-specific gems
-	sed -e '/wdm\|winrm/d' \
-		-i ${PN}.gemspec || die
-
-	# remove bsd-specific gems
-	sed -e '/rb-kqueue/d' \
-		-i ${PN}.gemspec || die
-
-	# remove ruby_dep, it's unused and only listed to loosen ruby implementation deps
-	sed -e '/ruby_dep/d' \
+	sed -e '/rake\|rspec\|webmock/s/~>/>=/' \
+		-e '/fake_ftp/d' \
+		-e '/bcrypt_pbkdf\|hashicorp-checkpoint\|i18n\|listen\|net-ssh\|net-scp\|net-sftp\|childprocess/s/~>/>=/' \
+		-e '/wdm\|winrm/d' \
+		-e '/rb-kqueue/d' \
+		-e '/ruby_dep/d' \
 		-i ${PN}.gemspec || die
 
 	sed -e "s/@VAGRANT_VERSION@/${PV}/g" "${FILESDIR}/${PN}.in" > "${PN}" || die
