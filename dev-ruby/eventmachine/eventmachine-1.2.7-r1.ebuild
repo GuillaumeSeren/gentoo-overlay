@@ -49,7 +49,7 @@ all_ruby_prepare() {
 		tests/test_unbind_reason.rb || die
 	sed -i -e '/test_for_real/,/^    end/ s:^:#:' \
 		tests/test_pending_connect_timeout.rb || die
-	rm -f tests/test_{get_sock_opt,set_sock_opt,idle_connection}.rb || die
+	rm tests/test_{get_sock_opt,set_sock_opt,idle_connection}.rb || die
 
 	# Avoid tests for insecure SSL versions that may not be available
 	sed -i -e '/test_any_to_v3/,/^    end/ s:^:#:' \
@@ -59,23 +59,23 @@ all_ruby_prepare() {
 
 	# Avoid test that deliberately triggers a C++ exception which causes
 	# a SEGFAULT. This does not appear to happen upstream (on travis).
-	rm -f tests/test_exc.rb || die
+	rm tests/test_exc.rb || die
 }
 
 each_ruby_configure() {
 	for extdir in ext ext/fastfilereader; do
-		pushd $extdir
+		pushd "${extdir}" || die
 		${RUBY} extconf.rb || die "extconf.rb failed for ${extdir}"
-		popd
+		popd || die
 	done
 }
 
 each_ruby_compile() {
 	for extdir in ext ext/fastfilereader; do
-		pushd $extdir
+		pushd "${extdir}" || die
 		# both extensions use C++, so use the CXXFLAGS not the CFLAGS
 		emake V=1 CFLAGS="${CXXFLAGS} -fPIC" archflag="${LDFLAGS}"
-		popd
+		popd || die
 		cp $extdir/*.so lib/ || die "Unable to copy extensions for ${extdir}"
 	done
 }
