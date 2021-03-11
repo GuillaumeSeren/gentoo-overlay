@@ -24,7 +24,7 @@ RESTRICT="!test? ( test )"
 RDEPEND="${RDEPEND}
 	app-arch/libarchive
 	net-misc/curl
-	virtualbox? ( || ( app-emulation/virtualbox ) )"
+	virtualbox? ( app-emulation/virtualbox )"
 
 ruby_add_rdepend "
 	>=dev-ruby/bcrypt_pbkdf-1.0.0
