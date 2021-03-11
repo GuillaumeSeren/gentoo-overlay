@@ -20,7 +20,10 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="test"
 
-ruby_add_rdepend ">=dev-ruby/excon-0.73"
+ruby_add_rdepend "
+	>=dev-ruby/excon-0.73
+	>=dev-ruby/log4r-1.1.10
+"
 ruby_add_bdepend ">=dev-ruby/rake-12.3
 	test? (
 		>=dev-ruby/webmock-3.0
