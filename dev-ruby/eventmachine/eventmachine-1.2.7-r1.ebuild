@@ -5,9 +5,8 @@ EAPI=7
 
 USE_RUBY="ruby25 ruby26 ruby27"
 
-RUBY_FAKEGEM_RECIPE_DOC="rdoc"
-RUBY_FAKEGEM_DOCDIR="rdoc"
-RUBY_FAKEGEM_EXTRADOC="docs/*.md README.md"
+RUBY_FAKEGEM_EXTRADOC="CHANGELOG.md README.md"
+RUBY_FAKEGEM_GEMSPEC="eventmachine.gemspec"
 
 inherit ruby-fakegem
 
@@ -31,6 +30,7 @@ all_ruby_prepare() {
 	# Remove package tasks to avoid dependency on rake-compiler.
 	rm rakelib/package.rake || die
 
+	sed -i -e '/git ls-files/d' ${RUBY_FAKEGEM_GEMSPEC} || die
 	# Remove the resolver tests since they require network access and
 	# the localhost test fails with an IPv6 localhost.
 	rm tests/test_resolver.rb || die
@@ -39,8 +39,10 @@ all_ruby_prepare() {
 	rm tests/test_kb.rb || die
 
 	# Avoid tests that require network access
-	sed -i -e '/test_bind_connect/,/^  end/ s:^:#:' \
-		tests/test_basic.rb || die
+	sed -e '/test_bind_connect/,/^  end/ s:^:#:' \
+		-e '/test_invalid_address_bind_connect_src/,/^  end/ s:^:#:' \
+		-e '/test_invalid_address_bind_connect_dst/,/^  end/ s:^:#:' \
+		-i tests/test_basic.rb || die
 	sed -i -e '/test_\(cookie\|http_client\|version_1_0\)/,/^  end/ s:^:#:' \
 		tests/test_httpclient.rb || die
 	sed -i -e '/test_\(get\|https_get\)/,/^  end/ s:^:#:' \
@@ -49,13 +51,19 @@ all_ruby_prepare() {
 		tests/test_unbind_reason.rb || die
 	sed -i -e '/test_for_real/,/^    end/ s:^:#:' \
 		tests/test_pending_connect_timeout.rb || die
-	rm tests/test_{get_sock_opt,set_sock_opt,idle_connection}.rb || die
-
 	# Avoid tests for insecure SSL versions that may not be available
-	sed -i -e '/test_any_to_v3/,/^    end/ s:^:#:' \
+	sed -e '/test_any_to_v3/,/^    end/ s:^:#:' \
 		-e '/test_v3_/,/^    end/ s:^:#:' \
 		-e '/test_tlsv1_required_with_external_client/aomit "sslv3"' \
-		tests/test_ssl_protocols.rb || die
+		-e '/test_any_to_any/,/^    end/ s:^:#:' \
+		-e '/test_case_insensitivity/,/^    end/ s:^:#:' \
+		-e '/test_default_to_default/,/^    end/ s:^:#:' \
+		-i tests/test_ssl_protocols.rb || die
+	sed -e '/test_ipv6_udp_local_server/,/^    end/ s:^:#:' \
+		-e '/test_ipv6_tcp_local_server/,/^    end/ s:^:#:' \
+		-i tests/test_ipv6.rb || die
+
+	rm tests/test_{sock_opt,ssl_verify,ssl_methods,ssl_dhparam,ssl_ecdh_curve,idle_connection}.rb || die
 
 	# Avoid test that deliberately triggers a C++ exception which causes
 	# a SEGFAULT. This does not appear to happen upstream (on travis).
@@ -87,6 +95,5 @@ each_ruby_test() {
 all_ruby_install() {
 	all_fakegem_install
 
-	dodoc /usr/share/doc/${PF}/
 	doins -r examples
 }
