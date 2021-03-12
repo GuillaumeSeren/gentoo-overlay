@@ -9,7 +9,7 @@ RUBY_FAKEGEM_GEMSPEC="vagrant.gemspec"
 RUBY_FAKEGEM_EXTRAINSTALL="keys plugins templates version.txt"
 RUBY_FAKEGEM_TASK_DOC=""
 
-inherit bash-completion-r1 ruby-fakegem
+inherit bash-completion-r1 optfeature ruby-fakegem
 
 DESCRIPTION="A tool for building and distributing development environments"
 HOMEPAGE="https://vagrantup.com/"
@@ -18,13 +18,13 @@ SRC_URI="https://github.com/hashicorp/vagrant/archive/v${PV}.tar.gz -> ${P}.tar.
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="+virtualbox test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
-RDEPEND="${RDEPEND}
+RDEPEND="
 	app-arch/libarchive
 	net-misc/curl
-	virtualbox? ( app-emulation/virtualbox )"
+"
 
 ruby_add_rdepend "
 	>=dev-ruby/bcrypt_pbkdf-1.0.0
@@ -86,4 +86,8 @@ all_ruby_install() {
 
 	insinto /usr/share/vim/vimfiles/syntax/
 	doins contrib/vim/vagrantfile.vim
+
+	elog "Optional dependencies:"
+	optfeature "virtualbox support" app-emulation/virtualbox
+	optfeature "docker support" app-emulation/docker
 }
