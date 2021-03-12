@@ -22,6 +22,7 @@ IUSE="test"
 RESTRICT="!test? ( test )"
 
 RDEPEND="
+	${RDEPEND}
 	app-arch/libarchive
 	net-misc/curl
 "
