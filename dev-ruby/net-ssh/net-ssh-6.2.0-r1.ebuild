@@ -8,6 +8,7 @@ USE_RUBY="ruby25 ruby26 ruby27"
 RUBY_FAKEGEM_DOCDIR="doc"
 RUBY_FAKEGEM_EXTRADOC="CHANGES.txt README.md THANKS.txt"
 RUBY_FAKEGEM_EXTRAINSTALL="support"
+RUBY_FAKEGEM_GEMSPEC="net-ssh.gemspec"
 
 inherit ruby-fakegem
 
@@ -19,6 +20,7 @@ LICENSE="GPL-2"
 SLOT="$(ver_cut 1)"
 KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~x86"
 IUSE="ed25519 test"
+RESTRICT="!test? ( test )"
 
 MY_P="net-ssh-6.2.0.rc1"
 RUBY_S=${MY_P}
@@ -40,6 +42,10 @@ ruby_add_bdepend "
 all_ruby_prepare() {
 	# Avoid bundler dependency
 	sed -i -e '/\(bundler\|:release\)/ s:^:#:' Rakefile || die
+
+	sed -e "s:require_relative ':require './:" \
+		-e 's/git ls-files -z/find -print0/' \
+		-i ${RUBY_FAKEGEM_GEMSPEC} || die
 }
 
 src_test() {
@@ -48,5 +54,5 @@ src_test() {
 	if ! use ed25519; then
 		export NET_SSH_NO_ED25519=true
 	fi
-	ruby-ng_src_test
+	${RUBY} -Ilib -Itest test/test_all.rb
 }
