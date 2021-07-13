@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
-USE_RUBY="ruby25 ruby26"
+USE_RUBY="ruby25 ruby26 ruby27"
 
 RUBY_FAKEGEM_EXTRADOC="CHANGELOG.md README.md"
 RUBY_FAKEGEM_GEMSPEC="vagrant.gemspec"
@@ -40,7 +40,7 @@ ruby_add_rdepend "
 	>=dev-ruby/rubyzip-2.0
 	>=dev-ruby/net-scp-3.0.0
 	>=dev-ruby/net-sftp-3.0
-	>=dev-ruby/net-ssh-6.2.0-r1:*
+	>=dev-ruby/net-ssh-6.1.0
 	dev-ruby/rest-client:2
 	>=dev-ruby/vagrant_cloud-3.0.2
 "
@@ -57,17 +57,16 @@ ruby_add_bdepend "
 all_ruby_prepare() {
 	# remove bundler support
 	sed -i '/[Bb]undler/d' Rakefile || die
+	rm Gemfile || die
 	rm tasks/bundler.rake || die
 
-	sed -e 's/..\/vagrant-spec\|..\/..\/vagrant-spec/\/home\/gseren\/tmp\/vagrant-spec/' \
-		-i Gemfile|| die
-
-	sed -e '/rake\|rspec\|webmock/s/~>/>=/' \
-		-e '/fake_ftp/d' \
-		-e '/bcrypt_pbkdf\|hashicorp-checkpoint\|i18n\|listen\|net-ssh\|net-scp\|net-sftp\|childprocess/s/~>/>=/' \
-		-e '/wdm\|winrm/d' \
-		-e '/rb-kqueue/d' \
-		-e '/ruby_dep/d' \
+	sed -e ':rake\|rspec\|webmock: s:~>:>=:' \
+		-e ':bcrypt_pbkdf\|hashicorp-checkpoint\|i18n\|listen\|net-ssh\|net-scp\|net-sftp\|childprocess: s:~>:>=:' \
+		-e '/fake_ftp/ s:^#*:#:' \
+		-e '/wdm/ s:^#*:#:' \
+		-e '/winrm/ s:^#*:#:' \
+		-e '/rb-kqueue/ s:^#*:#:' \
+		-e '/ruby_dep/ s:^#*:#:' \
 		-i ${PN}.gemspec || die
 
 	sed -e "s/@VAGRANT_VERSION@/${PV}/g" "${FILESDIR}/${PN}.in" > "${PN}" || die
