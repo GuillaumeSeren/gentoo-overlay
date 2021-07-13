@@ -6,8 +6,6 @@ EAPI=7
 USE_RUBY="ruby25 ruby26 ruby27"
 
 RUBY_FAKEGEM_EXTRADOC="CHANGELOG.md README.md"
-RUBY_FAKEGEM_GEMSPEC="public_suffix.gemspec"
-RUBY_FAKEGEM_RECIPE_DOC="rdoc"
 RUBY_FAKEGEM_EXTRAINSTALL="data"
 
 RUBY_FAKEGEM_BINWRAP=""
@@ -20,7 +18,8 @@ HOMEPAGE="https://simonecarletti.com/code/publicsuffix-ruby/"
 KEYWORDS="~amd64 ~arm ~arm64 ~hppa ~ppc ~ppc64 ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x64-solaris ~x86-solaris"
 LICENSE="MIT"
 SLOT="3"
-IUSE=""
+IUSE="test"
+RESTRICT="!test? ( test )"
 
 ruby_add_bdepend "test? ( dev-ruby/mocha )"
 
