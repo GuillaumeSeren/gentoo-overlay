@@ -7,7 +7,7 @@ USE_RUBY="ruby25 ruby26 ruby27"
 
 RUBY_FAKEGEM_EXTRADOC="CHANGELOG.md README.md"
 RUBY_FAKEGEM_RECIPE_TEST="rspec3"
-RUBY_FAKEGEM_RECIPE_DOC="none"
+RUBY_FAKEGEM_GEMSPEC="vagrant_cloud.gemspec"
 
 inherit ruby-fakegem
 
@@ -32,7 +32,7 @@ ruby_add_bdepend ">=dev-ruby/rake-12.3
 
 all_ruby_prepare() {
 	# # loosen dependencies
-	sed -e 'require_relative' \
+	sed -e 's:require_relative ":require "./:' \
 		-e '/excon/s/~>/>=/' \
 		-e '/log4r/s/~>/>=/' \
 		-e '/rake/s/~>/>=/' \
