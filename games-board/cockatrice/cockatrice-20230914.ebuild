@@ -9,9 +9,7 @@ MY_PV="2023-09-14-Release-2.9.0"
 
 DESCRIPTION="Open-source multiplatform software for playing card games over a network"
 HOMEPAGE="https://github.com/Cockatrice/Cockatrice"
-# SRC_URI="https://github.com/Cockatrice/Cockatrice/archive/${MY_PV}.tar.gz -> ${P}.tar.gz"
 SRC_URI="https://codeload.github.com/Cockatrice/Cockatrice/tar.gz/refs/tags/${MY_PV} -> ${P}.tar.gz"
-# https://codeload.github.com/Cockatrice/Cockatrice/tar.gz/refs/tags/2023-09-14-Release-2.9.0
 S="${WORKDIR}/Cockatrice-${MY_PV}"
 
 LICENSE="GPL-2+"
@@ -56,6 +54,7 @@ src_configure() {
 		-DTEST=$(usex test)
 		-DICONDIR="${EPREFIX}/usr/share/icons"
 		-DDESKTOPDIR="${EPREFIX}/usr/share/applications"
+		-DFORCE_USE_QT5=1
 	)
 
 	# Add date in the help about, come from git originally
