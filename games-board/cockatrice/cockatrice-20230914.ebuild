@@ -73,5 +73,6 @@ src_configure() {
 }
 
 pkg_postinst() {
+	xdg_pkg_postinst
 	optfeature "mysql/mariadb support" dev-db/mysql-connector-c
 }
