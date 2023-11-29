@@ -15,53 +15,32 @@ S="${WORKDIR}/Cockatrice-${MY_PV}"
 LICENSE="GPL-2+"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+client +oracle test server qt6"
+IUSE="+client +oracle test server"
 RESTRICT="!test? ( test )"
 
 RDEPEND="
-    !qt6? (
-        dev-qt/qtcore:5
-        dev-qt/qtnetwork:5
-        dev-qt/qtwidgets:5
-        client? (
-            dev-qt/qtconcurrent:5
-            dev-qt/qtgui:5
-            dev-qt/qtmultimedia:5
-            dev-qt/qtprintsupport:5
-            dev-qt/qtsvg:5
-            dev-qt/qtwebsockets:5
-        )
-        oracle? (
-            dev-qt/qtconcurrent:5
-            dev-qt/qtsvg:5
-            sys-libs/zlib
-            app-arch/xz-utils
-        )
-        server? (
-            dev-qt/qtsql:5
-            dev-qt/qtwebsockets:5
-            dev-db/mysql-connector-c
-        )
+    dev-qt/qtcore:5
+    dev-qt/qtnetwork:5
+    dev-qt/qtwidgets:5
+    client? (
+        dev-qt/qtconcurrent:5
+        dev-qt/qtgui:5
+        dev-qt/qtmultimedia:5
+        dev-qt/qtprintsupport:5
+        dev-qt/qtsvg:5
+        dev-qt/qtwebsockets:5
     )
-    qt6? (
-        dev-qt/qtbase:6[network,widgets]
-        client? (
-            dev-qt/qtbase:6[concurrent,gui]
-            dev-qt/qtmultimedia:6
-            dev-qt/qtsvg:6
-            dev-qt/qtwebsockets:6
-        )
-        oracle? (
-            dev-qt/qtbase:6[concurrent]
-            dev-qt/qtsvg:6
-            sys-libs/zlib
-            app-arch/xz-utils
-        )
-        server? (
-            dev-qt/qtbase:6[sql]
-            dev-qt/qtwebsockets:6
-            dev-db/mysql-connector-c
-        )
+    oracle? (
+        dev-qt/qtconcurrent:5
+        dev-qt/qtsvg:5
+        sys-libs/zlib
+        app-arch/xz-utils
+    )
+    server? (
+        dev-qt/qtsql:5
+        dev-qt/qtwebsockets:5
+        dev-db/mysql-connector-c
+    )
     )"
 DEPEND="
     ${RDEPEND}
@@ -73,7 +52,7 @@ BDEPEND="
 
 src_configure() {
 	local mycmakeargs=(
-		-DBUILD_SHARED_LIBS=OFF
+		-DBUILD_SHARED_LIBS=OFF # This is need because the default eclass breaks the build
 		-DUSE_CCACHE=OFF
 		-DWITH_CLIENT=$(usex client)
 		-DWITH_ORACLE=$(usex oracle)
@@ -81,6 +60,7 @@ src_configure() {
 		-DTEST=$(usex test)
 		-DICONDIR="${EPREFIX}/usr/share/icons"
 		-DDESKTOPDIR="${EPREFIX}/usr/share/applications"
+                -DFORCE_USE_QT5=1
 	)
 
 	# Add date in the help about, come from git originally
