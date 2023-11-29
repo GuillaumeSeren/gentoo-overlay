@@ -37,7 +37,7 @@ RDEPEND="
             sys-libs/zlib
             app-arch/xz-utils
         )
-        server? (
+        server? && !elibc_musl? (
             dev-qt/qtsql:5
             dev-qt/qtwebsockets:5
             dev-db/mysql-connector-c
@@ -57,7 +57,7 @@ RDEPEND="
             sys-libs/zlib
             app-arch/xz-utils
         )
-        server? (
+        server? && !elibc_musl? (
             dev-qt/qtbase:6[sql]
             dev-qt/qtwebsockets:6
             dev-db/mysql-connector-c
@@ -75,6 +75,7 @@ CMAKE_BUILD_TYPE=RelWithDebInfo
 
 src_configure() {
 	local mycmakeargs=(
+		-DBUILD_SHARED_LIBS=OFF
 		-DUSE_CCACHE=OFF
 		-DWITH_CLIENT=$(usex client)
 		-DWITH_ORACLE=$(usex oracle)
