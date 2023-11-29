@@ -75,6 +75,7 @@ CMAKE_BUILD_TYPE=RelWithDebInfo
 
 src_configure() {
 	local mycmakeargs=(
+		-DBUILD_SHARED_LIBS=OFF
 		-DUSE_CCACHE=OFF
 		-DWITH_CLIENT=$(usex client)
 		-DWITH_ORACLE=$(usex oracle)
