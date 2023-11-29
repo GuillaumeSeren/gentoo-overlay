@@ -19,6 +19,7 @@ IUSE="+client +oracle test server"
 RESTRICT="!test? ( test )"
 
 RDEPEND="
+    dev-libs/protobuf
     dev-qt/qtcore:5
     dev-qt/qtnetwork:5
     dev-qt/qtwidgets:5
