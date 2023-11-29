@@ -19,7 +19,7 @@ IUSE="+client +oracle test server"
 RESTRICT="!test? ( test )"
 
 RDEPEND="
-	dev-libs/protobuf
+	dev-libs/protobuf:=
 	dev-qt/qtcore:5
 	dev-qt/qtnetwork:5
 	dev-qt/qtwidgets:5
@@ -45,8 +45,7 @@ DEPEND="
 	${RDEPEND}
 	test? ( dev-cpp/gtest )"
 BDEPEND="
-	dev-qt/linguist-tools:5
-	dev-libs/protobuf"
+	dev-libs/protobuf:="
 
 PATCHES=(
 	"${FILESDIR}/${PN}-2.9.0-support-protobuf-23.patch"
@@ -63,6 +62,7 @@ src_configure() {
 		-DICONDIR="${EPREFIX}/usr/share/icons"
 		-DDESKTOPDIR="${EPREFIX}/usr/share/applications"
 		-DFORCE_USE_QT5=1
+		-DUPDATE_TRANSLATIONS=OFF
 	)
 
 	# Add date in the help about, come from git originally
@@ -73,5 +73,6 @@ src_configure() {
 }
 
 pkg_postinst() {
+	xdg_pkg_postinst
 	optfeature "mysql/mariadb support" dev-db/mysql-connector-c
 }
