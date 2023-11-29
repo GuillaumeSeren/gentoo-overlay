@@ -58,7 +58,7 @@ src_configure() {
 		-DTEST=$(usex test)
 		-DICONDIR="${EPREFIX}/usr/share/icons"
 		-DDESKTOPDIR="${EPREFIX}/usr/share/applications"
-                -DFORCE_USE_QT5=1
+		-DFORCE_USE_QT5=1
 	)
 
 	# Add date in the help about, come from git originally
