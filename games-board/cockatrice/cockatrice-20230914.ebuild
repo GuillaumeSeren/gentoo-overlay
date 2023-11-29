@@ -37,7 +37,7 @@ RDEPEND="
             sys-libs/zlib
             app-arch/xz-utils
         )
-        server? && !elibc_musl? (
+        server? (
             dev-qt/qtsql:5
             dev-qt/qtwebsockets:5
             dev-db/mysql-connector-c
@@ -57,21 +57,19 @@ RDEPEND="
             sys-libs/zlib
             app-arch/xz-utils
         )
-        server? && !elibc_musl? (
+        server? (
             dev-qt/qtbase:6[sql]
             dev-qt/qtwebsockets:6
             dev-db/mysql-connector-c
         )
     )"
 DEPEND="
-	${RDEPEND}
-	test? ( dev-cpp/gtest )"
+    ${RDEPEND}
+    test? ( dev-cpp/gtest )"
 BDEPEND="
-	dev-qt/linguist-tools:5
-	client? ( dev-libs/protobuf )
-	server? ( dev-libs/protobuf )"
-
-CMAKE_BUILD_TYPE=RelWithDebInfo
+    !qt6 (dev-qt/linguist-tools:5)
+    qt6 (dev-qt/qttools:6[linguist])
+    dev-libs/protobuf"
 
 src_configure() {
 	local mycmakeargs=(
