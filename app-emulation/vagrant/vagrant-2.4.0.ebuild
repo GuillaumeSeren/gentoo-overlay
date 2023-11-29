@@ -3,7 +3,7 @@
 
 EAPI=8
 
-USE_RUBY="ruby31"
+USE_RUBY="ruby31 ruby32"
 
 RUBY_FAKEGEM_EXTENSIONS=(ext/vagrant_ssl/extconf.rb)
 RUBY_FAKEGEM_EXTRADOC="CHANGELOG.md README.md"
@@ -51,7 +51,7 @@ ruby_add_rdepend "
 	>=dev-ruby/rexml-3.2.0
 	>=dev-ruby/rgl-0.5.10
 	>=dev-ruby/rubyzip-2.3.2
-	>=dev-ruby/vagrant_cloud-3.0.5
+	>=dev-ruby/vagrant_cloud-3.1.0
 	>=dev-ruby/ipaddr-1.2.4
 "
 
