@@ -67,8 +67,8 @@ DEPEND="
     ${RDEPEND}
     test? ( dev-cpp/gtest )"
 BDEPEND="
-    !qt6 (dev-qt/linguist-tools:5)
-    qt6 (dev-qt/qttools:6[linguist])
+    !qt6? (dev-qt/linguist-tools:5)
+    qt6? (dev-qt/qttools:6[linguist])
     dev-libs/protobuf"
 
 src_configure() {
