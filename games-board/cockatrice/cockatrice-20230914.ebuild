@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit xdg cmake
+inherit xdg cmake optfeature
 
 MY_PV="${PV:0:4}-${PV:4:2}-${PV:6:2}-Release-2.9.0"
 
@@ -19,35 +19,38 @@ IUSE="+client +oracle test server"
 RESTRICT="!test? ( test )"
 
 RDEPEND="
-    dev-libs/protobuf
-    dev-qt/qtcore:5
-    dev-qt/qtnetwork:5
-    dev-qt/qtwidgets:5
-    client? (
-        dev-qt/qtconcurrent:5
-        dev-qt/qtgui:5
-        dev-qt/qtmultimedia:5
-        dev-qt/qtprintsupport:5
-        dev-qt/qtsvg:5
-        dev-qt/qtwebsockets:5
-    )
-    oracle? (
-        dev-qt/qtconcurrent:5
-        dev-qt/qtsvg:5
-        sys-libs/zlib
-        app-arch/xz-utils
-    )
-    server? (
-        dev-qt/qtsql:5
-        dev-qt/qtwebsockets:5
-        dev-db/mysql-connector-c
-    )"
+	dev-libs/protobuf
+	dev-qt/qtcore:5
+	dev-qt/qtnetwork:5
+	dev-qt/qtwidgets:5
+	client? (
+		dev-qt/qtconcurrent:5
+		dev-qt/qtgui:5
+		dev-qt/qtmultimedia:5
+		dev-qt/qtprintsupport:5
+		dev-qt/qtsvg:5
+		dev-qt/qtwebsockets:5
+	)
+	oracle? (
+		dev-qt/qtconcurrent:5
+		dev-qt/qtsvg:5
+		sys-libs/zlib
+		app-arch/xz-utils
+	)
+	server? (
+		dev-qt/qtsql:5
+		dev-qt/qtwebsockets:5
+	)"
 DEPEND="
-    ${RDEPEND}
-    test? ( dev-cpp/gtest )"
+	${RDEPEND}
+	test? ( dev-cpp/gtest )"
 BDEPEND="
-    dev-qt/linguist-tools:5
-    dev-libs/protobuf"
+	dev-qt/linguist-tools:5
+	dev-libs/protobuf"
+
+PATCHES=(
+	"${FILESDIR}/${PN}-2.9.0-support-protobuf-23.patch"
+)
 
 src_configure() {
 	local mycmakeargs=(
@@ -67,4 +70,8 @@ src_configure() {
 		-i cmake/getversion.cmake || die "sed failed!"
 
 	cmake_src_configure
+}
+
+pkg_postinst() {
+	optfeature "mysql/mariadb support" dev-db/mysql-connector-c
 }
