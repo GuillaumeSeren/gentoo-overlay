@@ -19,7 +19,7 @@ IUSE="+client +oracle test server"
 RESTRICT="!test? ( test )"
 
 RDEPEND="
-	dev-libs/protobuf
+	dev-libs/protobuf:=
 	dev-qt/qtcore:5
 	dev-qt/qtnetwork:5
 	dev-qt/qtwidgets:5
@@ -46,7 +46,7 @@ DEPEND="
 	test? ( dev-cpp/gtest )"
 BDEPEND="
 	dev-qt/linguist-tools:5
-	dev-libs/protobuf"
+	dev-libs/protobuf:="
 
 PATCHES=(
 	"${FILESDIR}/${PN}-2.9.0-support-protobuf-23.patch"
