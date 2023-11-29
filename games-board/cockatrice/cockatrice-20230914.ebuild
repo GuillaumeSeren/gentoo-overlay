@@ -45,7 +45,6 @@ DEPEND="
 	${RDEPEND}
 	test? ( dev-cpp/gtest )"
 BDEPEND="
-	dev-qt/linguist-tools:5
 	dev-libs/protobuf:="
 
 PATCHES=(
@@ -63,6 +62,7 @@ src_configure() {
 		-DICONDIR="${EPREFIX}/usr/share/icons"
 		-DDESKTOPDIR="${EPREFIX}/usr/share/applications"
 		-DFORCE_USE_QT5=1
+		-DUPDATE_TRANSLATIONS=OFF
 	)
 
 	# Add date in the help about, come from git originally
