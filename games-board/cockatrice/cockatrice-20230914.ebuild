@@ -40,7 +40,6 @@ RDEPEND="
         dev-qt/qtsql:5
         dev-qt/qtwebsockets:5
         dev-db/mysql-connector-c
-    )
     )"
 DEPEND="
     ${RDEPEND}
