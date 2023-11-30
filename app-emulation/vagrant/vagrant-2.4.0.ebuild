@@ -37,7 +37,7 @@ ruby_add_rdepend "
 	>=dev-ruby/ed25519-1.3.0
 	dev-ruby/erubi
 	>=dev-ruby/googleapis-common-protos-types-1.3.0
-	dev-ruby/grpc
+	>=dev-ruby/grpc-1.59.2
 	>=dev-ruby/hashicorp-checkpoint-0.1.5
 	>=dev-ruby/i18n-1.12:1
 	>=dev-ruby/listen-3.7
