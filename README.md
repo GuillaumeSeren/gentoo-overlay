@@ -84,7 +84,7 @@ Would you like to merge these packages? [Yes/No]
 ```
 
 # CONTENT
-Here the links for stuff that are packaged here.
+Here the list of stuff that are packaged here.
 
 Software                                | DESCRIPTION
 ----------------------------------------|------------
