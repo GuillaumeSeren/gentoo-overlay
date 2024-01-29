@@ -59,6 +59,7 @@ ruby_add_bdepend "
 	>=dev-ruby/rake-13.0.0
 	test? (
 		~app-emulation/vagrant-${PV}
+		dev-ruby/fake_ftp
 		dev-ruby/rake-compiler
 		>=dev-ruby/rspec-3.11
 		>=dev-ruby/rspec-its-1.3.0
