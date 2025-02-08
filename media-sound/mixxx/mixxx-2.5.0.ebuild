@@ -88,14 +88,14 @@ BDEPEND="
 	virtual/pkgconfig
 "
 
-PATCHES=(
-	"${FILESDIR}"/${PN}-2.3.0-docs.patch
-	"${FILESDIR}"/${PN}-2.3.0-cmake.patch
-	"${FILESDIR}"/${PN}-2.3.1-benchmark_compile_fix.patch
-)
+# PATCHES=(
+# 	"${FILESDIR}"/${PN}-2.3.0-docs.patch
+# 	"${FILESDIR}"/${PN}-2.3.0-cmake.patch
+# 	"${FILESDIR}"/${PN}-2.3.1-benchmark_compile_fix.patch
+# )
 
 PLOCALES="
-	ca cs de en es fi fr gl id it ja kn nl pl pt ro ru sl sq sr tr zh-CN zh-TW
+	ca cs de en es fi fr gl id it nl pl pt ro ru sl sq sr tr
 "
 
 mixxx_set_globals() {
