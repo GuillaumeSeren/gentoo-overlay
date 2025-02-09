@@ -21,12 +21,14 @@ else
 fi
 LICENSE="GPL-2"
 SLOT="0"
-IUSE="aac ffmpeg hid keyfinder lv2 modplug mp3 mp4 opus qtkeychain shout wavpack"
+# IUSE="aac ffmpeg hid keyfinder lv2 modplug mp3 mp4 opus qtkeychain shout wavpack"
+IUSE="aac doc ffmpeg hid keyfinder lv2 mp3 mp4 opus qtkeychain shout wavpack"
 
 RDEPEND="
 	dev-db/sqlite
 	dev-libs/glib:2
 	dev-libs/protobuf:=
+	dev-qt/qtconcurrent:5
 	dev-qt/qtcore:5
 	dev-qt/qtdbus:5
 	dev-qt/qtgui:5
@@ -46,12 +48,11 @@ RDEPEND="
 	media-libs/libsndfile
 	media-libs/libsoundtouch
 	media-libs/libvorbis
-	media-libs/portaudio[alsa]
+	media-libs/portaudio
 	media-libs/portmidi
 	media-libs/rubberband
 	<media-libs/taglib-2
 	media-libs/vamp-plugin-sdk
-	media-sound/lame
 	sci-libs/fftw:3.0=
 	sys-power/upower
 	virtual/glu
@@ -67,20 +68,15 @@ RDEPEND="
 	hid? ( dev-libs/hidapi )
 	keyfinder? ( media-libs/libkeyfinder )
 	lv2? ( media-libs/lilv )
-	modplug? ( media-libs/libmodplug )
 	mp3? ( media-libs/libmad )
 	mp4? ( media-libs/libmp4v2:= )
 	opus? (	media-libs/opusfile )
 	qtkeychain? ( dev-libs/qtkeychain:=[qt5(+)] )
+	shout? ( >=media-libs/libshout-2.4.5 )
 	wavpack? ( media-sound/wavpack )
 "
-	# libshout-idjc-2.4.6 is required. Please check and re-add once it's
-	# available in ::gentoo
-	# Meanwhile we're using the bundled libshout-idjc. See bug #775443
-	#shout? ( >=media-libs/libshout-idjc-2.4.6 )
-
 DEPEND="${RDEPEND}
-	dev-qt/qtconcurrent:5
+	dev-cpp/ms-gsl
 "
 BDEPEND="
 	dev-qt/qttest:5
@@ -88,46 +84,28 @@ BDEPEND="
 	virtual/pkgconfig
 "
 
-# PATCHES=(
-# 	"${FILESDIR}"/${PN}-2.3.0-docs.patch
-# 	"${FILESDIR}"/${PN}-2.3.0-cmake.patch
-# 	"${FILESDIR}"/${PN}-2.3.1-benchmark_compile_fix.patch
-# )
-
-PLOCALES="
-	ca cs de en es fi fr gl id it nl pl pt ro ru sl sq sr tr
-"
-
-mixxx_set_globals() {
-	local lang
-	local MANUAL_URI_BASE="https://downloads.mixxx.org/manual/${MY_PV}"
-	for lang in ${PLOCALES} ; do
-		SRC_URI+=" l10n_${lang}? ( ${MANUAL_URI_BASE}/${PN}-manual-${MY_PV}-${lang/ja/ja-JP}.pdf )"
-		IUSE+=" l10n_${lang/ en/ +en}"
-	done
-	SRC_URI+=" ${MANUAL_URI_BASE}/${PN}-manual-${MY_PV}-en.pdf"
-}
-mixxx_set_globals
+PATCHES=(
+	"${FILESDIR}"/${PN}-9999-docs.patch
+)
 
 src_configure() {
 	local mycmakeargs=(
-		# Not available on Linux yet and requires additional deps
-		-DBATTERY="off"
-		-DBROADCAST="$(usex shout on off)"
-		-DCCACHE_SUPPORT="off"
 		-DFAAD="$(usex aac on off)"
 		-DFFMPEG="$(usex ffmpeg on off)"
 		-DHID="$(usex hid on off)"
-		-DINSTALL_USER_UDEV_RULES=OFF
-		-DKEYFINDER="$(usex keyfinder on off)"
 		-DLILV="$(usex lv2 on off)"
 		-DMAD="$(usex mp3 on off)"
-		-DMODPLUG="$(usex modplug on off)"
 		-DOPTIMIZE="off"
+		-DCCACHE_SUPPORT="off"
 		-DOPUS="$(usex opus on off)"
-		-DQTKEYCHAIN="$(usex qtkeychain on off)"
+		-DBROADCAST="$(usex shout on off)"
 		-DVINYLCONTROL="on"
+		-DINSTALL_USER_UDEV_RULES=OFF
 		-DWAVPACK="$(usex wavpack on off)"
+		-DQTKEYCHAIN="$(usex qtkeychain on off)"
+		-DKEYFINDER="$(usex keyfinder on off)"
+		-DDOWNLOAD_MANUAL=OFF
+		-DBUILD_SHARED_LIBS=OFF
 	)
 
 	if [[ ${PV} == 9999 ]] ; then
@@ -141,13 +119,10 @@ src_configure() {
 src_install() {
 	cmake_src_install
 	udev_newrules "${S}"/res/linux/mixxx-usb-uaccess.rules 69-mixxx-usb-uaccess.rules
-	dodoc README.md CHANGELOG.md
-	local locale
-	for locale in ${PLOCALES} ; do
-		if use l10n_${locale} ; then
-			dodoc "${DISTDIR}"/${PN}-manual-${MY_PV}-${locale/ja/ja-JP}.pdf
-		fi
-	done
+
+	if use doc ; then
+		dodoc README res/Mixxx-Keyboard-Shortcuts.pdf
+	fi
 }
 
 pkg_postinst() {
