@@ -8,9 +8,9 @@ inherit cmake xdg udev
 MY_PV=$(ver_cut 1-2)
 DESCRIPTION="Advanced Digital DJ tool based on Qt"
 HOMEPAGE="https://mixxx.org/"
-if [[ ${PV} == *9999 ]] ; then
+if [[ ${PV} == *9999 ]]; then
 	inherit git-r3
-	if [[ ${PV} == ?.?.9999 ]] ; then
+	if [[ ${PV} == ?.?.9999 ]]; then
 		EGIT_BRANCH=${PV%.9999}
 	fi
 	EGIT_REPO_URI="https://github.com/mixxxdj/${PN}.git"
@@ -28,18 +28,18 @@ RDEPEND="
 	dev-db/sqlite
 	dev-libs/glib:2
 	dev-libs/protobuf:=
-	dev-qt/qtconcurrent:5
-	dev-qt/qtcore:5
-	dev-qt/qtdbus:5
-	dev-qt/qtgui:5
-	dev-qt/qtnetwork:5
-	dev-qt/qtopengl:5
+	dev-qt/qtconcurrent:6
+	dev-qt/qtcore:6
+	dev-qt/qtdbus:6
+	dev-qt/qtgui:6
+	dev-qt/qtnetwork:6
+	dev-qt/qtopengl:6
 	dev-qt/qtscript:5[scripttools]
-	dev-qt/qtsql:5
-	dev-qt/qtsvg:5
-	dev-qt/qtwidgets:5
-	dev-qt/qtx11extras:5
-	dev-qt/qtxml:5
+	dev-qt/qtsql:6
+	dev-qt/qtsvg:6
+	dev-qt/qtwidgets:6
+	dev-qt/qtx11extras:6
+	dev-qt/qtxml:6
 	media-libs/chromaprint
 	media-libs/flac:=
 	media-libs/libebur128
@@ -79,9 +79,10 @@ DEPEND="${RDEPEND}
 	dev-cpp/ms-gsl
 "
 BDEPEND="
-	dev-qt/qttest:5
+	dev-qt/qttest:6
 	dev-qt/qtxmlpatterns:5
 	virtual/pkgconfig
+	dev-cpp/benchmark
 "
 
 PATCHES=(
@@ -106,9 +107,10 @@ src_configure() {
 		-DKEYFINDER="$(usex keyfinder on off)"
 		-DDOWNLOAD_MANUAL=OFF
 		-DBUILD_SHARED_LIBS=OFF
+		-DENGINEPRIME=OFF
 	)
 
-	if [[ ${PV} == 9999 ]] ; then
+	if [[ ${PV} == 9999 ]]; then
 		mycmakeargs+=(
 			-DENGINEPRIME="OFF"
 		)
@@ -120,7 +122,7 @@ src_install() {
 	cmake_src_install
 	udev_newrules "${S}"/res/linux/mixxx-usb-uaccess.rules 69-mixxx-usb-uaccess.rules
 
-	if use doc ; then
+	if use doc; then
 		dodoc README res/Mixxx-Keyboard-Shortcuts.pdf
 	fi
 }
