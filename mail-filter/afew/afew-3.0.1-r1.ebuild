@@ -43,17 +43,17 @@ python_prepare_all() {
 	distutils-r1_python_prepare_all
 }
 
-python_compile_all() {
-	sphinx-build -b man docs docs/build/man || die
+# python_compile_all() {
+# 	# sphinx-build -b man docs docs/build/man || die
+#
+# 	# if use doc; then
+# 	# 	sphinx-build -b html docs docs/build/html || die
+# 	# fi
+# }
 
-	# if use doc; then
-	# 	sphinx-build -b html docs docs/build/html || die
-	# fi
-}
-
-python_install_all() {
-	doman docs/build/man/*
-	# dodoc afew/defaults/afew.config
-	# use doc && HTML_DOCS=(docs/build/html/.)
-	# einstalldocs
-}
+# python_install_all() {
+# 	doman docs/build/man/*
+# 	# dodoc afew/defaults/afew.config
+# 	# use doc && HTML_DOCS=(docs/build/html/.)
+# 	# einstalldocs
+# }
